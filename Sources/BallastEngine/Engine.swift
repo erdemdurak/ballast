@@ -1,5 +1,13 @@
 import Foundation
 
+/// Seconds left before `Carry on` becomes tappable. The friction is the product, so
+/// this lives here and is tested rather than sitting as arithmetic inside a view.
+public func holdRemaining(
+    holdSeconds: TimeInterval, askedAt: TimeInterval, now: TimeInterval
+) -> Int {
+    max(0, Int((holdSeconds - (now - askedAt)).rounded(.up)))
+}
+
 /// The whole product logic. Pure: no clocks, no I/O, no platform types.
 public func reduce(_ state: SessionState, _ event: Event, _ now: TimeInterval) -> (SessionState, [Effect]) {
     var s = state

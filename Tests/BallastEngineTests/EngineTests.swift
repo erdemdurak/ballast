@@ -177,6 +177,29 @@ private struct Row {
     #expect(effects.contains(.present(.asking(holdSeconds: 0))))
 }
 
+// MARK: - The hold
+
+@Test func theHoldCountsDownAndThenReleases() {
+    let asked = t0 + 20 * min
+    let table: [(now: TimeInterval, expect: Int)] = [
+        (asked, 4),
+        (asked + 0.4, 4),
+        (asked + 1, 3),
+        (asked + 3.1, 1),
+        (asked + 3.9, 1),
+        (asked + 4, 0),
+        (asked + 30, 0),
+    ]
+    for row in table {
+        let left = holdRemaining(holdSeconds: 4, askedAt: asked, now: row.now)
+        #expect(left == row.expect, "at +\(row.now - asked)s")
+    }
+}
+
+@Test func aZeroHoldIsNeverHeld() {
+    #expect(holdRemaining(holdSeconds: 0, askedAt: t0, now: t0) == 0)
+}
+
 @Test func eventsOutsideASessionDoNothing() {
     for event in [Event.slip, .pickup, .endSession, .dismiss(.down)] {
         let (s, effects) = reduce(SessionState(), event, t0)

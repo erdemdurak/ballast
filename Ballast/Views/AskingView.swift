@@ -4,7 +4,7 @@ import SwiftUI
 struct AskingView: View {
     @Bindable var model: AppModel
 
-    private var held: Bool { model.holdRemaining > 0 }
+    private var held: Bool { model.hold > 0 }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 22) {
@@ -41,13 +41,13 @@ struct AskingView: View {
                 Button(S.t("ask.down")) { model.dismiss(.down) }
                     .buttonStyle(FilledButtonStyle())
 
-                Button(held ? S.t("ask.through.held", model.holdRemaining) : S.t("ask.through")) {
+                Button(held ? S.t("ask.through.held", model.hold) : S.t("ask.through")) {
                     model.dismiss(.through)
                 }
                 .buttonStyle(OutlineButtonStyle(inert: held))
                 .disabled(held)
                 .accessibilityLabel(
-                    held ? S.t("a11y.hold", model.holdRemaining) : S.t("ask.through"))
+                    held ? S.t("a11y.hold", model.hold) : S.t("ask.through"))
             }
         }
         .padding(24)

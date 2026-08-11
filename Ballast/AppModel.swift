@@ -65,8 +65,9 @@ final class AppModel {
         return max(0, state.config.interval - (nowTick - anchor))
     }
 
-    var holdRemaining: Int {
-        max(0, Int((state.config.holdSeconds - (nowTick - askedAt)).rounded(.up)))
+    var hold: Int {
+        holdRemaining(
+            holdSeconds: state.config.holdSeconds, askedAt: askedAt, now: nowTick)
     }
 
     /// Minutes since the anchor, for the asking copy.
