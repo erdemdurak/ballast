@@ -9,9 +9,6 @@
 "setup.task.label" = "你的任务";
 "setup.task.placeholder" = "写完化学实验报告";
 "setup.interval" = "多久后再问";
-"setup.mode" = "何时问我";
-"setup.mode.slip" = "刷过之后";
-"setup.mode.any" = "每次拿起";
 "setup.start" = "开始";
 "session.anchor" = "你说要";
 "session.armedIn" = "距离下次询问";

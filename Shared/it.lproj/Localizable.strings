@@ -9,9 +9,6 @@
 "setup.task.label" = "Il tuo lavoro";
 "setup.task.placeholder" = "Finire la relazione di chimica";
 "setup.interval" = "Aspetta prima di chiedere";
-"setup.mode" = "Chiedimi";
-"setup.mode.slip" = "Dopo un feed";
-"setup.mode.any" = "Ogni volta";
 "setup.start" = "Inizia";
 "session.anchor" = "Volevi";
 "session.armedIn" = "Domanda tra";

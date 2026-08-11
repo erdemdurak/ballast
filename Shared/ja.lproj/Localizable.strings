@@ -9,9 +9,6 @@
 "setup.task.label" = "いまの作業";
 "setup.task.placeholder" = "化学のレポートを仕上げる";
 "setup.interval" = "尋ねるまでの間隔";
-"setup.mode" = "尋ねるタイミング";
-"setup.mode.slip" = "フィードを見たあと";
-"setup.mode.any" = "手に取るたび";
 "setup.start" = "はじめる";
 "session.anchor" = "いま向き合っているのは";
 "session.armedIn" = "次に尋ねるまで";

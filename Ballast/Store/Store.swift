@@ -3,7 +3,6 @@ import Foundation
 struct Prefs: Codable {
     var task = ""
     var intervalMin = Constants.defaultIntervalMin
-    var mode: Mode = .slip
     var holdSeconds: TimeInterval = Constants.hold
     /// How long the work itself should take. The countdown the user actually cares about.
     var durationMin: Int = 60

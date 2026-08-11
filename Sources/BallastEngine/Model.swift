@@ -23,7 +23,7 @@ public struct Config: Equatable, Sendable {
 
     public init(
         intervalMin: Int = Constants.defaultIntervalMin,
-        mode: Mode = .slip,
+        mode: Mode = .any,
         holdSeconds: TimeInterval = Constants.hold
     ) {
         self.intervalMin = intervalMin

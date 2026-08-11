@@ -9,9 +9,6 @@
 "setup.task.label" = "지금 하는 일";
 "setup.task.placeholder" = "화학 실험 보고서 마무리하기";
 "setup.interval" = "묻기 전에 기다릴 시간";
-"setup.mode" = "물어볼 때";
-"setup.mode.slip" = "피드를 본 뒤";
-"setup.mode.any" = "들 때마다";
 "setup.start" = "시작";
 "session.anchor" = "하려던 일";
 "session.armedIn" = "다음 질문까지";

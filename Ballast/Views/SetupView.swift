@@ -28,7 +28,6 @@ struct SetupView: View {
 
                 field
                 duration
-                mode
                 feeds
                 holdToggle
 
@@ -79,17 +78,6 @@ struct SetupView: View {
                 in: 15...240, step: 15
             )
             .tint(Token.ink)
-        }
-    }
-
-    private var mode: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Eyebrow(text: S.t("setup.mode"))
-            Picker("", selection: $model.draft.mode) {
-                Text(S.t("setup.mode.slip")).tag(Mode.slip)
-                Text(S.t("setup.mode.any")).tag(Mode.any)
-            }
-            .pickerStyle(.segmented)
         }
     }
 

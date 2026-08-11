@@ -65,7 +65,7 @@ final class AppModel {
 
     var config: Config {
         Config(
-            intervalMin: draft.intervalMin, mode: draft.mode,
+            intervalMin: draft.intervalMin,
             holdSeconds: draft.holdSeconds)
     }
 
@@ -91,6 +91,10 @@ final class AppModel {
     }
 
     private var askAnchor: TimeInterval?
+
+    /// Whether the question was earned by a detected feed slip rather than by time
+    /// alone. The copy differs, and guessing from the mode would now always be wrong.
+    private(set) var askedAfterSlip = false
 
     var open: SessionRecord? { store.open }
 
@@ -224,6 +228,7 @@ final class AppModel {
             switch screen {
             case .asking:
                 askAnchor = anchorBefore
+                askedAfterSlip = anchorBefore != nil && anchorBefore == state.lastSlip
                 askedAt = now
                 nowTick = now
                 route = .asking

@@ -28,7 +28,7 @@ struct AskingView: View {
 
             Text(
                 S.t(
-                    model.state.config.mode == .slip ? "ask.body.slip" : "ask.body.any",
+                    model.askedAfterSlip ? "ask.body.slip" : "ask.body.any",
                     model.minutesSinceAnchor)
             )
             .font(Face.body(17))

@@ -9,9 +9,6 @@
 "setup.task.label" = "Твоя задача";
 "setup.task.placeholder" = "Дописать отчёт по химии";
 "setup.interval" = "Подождать перед вопросом";
-"setup.mode" = "Спрашивать";
-"setup.mode.slip" = "После ленты";
-"setup.mode.any" = "Каждый раз";
 "setup.start" = "Начать";
 "session.anchor" = "Ты собирался";
 "session.armedIn" = "Вопрос через";

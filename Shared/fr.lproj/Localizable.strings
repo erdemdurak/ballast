@@ -9,9 +9,6 @@
 "setup.task.label" = "Ta tâche";
 "setup.task.placeholder" = "Finir le compte rendu de chimie";
 "setup.interval" = "Attendre avant de demander";
-"setup.mode" = "Demande-moi";
-"setup.mode.slip" = "Après un fil";
-"setup.mode.any" = "À chaque fois";
 "setup.start" = "Commencer";
 "session.anchor" = "Tu voulais";
 "session.armedIn" = "Question dans";

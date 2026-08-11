@@ -9,9 +9,6 @@
 "setup.task.label" = "مهمتك";
 "setup.task.placeholder" = "إنهاء تقرير الكيمياء";
 "setup.interval" = "الانتظار قبل السؤال";
-"setup.mode" = "اسألني";
-"setup.mode.slip" = "بعد التصفح";
-"setup.mode.any" = "في كل مرة";
 "setup.start" = "ابدأ";
 "session.anchor" = "قلت إنك ستقوم بـ";
 "session.armedIn" = "السؤال بعد";

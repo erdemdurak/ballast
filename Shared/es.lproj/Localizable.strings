@@ -9,9 +9,6 @@
 "setup.task.label" = "Tu tarea";
 "setup.task.placeholder" = "Terminar el informe de química";
 "setup.interval" = "Esperar antes de preguntar";
-"setup.mode" = "Pregúntame";
-"setup.mode.slip" = "Después de un feed";
-"setup.mode.any" = "Cada vez";
 "setup.start" = "Empezar";
 "session.anchor" = "Ibas a";
 "session.armedIn" = "Pregunta en";

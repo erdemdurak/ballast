@@ -3,9 +3,6 @@
 "setup.task.label" = "Your task";
 "setup.task.placeholder" = "Finish the chemistry lab write-up";
 "setup.interval" = "Wait before asking";
-"setup.mode" = "Ask me";
-"setup.mode.slip" = "After a scroll";
-"setup.mode.any" = "On any pick-up";
 "setup.start" = "Start";
 
 "session.anchor" = "You said you'd";

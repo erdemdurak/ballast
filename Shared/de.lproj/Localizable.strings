@@ -9,9 +9,6 @@
 "setup.task.label" = "Deine Aufgabe";
 "setup.task.placeholder" = "Das Chemieprotokoll fertigschreiben";
 "setup.interval" = "Warten, bevor gefragt wird";
-"setup.mode" = "Frag mich";
-"setup.mode.slip" = "Nach einem Feed";
-"setup.mode.any" = "Bei jedem Griff";
 "setup.start" = "Starten";
 "session.anchor" = "Du wolltest";
 "session.armedIn" = "Frage kommt in";

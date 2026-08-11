@@ -9,9 +9,6 @@
 "setup.task.label" = "İşin";
 "setup.task.placeholder" = "Kimya raporunu bitir";
 "setup.interval" = "Sormadan önce bekle";
-"setup.mode" = "Bana sor";
-"setup.mode.slip" = "Akıştan sonra";
-"setup.mode.any" = "Her elime alışta";
 "setup.start" = "Başlat";
 "session.anchor" = "Şunu yapacaktın";
 "session.armedIn" = "Soruya kalan";
