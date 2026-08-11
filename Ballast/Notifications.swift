@@ -6,6 +6,7 @@ import UserNotifications
 /// The app is suspended for most of a session, so the questions cannot be posted as
 /// they come due — the whole series is scheduled up front and cancelled when the
 /// session ends or the anchor moves.
+@Observable
 @MainActor
 final class Notifications: NSObject {
     /// iOS caps pending local notifications at 64 per app.
@@ -13,10 +14,17 @@ final class Notifications: NSObject {
 
     var onOpen: (() -> Void)?
 
+    /// Shown in the session screen. "Nothing buzzed" has too many possible causes to
+    /// keep guessing at.
+    private(set) var status = "—"
+
+
     func requestAuthorization() async -> Bool {
         do {
-            return try await UNUserNotificationCenter.current()
+            let granted = try await UNUserNotificationCenter.current()
                 .requestAuthorization(options: [.alert, .sound, .badge])
+            if !granted { status = "not allowed" }
+            return granted
         } catch {
             print("Ballast: notification authorisation failed — \(error)")
             return false
@@ -66,6 +74,24 @@ final class Notifications: NSObject {
                 scheduled += 1
             }
             fire = fire.addingTimeInterval(interval)
+        }
+        refreshStatus()
+    }
+
+    private func refreshStatus() {
+        Task {
+            let settings = await UNUserNotificationCenter.current().notificationSettings()
+            guard settings.authorizationStatus == .authorized else {
+                status = "not allowed"
+                return
+            }
+            let pending = await UNUserNotificationCenter.current().pendingNotificationRequests()
+            let next = pending.compactMap {
+                ($0.trigger as? UNTimeIntervalNotificationTrigger)?.timeInterval
+            }.min()
+            status =
+                next.map { "\(pending.count) queued, next in \(Int($0 / 60))m" }
+                ?? "\(pending.count) queued"
         }
     }
 

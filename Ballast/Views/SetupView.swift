@@ -28,7 +28,6 @@ struct SetupView: View {
 
                 field
                 duration
-                interval
                 mode
                 feeds
                 sensitivity
@@ -79,26 +78,6 @@ struct SetupView: View {
                     get: { Double(model.draft.durationMin) },
                     set: { model.draft.durationMin = Int($0) }),
                 in: 15...240, step: 15
-            )
-            .tint(Token.ink)
-        }
-    }
-
-    private var interval: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Eyebrow(text: S.t("setup.interval"))
-                Spacer()
-                Text("\(model.draft.intervalMin) min")
-                    .font(Face.data(13, .medium))
-                    .foregroundStyle(Token.ink)
-            }
-            Slider(
-                value: Binding(
-                    get: { Double(model.draft.intervalMin) },
-                    set: { model.draft.intervalMin = Int($0) }),
-                in: Double(Constants.intervalRange.lowerBound)...Double(Constants.intervalRange.upperBound),
-                step: Double(Constants.intervalStep)
             )
             .tint(Token.ink)
         }

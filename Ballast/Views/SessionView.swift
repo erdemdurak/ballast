@@ -43,6 +43,10 @@ struct SessionView: View {
                         .foregroundStyle(Token.mute)
                         .fixedSize(horizontal: false, vertical: true)
                     Eyebrow(
+                        text: "Reminders · \(model.notifications.status)",
+                        color: model.notifications.status.contains("queued")
+                            ? Token.calm : Token.slip)
+                    Eyebrow(
                         text: "Lock screen · \(model.liveActivity.status)",
                         color: model.liveActivity.status == "on" ? Token.calm : Token.slip)
                     if model.awayTotal >= 1 {

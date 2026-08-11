@@ -217,13 +217,17 @@ final class AppModel {
     /// The app is asleep when the questions come due, so the whole series is scheduled
     /// ahead and rebuilt whenever the anchor moves.
     private func rescheduleQuestions() {
-        guard state.sessionStart != nil, let anchor = state.anchor else {
+        guard let start = state.sessionStart else {
             notifications.cancel()
             return
         }
+        // Reminders are about the work, not about a slip. Running them from the
+        // engine's anchor meant "After a scroll" sessions — where the anchor is nil
+        // until a feed is logged — scheduled nothing at all.
+        let base = max(state.lastNudge ?? start, start)
         notifications.schedule(
             task: state.task,
-            from: Date(timeIntervalSince1970: anchor),
+            from: Date(timeIntervalSince1970: base),
             every: state.config.interval,
             endsAt: endsAtDate)
     }
