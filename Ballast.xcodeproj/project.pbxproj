@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA00000000000000000071 /* BallastMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA00000000000000000032 /* BallastMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BA00000000000000000070 /* BallastWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA00000000000000000031 /* BallastWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				BA00000000000000000070 /* BallastWidget.appex in Embed Foundation Extensions */,
+				BA00000000000000000071 /* BallastMonitor.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +134,7 @@
 			);
 			dependencies = (
 				BA00000000000000000045 /* PBXTargetDependency */,
+				BA00000000000000000047 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				BA00000000000000000001 /* Ballast */,
@@ -437,7 +440,7 @@
 				CODE_SIGN_ENTITLEMENTS = BallastMonitor/BallastMonitor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y829B2QFT9;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "BallastMonitor-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -461,7 +464,7 @@
 				CODE_SIGN_ENTITLEMENTS = BallastMonitor/BallastMonitor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y829B2QFT9;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "BallastMonitor-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
