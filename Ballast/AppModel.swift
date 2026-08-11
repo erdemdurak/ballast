@@ -168,10 +168,6 @@ final class AppModel {
 
     func logSlip() { send(.slip) }
 
-    /// The simulator has no accelerometer, and the spec puts this under the slip button
-    /// regardless. It goes through the same engine path a real pick-up does.
-    func simulatePickup() { send(.pickup) }
-
     func dismiss(_ how: Dismissal) { send(.dismiss(how)) }
 
     func newSession() {

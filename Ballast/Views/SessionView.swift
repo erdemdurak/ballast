@@ -21,14 +21,11 @@ struct SessionView: View {
 
             Spacer(minLength: 0)
 
-            VStack(spacing: 12) {
+            // Only worth offering when Screen Time is not watching anything — with
+            // apps chosen, self-reporting a slip is redundant.
+            if model.screenTime.watchedCount == 0 {
                 Button(S.t("session.slipBtn")) { model.logSlip() }
                     .buttonStyle(OutlineButtonStyle(color: Token.slip))
-
-                Button(S.t("session.simulate")) { model.simulatePickup() }
-                    .font(Face.body(13))
-                    .foregroundStyle(Token.mute)
-                    .frame(minHeight: Token.minTarget)
             }
 
             if model.detector.unavailable {
@@ -38,10 +35,6 @@ struct SessionView: View {
                     .fixedSize(horizontal: false, vertical: true)
             } else {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(S.t("session.watching"))
-                        .font(Face.body(13))
-                        .foregroundStyle(Token.mute)
-                        .fixedSize(horizontal: false, vertical: true)
                     Eyebrow(
                         text: "Reminders · \(model.notifications.status)",
                         color: model.notifications.status.contains("queued")
@@ -49,9 +42,6 @@ struct SessionView: View {
                     Eyebrow(
                         text: "Lock screen · \(model.liveActivity.status)",
                         color: model.liveActivity.status == "on" ? Token.calm : Token.slip)
-                    if model.awayTotal >= 1 {
-                        Eyebrow(text: S.t("session.away", clock(model.awayTotal)), color: Token.slip)
-                    }
                 }
             }
         }
