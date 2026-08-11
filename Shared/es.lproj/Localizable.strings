@@ -1,4 +1,4 @@
-/* Paperweight — es
+/* Hold Focus — es
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "Sesión cerrada";
 "closed.down" = "Lo dejaste";
 "closed.next" = "Escribe la siguiente";
-"perm.usage.pre" = "Deja que Paperweight vea cuándo se abre una app de feed, así no tienes que decírselo. La lista se queda en este móvil.";
+"perm.usage.pre" = "Deja que Hold Focus vea cuándo se abre una app de feed, así no tienes que decírselo. La lista se queda en este móvil.";
 "empty.noSessions" = "Aún no hay sesiones. Escribe algo y empieza.";
 "session.inSession" = "En marcha";
 "setup.recent" = "Reciente";
@@ -41,10 +41,10 @@
 "closed.longer" = "La próxima vez date un poco más de tiempo.";
 "a11y.hold" = "Seguir, disponible en %lld segundos.";
 "notif.body" = "Ibas a: %@";
-"perm.notif.pre" = "Paperweight hace su pregunta con una notificación, para poder alcanzarte con la app cerrada.";
+"perm.notif.pre" = "Hold Focus hace su pregunta con una notificación, para poder alcanzarte con la app cerrada.";
 "setup.feeds" = "Apps vigiladas";
 "setup.feeds.pick" = "Elegir apps";
-"perm.screentime.pre" = "Paperweight le pide a Screen Time que le avise cuando una app de feed lleva un minuto abierta. Apple devuelve identificadores anónimos — Paperweight nunca sabe qué apps elegiste.";
+"perm.screentime.pre" = "Hold Focus le pide a Screen Time que le avise cuando una app de feed lleva un minuto abierta. Apple devuelve identificadores anónimos — Hold Focus nunca sabe qué apps elegiste.";
 "setup.duration" = "Cuánto debería durar";
 "session.leftOnWork" = "%lld min restantes";
 "notif.remaining" = "Quedan %lld minutos de: %@. ¿Ya está?";

@@ -349,7 +349,7 @@
 				DEVELOPMENT_TEAM = Y829B2QFT9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Paperweight;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hold Focus";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -377,7 +377,7 @@
 				DEVELOPMENT_TEAM = Y829B2QFT9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Paperweight;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hold Focus";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -402,7 +402,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "BallastWidget-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Paperweight;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hold Focus";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -426,7 +426,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "BallastWidget-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Paperweight;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hold Focus";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

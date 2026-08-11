@@ -1,4 +1,4 @@
-/* Paperweight — pt-BR
+/* Hold Focus — pt-BR
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "Sessão encerrada";
 "closed.down" = "Deixou de lado";
 "closed.next" = "Escreva a próxima";
-"perm.usage.pre" = "Deixe o Paperweight ver quando um app de feed abre, assim você não precisa avisar. A lista fica neste celular.";
+"perm.usage.pre" = "Deixe o Hold Focus ver quando um app de feed abre, assim você não precisa avisar. A lista fica neste celular.";
 "empty.noSessions" = "Nenhuma sessão ainda. Escreva algo e comece.";
 "session.inSession" = "Em andamento";
 "setup.recent" = "Recentes";
@@ -41,10 +41,10 @@
 "closed.longer" = "Da próxima vez, se dê um pouco mais de tempo.";
 "a11y.hold" = "Seguir, disponível em %lld segundos.";
 "notif.body" = "Você ia: %@";
-"perm.notif.pre" = "O Paperweight faz a pergunta por notificação, para alcançar você com o app fechado.";
+"perm.notif.pre" = "O Hold Focus faz a pergunta por notificação, para alcançar você com o app fechado.";
 "setup.feeds" = "Apps observados";
 "setup.feeds.pick" = "Escolher apps";
-"perm.screentime.pre" = "O Paperweight pede ao Screen Time que avise quando um app de feed ficou um minuto aberto. A Apple devolve identificadores anônimos — o Paperweight nunca sabe quais apps você escolheu.";
+"perm.screentime.pre" = "O Hold Focus pede ao Screen Time que avise quando um app de feed ficou um minuto aberto. A Apple devolve identificadores anônimos — o Hold Focus nunca sabe quais apps você escolheu.";
 "setup.duration" = "Quanto o trabalho deve levar";
 "session.leftOnWork" = "%lld min restantes";
 "notif.remaining" = "Faltam %lld minutos para: %@. Já terminou?";

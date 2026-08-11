@@ -1,4 +1,4 @@
-/* Paperweight — zh-Hans
+/* Hold Focus — zh-Hans
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "本次结束";
 "closed.down" = "放下了";
 "closed.next" = "写下一件";
-"perm.usage.pre" = "让 Paperweight 自己看到信息流应用何时打开，你就不用告诉它。名单不会离开这台手机。";
+"perm.usage.pre" = "让 Hold Focus 自己看到信息流应用何时打开，你就不用告诉它。名单不会离开这台手机。";
 "empty.noSessions" = "还没有记录。写下一件事，开始吧。";
 "session.inSession" = "进行中";
 "setup.recent" = "最近";
@@ -41,10 +41,10 @@
 "closed.longer" = "下次给自己多留一点时间。";
 "a11y.hold" = "继续，%lld 秒后可用。";
 "notif.body" = "你说要：%@";
-"perm.notif.pre" = "Paperweight 用通知来问，这样应用关着也能找到你。";
+"perm.notif.pre" = "Hold Focus 用通知来问，这样应用关着也能找到你。";
 "setup.feeds" = "留意的应用";
 "setup.feeds.pick" = "选择应用";
-"perm.screentime.pre" = "Paperweight 请 Screen Time 在某个信息流应用打开满一分钟时告知。Apple 返回的是匿名标识，Paperweight 始终不知道你选了哪些应用。";
+"perm.screentime.pre" = "Hold Focus 请 Screen Time 在某个信息流应用打开满一分钟时告知。Apple 返回的是匿名标识，Hold Focus 始终不知道你选了哪些应用。";
 "setup.duration" = "这件事打算做多久";
 "session.leftOnWork" = "还剩 %lld 分钟";
 "notif.remaining" = "还剩 %lld 分钟：%@。做完了吗？";
