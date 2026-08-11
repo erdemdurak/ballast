@@ -19,6 +19,13 @@ class BallastMonitor: DeviceActivityMonitor {
         let now = Date().timeIntervalSince1970
         SharedState.lastSlip = now
 
+        // "ballast.<appIndex>.<step>" — the index attributes the crossing to one app
+        // without this process ever learning which app that is.
+        let parts = event.rawValue.split(separator: ".")
+        if parts.count == 3, let index = Int(parts[1]) {
+            SharedState.recordInterruption(appIndex: index, at: now)
+        }
+
         let task = SharedState.task
         guard !task.isEmpty else { return }
 

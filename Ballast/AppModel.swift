@@ -127,6 +127,8 @@ final class AppModel {
         SharedState.intervalMin = draft.intervalMin
         SharedState.endsAt = endsAtDate?.timeIntervalSince1970 ?? 0
         SharedState.sessionActive = true
+        // Cleared at the start, not the end: the closed screen still needs them.
+        SharedState.clearInterruptions()
         screenTime.startMonitoring()
     }
 

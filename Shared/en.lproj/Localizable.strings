@@ -75,3 +75,9 @@
 "notif.remaining" = "%lld minutes left on: %@. Done?";
 "notif.overrun" = "Time is up on: %@. Done?";
 "live.done" = "Is this done?";
+
+/* Interruptions — Screen Time attributing threshold crossings to individual apps. */
+"session.noInterruptions" = "No interruptions yet";
+"session.interrupted" = "Interrupted %lld times";
+"closed.interruptions" = "Interruptions";
+"closed.interruptedBy" = "You broke off for these";

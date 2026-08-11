@@ -1,6 +1,7 @@
 import DeviceActivity
 import FamilyControls
 import Foundation
+import ManagedSettings
 
 extension DeviceActivityName {
     static let daily = Self("ballast.daily")
@@ -26,12 +27,28 @@ final class ScreenTime {
 
     private let center = DeviceActivityCenter()
     private let storageKey = "ballast.selection"
+    private let orderKey = "ballast.tokenOrder"
+
+    /// A Set has no stable order, so the order the monitor's indices refer to is
+    /// frozen here when monitoring starts.
+    private(set) var orderedTokens: [ApplicationToken] = []
+
+    /// How many threshold crossings we can attribute per app in a day. Each event is
+    /// a separate DeviceActivityEvent, and the framework does not document a hard
+    /// ceiling, so this stays deliberately modest.
+    private static let stepsPerApp = 8
 
     init() {
         if let data = UserDefaults.standard.data(forKey: storageKey),
             let decoded = try? JSONDecoder().decode(FamilyActivitySelection.self, from: data)
         {
             selection = decoded
+        }
+        // The monitor's indices point into this list, so it has to survive relaunches.
+        if let data = UserDefaults.standard.data(forKey: orderKey),
+            let decoded = try? JSONDecoder().decode([ApplicationToken].self, from: data)
+        {
+            orderedTokens = decoded
         }
         refreshStatus()
     }
@@ -67,14 +84,32 @@ final class ScreenTime {
             intervalEnd: DateComponents(hour: 23, minute: 59),
             repeats: true)
 
-        let event = DeviceActivityEvent(
-            applications: selection.applicationTokens,
-            categories: selection.categoryTokens,
-            threshold: DateComponents(minute: 1))
+        // One event per app per minute-step. A single event fires only once per
+        // monitoring interval, so a ladder of thresholds is the only way to count
+        // more than one interruption a day — and per-app events are what make
+        // attribution possible at all.
+        orderedTokens = Array(selection.applicationTokens)
+        if let data = try? JSONEncoder().encode(orderedTokens) {
+            UserDefaults.standard.set(data, forKey: orderKey)
+        }
+        var events: [DeviceActivityEvent.Name: DeviceActivityEvent] = [:]
+        for (index, token) in orderedTokens.enumerated() {
+            for step in 1...Self.stepsPerApp {
+                events[DeviceActivityEvent.Name("ballast.\(index).\(step)")] =
+                    DeviceActivityEvent(
+                        applications: [token],
+                        threshold: DateComponents(minute: step))
+            }
+        }
+        if !selection.categoryTokens.isEmpty {
+            events[.feedOpened] = DeviceActivityEvent(
+                categories: selection.categoryTokens,
+                threshold: DateComponents(minute: 1))
+        }
 
         center.stopMonitoring([.daily])
         do {
-            try center.startMonitoring(.daily, during: schedule, events: [.feedOpened: event])
+            try center.startMonitoring(.daily, during: schedule, events: events)
             status = "watching \(watchedCount)"
         } catch {
             status = "failed: \(error)"

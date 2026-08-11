@@ -39,6 +39,34 @@ enum SharedState {
         return max(0, Int((endsAt - Date().timeIntervalSince1970) / 60))
     }
 
+    /// Every threshold crossing the monitor has seen this session, as "index:time".
+    /// The index points into the ordered token list the app wrote when monitoring
+    /// started, so a crossing can be attributed to one app without either process
+    /// ever learning which app it is.
+    static var interruptions: [String] {
+        get { defaults?.stringArray(forKey: "interruptions") ?? [] }
+        set { defaults?.set(newValue, forKey: "interruptions") }
+    }
+
+    static func recordInterruption(appIndex: Int, at t: TimeInterval) {
+        var all = interruptions
+        all.append("\(appIndex):\(t)")
+        interruptions = all
+    }
+
+    static func clearInterruptions() { interruptions = [] }
+
+    /// (appIndex, count) for the current session, most interrupted first.
+    static func interruptionCounts() -> [(index: Int, count: Int)] {
+        var tally: [Int: Int] = [:]
+        for entry in interruptions {
+            guard let index = Int(entry.split(separator: ":").first ?? "") else { continue }
+            tally[index, default: 0] += 1
+        }
+        return tally.map { (index: $0.key, count: $0.value) }
+            .sorted { $0.count > $1.count }
+    }
+
     /// Whether a session is running. The monitor stays silent otherwise.
     static var sessionActive: Bool {
         get { defaults?.bool(forKey: "sessionActive") ?? false }

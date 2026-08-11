@@ -1,3 +1,4 @@
+import ManagedSettings
 import SwiftUI
 
 struct ClosedView: View {
@@ -34,6 +35,8 @@ struct ClosedView: View {
                     row(S.t("closed.questions"), "\(record.count(.nudge))")
                 }
 
+                interruptions
+
                 // The only number that matters.
                 Text(S.t("closed.putDown", record.count(.down), record.count(.nudge)))
                     .font(Face.display(26, .semibold))
@@ -54,6 +57,30 @@ struct ClosedView: View {
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .background(Token.paper)
+    }
+
+    /// Named, so the summary answers "what actually broke the work".
+    @ViewBuilder private var interruptions: some View {
+        let counts = SharedState.interruptionCounts()
+        if !counts.isEmpty {
+            VStack(alignment: .leading, spacing: 8) {
+                Eyebrow(text: S.t("closed.interruptedBy"), color: Token.slip)
+                ForEach(counts.prefix(4), id: \.index) { entry in
+                    if entry.index < model.screenTime.orderedTokens.count {
+                        HStack {
+                            Label(model.screenTime.orderedTokens[entry.index])
+                                .labelStyle(.titleAndIcon)
+                                .font(Face.body(15))
+                                .foregroundStyle(Token.ink)
+                            Spacer()
+                            Text("\(entry.count)×")
+                                .font(Face.data(13, .medium))
+                                .foregroundStyle(Token.slip)
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private func row(_ label: String, _ value: String) -> some View {

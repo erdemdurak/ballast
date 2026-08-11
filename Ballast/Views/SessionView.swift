@@ -1,3 +1,4 @@
+import ManagedSettings
 import SwiftUI
 
 struct SessionView: View {
@@ -16,7 +17,7 @@ struct SessionView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
 
-            trace
+            interruptions
             countdown
 
             Spacer(minLength: 0)
@@ -64,26 +65,33 @@ struct SessionView: View {
         }
     }
 
-    private var trace: some View {
-        VStack(alignment: .leading, spacing: 6) {
+    /// What Screen Time saw: which apps broke the work, and how often. The tokens
+    /// are opaque — the system draws the name and icon, this code never reads them.
+    @ViewBuilder private var interruptions: some View {
+        let counts = SharedState.interruptionCounts()
+        let total = counts.reduce(0) { $0 + $1.count }
+        VStack(alignment: .leading, spacing: 8) {
             Rectangle().fill(Token.line).frame(height: 0.5)
-            TraceView(
-                samples: model.trace,
-                events: model.open?.events ?? [],
-                now: model.nowTick,
-                reduceMotion: reduceMotion)
-            Rectangle().fill(Token.line).frame(height: 0.5)
-            HStack {
-                Eyebrow(
-                    text: model.detector.isRunning
-                        ? S.t("session.motionLive") : S.t("session.motionOff"),
-                    color: model.detector.isRunning ? Token.calm : Token.mute)
-                Spacer()
-                Eyebrow(
-                    text: S.t(
-                        "session.counts", model.open?.count(.pickup) ?? 0,
-                        model.open?.count(.slip) ?? 0))
+            if total == 0 {
+                Eyebrow(text: S.t("session.noInterruptions"), color: Token.calm)
+            } else {
+                Eyebrow(text: S.t("session.interrupted", total), color: Token.slip)
+                ForEach(counts.prefix(4), id: \.index) { row in
+                    if row.index < model.screenTime.orderedTokens.count {
+                        HStack {
+                            Label(model.screenTime.orderedTokens[row.index])
+                                .labelStyle(.titleAndIcon)
+                                .font(Face.body(15))
+                                .foregroundStyle(Token.ink)
+                            Spacer()
+                            Text("\(row.count)×")
+                                .font(Face.data(13, .medium))
+                                .foregroundStyle(Token.slip)
+                        }
+                    }
+                }
             }
+            Rectangle().fill(Token.line).frame(height: 0.5)
         }
     }
 
