@@ -6,6 +6,8 @@ struct Prefs: Codable {
     var sensitivity = Constants.defaultSensitivity
     var mode: Mode = .slip
     var holdSeconds: TimeInterval = Constants.hold
+    /// How long the work itself should take. The countdown the user actually cares about.
+    var durationMin: Int = 60
 }
 
 struct Ev: Codable {

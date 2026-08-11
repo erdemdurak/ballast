@@ -1,0 +1,40 @@
+{
+  "source": "/Users/macbookpro/Projects/ballast/Ballast/Views/SetupView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld min",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld min",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 92
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 110
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ · %lld/%lld",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 207
+        }
+      }
+    ]
+  },
+  "version": 1
+}

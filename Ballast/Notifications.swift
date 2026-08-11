@@ -26,15 +26,11 @@ final class Notifications: NSObject {
     /// Schedules a question at every interval from `anchor` for the rest of the day.
     /// `interruptionLevel` stays `.active`: `.timeSensitive` needs an entitlement, and
     /// entitlements are what we cannot sign for yet.
-    func schedule(task: String, from anchor: Date, every interval: TimeInterval) {
+    func schedule(
+        task: String, from anchor: Date, every interval: TimeInterval, endsAt: Date?
+    ) {
         cancel()
         guard interval > 0 else { return }
-
-        let content = UNMutableNotificationContent()
-        content.title = S.t("ask.title")
-        content.body = S.t("notif.body", task)
-        content.sound = .default
-        content.interruptionLevel = .active
 
         let now = Date()
         var fire = anchor.addingTimeInterval(interval)
@@ -43,6 +39,22 @@ final class Notifications: NSObject {
 
         while scheduled < Self.maxPending, fire.timeIntervalSince(now) < 12 * 60 * 60 {
             if fire > now {
+                // Each reminder states the time left on the work at the moment it
+                // will actually arrive, not when it was scheduled.
+                let content = UNMutableNotificationContent()
+                content.title = S.t("ask.title")
+                if let endsAt {
+                    let left = Int((endsAt.timeIntervalSince(fire) / 60).rounded())
+                    content.body =
+                        left > 0
+                        ? S.t("notif.remaining", left, task)
+                        : S.t("notif.overrun", task)
+                } else {
+                    content.body = S.t("notif.body", task)
+                }
+                content.sound = .default
+                content.interruptionLevel = .active
+
                 let request = UNNotificationRequest(
                     identifier: "ballast.question.\(scheduled)",
                     content: content,

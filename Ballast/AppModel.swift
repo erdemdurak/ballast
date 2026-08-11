@@ -119,12 +119,13 @@ final class AppModel {
         startClock()
         UIApplication.shared.isIdleTimerDisabled = true
         send(.startSession(task: draft.task, config: config), at: now)
-        liveActivity.start(task: draft.task, armedAt: armedAtDate)
+        liveActivity.start(task: draft.task, armedAt: armedAtDate, endsAt: endsAtDate)
         syncActivity()
         armNotifications()
 
         SharedState.task = draft.task
         SharedState.intervalMin = draft.intervalMin
+        SharedState.endsAt = endsAtDate?.timeIntervalSince1970 ?? 0
         SharedState.sessionActive = true
         screenTime.startMonitoring()
     }
@@ -190,6 +191,18 @@ final class AppModel {
         if case .tick = event {} else { syncActivity() }
     }
 
+    /// When the work is due. Held on the store so it survives process death.
+    var endsAtDate: Date? {
+        guard let start = state.sessionStart else { return nil }
+        return Date(timeIntervalSince1970: start + Double(draft.durationMin) * 60)
+    }
+
+    /// Minutes left on the work, for the reminder copy.
+    var minutesLeft: Int {
+        guard let endsAt = endsAtDate else { return 0 }
+        return Int((endsAt.timeIntervalSince1970 - nowTick) / 60)
+    }
+
     /// When the next pick-up starts asking, as a wall-clock date for the Lock Screen.
     private var armedAtDate: Date? {
         state.anchor.map { Date(timeIntervalSince1970: $0 + state.config.interval) }
@@ -197,7 +210,7 @@ final class AppModel {
 
     private func syncActivity() {
         guard state.sessionStart != nil else { return }
-        liveActivity.update(armedAt: armedAtDate, asking: state.isAsking)
+        liveActivity.update(armedAt: armedAtDate, asking: state.isAsking, endsAt: endsAtDate)
         rescheduleQuestions()
     }
 
@@ -211,7 +224,8 @@ final class AppModel {
         notifications.schedule(
             task: state.task,
             from: Date(timeIntervalSince1970: anchor),
-            every: state.config.interval)
+            every: state.config.interval,
+            endsAt: endsAtDate)
     }
 
     private func apply(_ effect: Effect, at now: TimeInterval, anchorBefore: TimeInterval?) {
@@ -256,7 +270,7 @@ final class AppModel {
         UIApplication.shared.isIdleTimerDisabled = true
         // A resumed session is still a session: it needs the question scheduled and,
         // if this is the first run, the permission asked for.
-        liveActivity.start(task: s.task, armedAt: armedAtDate)
+        liveActivity.start(task: s.task, armedAt: armedAtDate, endsAt: endsAtDate)
         armNotifications()
     }
 

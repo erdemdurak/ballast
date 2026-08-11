@@ -22,4 +22,8 @@ enum S {
     static func t(_ key: String, _ s: String) -> String {
         String(format: t(key), s)
     }
+
+    static func t(_ key: String, _ n: Int, _ s: String) -> String {
+        String(format: t(key), n, s)
+    }
 }

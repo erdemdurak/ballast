@@ -20,6 +20,12 @@ enum SharedState {
         set { defaults?.set(newValue, forKey: "intervalMin") }
     }
 
+    /// When the work is due, so a notification can say how long is left.
+    static var endsAt: TimeInterval {
+        get { defaults?.double(forKey: "endsAt") ?? 0 }
+        set { defaults?.set(newValue, forKey: "endsAt") }
+    }
+
     /// Written by the monitor, read by the app when it next runs.
     static var lastSlip: TimeInterval {
         get { defaults?.double(forKey: "lastSlip") ?? 0 }

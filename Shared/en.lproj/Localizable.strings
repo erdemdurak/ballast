@@ -68,3 +68,10 @@
 "setup.feeds" = "Feeds to watch";
 "setup.feeds.pick" = "Choose apps";
 "perm.screentime.pre" = "Ballast asks Screen Time to tell it when a feed app has been open for a minute. Apple hands back anonymous tokens — Ballast never learns which apps you picked.";
+
+/* The work itself, not the interval. This is the countdown the user watches. */
+"setup.duration" = "How long the work should take";
+"session.leftOnWork" = "%lld min left";
+"notif.remaining" = "%lld minutes left on: %@. Done?";
+"notif.overrun" = "Time is up on: %@. Done?";
+"live.done" = "Is this done?";

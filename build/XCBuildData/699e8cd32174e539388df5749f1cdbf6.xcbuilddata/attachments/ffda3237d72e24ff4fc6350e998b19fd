@@ -1,0 +1,89 @@
+{
+  "" : {
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor-primary.dia",
+    "emit-module-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor-primary-emit-module.dia",
+    "pch" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor-primary.swiftdeps"
+  },
+  "/Users/macbookpro/Projects/ballast/BallastMonitor/BallastMonitor.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastMonitor~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Projects/ballast/Shared/SharedState.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/SharedState~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Projects/ballast/Shared/Strings.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Strings~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Projects/ballast/Shared/Tokens.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Tokens~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Projects/ballast/Sources/BallastEngine/BallastActivity.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/BallastActivity~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Projects/ballast/Sources/BallastEngine/Constants.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Constants~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Projects/ballast/Sources/BallastEngine/Engine.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Engine~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Projects/ballast/Sources/BallastEngine/Model.swift" : {
+    "const-values" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model.d",
+    "diagnostics" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model.dia",
+    "index-unit-output-path" : "/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model.o",
+    "llvm-bc" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model.bc",
+    "object" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model.o",
+    "swift-dependencies" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Projects/ballast/build/Ballast.build/Debug-iphoneos/BallastMonitor.build/Objects-normal/arm64/Model~partial.swiftmodule"
+  }
+}

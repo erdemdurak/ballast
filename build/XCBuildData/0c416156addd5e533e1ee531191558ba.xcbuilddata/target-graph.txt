@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'Ballast' in project 'Ballast'
+➜ Explicit dependency on target 'BallastWidget' in project 'Ballast'
+➜ Explicit dependency on target 'BallastMonitor' in project 'Ballast'
+Target 'BallastMonitor' in project 'Ballast' (no dependencies)
+Target 'BallastWidget' in project 'Ballast' (no dependencies)

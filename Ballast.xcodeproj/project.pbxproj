@@ -36,7 +36,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				BA00000000000000000070 /* BallastWidget.appex in Embed Foundation Extensions */,
-				BA00000000000000000071 /* BallastMonitor.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,7 +140,6 @@
 			);
 			dependencies = (
 				BA00000000000000000045 /* PBXTargetDependency */,
-				BA00000000000000000047 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				BA00000000000000000001 /* Ballast */,

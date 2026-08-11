@@ -30,8 +30,8 @@ struct BallastLiveActivity: Widget {
             } compactLeading: {
                 Mark()
             } compactTrailing: {
-                if let armedAt = context.state.armedAt, !context.state.asking {
-                    Text(timerInterval: Date()...armedAt, countsDown: true)
+                if let endsAt = context.state.endsAt, endsAt > Date() {
+                    Text(timerInterval: Date()...endsAt, countsDown: true)
                         .font(.system(size: 13, design: .monospaced))
                         .frame(maxWidth: 44)
                 }
@@ -75,8 +75,22 @@ private struct StatusLine: View {
 
     var body: some View {
         if state.asking {
-            Text(S.t("ask.list"))
+            Text(S.t("live.done"))
                 .font(.system(size: 13))
+                .foregroundStyle(Token.slip)
+        } else if let endsAt = state.endsAt, endsAt > Date() {
+            // The work, not the interval — this is the number being watched.
+            HStack(spacing: 8) {
+                Text(timerInterval: Date()...endsAt, countsDown: true)
+                    .font(.system(size: 22, weight: .medium, design: .monospaced))
+                    .foregroundStyle(Token.ink)
+                Text(S.t("live.done"))
+                    .font(.system(size: 13))
+                    .foregroundStyle(Token.mute)
+            }
+        } else if state.endsAt != nil {
+            Text(S.t("live.done"))
+                .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Token.slip)
         } else if let armedAt = state.armedAt, armedAt > Date() {
             HStack(spacing: 8) {

@@ -17,7 +17,7 @@ final class LiveActivityController {
 
     var enabled: Bool { ActivityAuthorizationInfo().areActivitiesEnabled }
 
-    func start(task: String, armedAt: Date?) {
+    func start(task: String, armedAt: Date?, endsAt: Date?) {
         guard activity == nil else { return }
         guard enabled else {
             status = "off in Settings"
@@ -27,7 +27,7 @@ final class LiveActivityController {
             activity = try Activity.request(
                 attributes: BallastAttributes(task: task),
                 content: .init(
-                    state: .init(armedAt: armedAt, asking: false), staleDate: nil))
+                    state: .init(armedAt: armedAt, asking: false, endsAt: endsAt), staleDate: nil))
             status = "on"
         } catch {
             status = "failed: \(error)"
@@ -36,11 +36,11 @@ final class LiveActivityController {
         }
     }
 
-    func update(armedAt: Date?, asking: Bool) {
+    func update(armedAt: Date?, asking: Bool, endsAt: Date?) {
         guard let activity else { return }
         Task {
             await activity.update(
-                .init(state: .init(armedAt: armedAt, asking: asking), staleDate: nil))
+                .init(state: .init(armedAt: armedAt, asking: asking, endsAt: endsAt), staleDate: nil))
         }
     }
 

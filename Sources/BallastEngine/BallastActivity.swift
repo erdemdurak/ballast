@@ -14,10 +14,13 @@
             public var armedAt: Date?
             /// True once a question is outstanding.
             public var asking: Bool
+            /// When the work is due. This is the number the user is actually watching.
+            public var endsAt: Date?
 
-            public init(armedAt: Date? = nil, asking: Bool = false) {
+            public init(armedAt: Date? = nil, asking: Bool = false, endsAt: Date? = nil) {
                 self.armedAt = armedAt
                 self.asking = asking
+                self.endsAt = endsAt
             }
         }
 

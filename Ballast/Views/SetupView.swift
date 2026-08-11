@@ -27,6 +27,7 @@ struct SetupView: View {
                 }
 
                 field
+                duration
                 interval
                 mode
                 feeds
@@ -60,6 +61,26 @@ struct SetupView: View {
             Rectangle()
                 .fill(Token.ink)
                 .frame(height: 2)
+        }
+    }
+
+    /// The work's own clock. This is what the reminder counts down.
+    private var duration: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Eyebrow(text: S.t("setup.duration"))
+                Spacer()
+                Text("\(model.draft.durationMin) min")
+                    .font(Face.data(13, .medium))
+                    .foregroundStyle(Token.ink)
+            }
+            Slider(
+                value: Binding(
+                    get: { Double(model.draft.durationMin) },
+                    set: { model.draft.durationMin = Int($0) }),
+                in: 15...240, step: 15
+            )
+            .tint(Token.ink)
         }
     }
 
@@ -118,7 +139,12 @@ struct SetupView: View {
                 .foregroundStyle(Token.mute)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .familyActivityPicker(isPresented: $showPicker, selection: $model.screenTime.selection)
+        // screenTime is a let, so the picker gets an explicit binding rather than a key path.
+        .familyActivityPicker(
+            isPresented: $showPicker,
+            selection: Binding(
+                get: { model.screenTime.selection },
+                set: { model.screenTime.selection = $0 }))
     }
 
     private var sensitivity: some View {
