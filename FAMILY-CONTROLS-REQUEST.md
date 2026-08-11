@@ -23,6 +23,31 @@ needs walking back.
 
 ---
 
+## App Purpose
+
+The short form App Store Connect asks for alongside the entitlement. The longer
+per-bundle texts below are for the entitlement request form itself.
+
+Hold Focus is a personal focus reminder. The user writes down the one task they are
+working on and how long it should take, and the app reminds them of that task while the
+session runs — on the Lock Screen and through local notifications.
+
+Family Controls is used for one purpose only: to know when the user's own selected apps
+have been in use, so a reminder can arrive shortly afterwards instead of on a blind timer,
+and so the session summary can show what actually interrupted the work. The user selects
+those apps themselves through FamilyActivityPicker, and because Apple returns opaque
+tokens the app never learns which apps were chosen.
+
+Hold Focus never blocks, restricts, hides or delays access to anything. ManagedSettingsStore
+and shield configurations are not used anywhere in the app. Every reminder can be dismissed
+immediately, and the dismissal is worded neutrally.
+
+Authorization is requested for `.individual` only. There is no parental mode, no employer
+mode, no remote configuration and no reporting to any third party — the app cannot be
+pointed at another person's device. No usage or activity data leaves the device.
+
+---
+
 ## For `app.ballast`
 
 Hold Focus is a personal focus reminder for the person using the device. The user writes
