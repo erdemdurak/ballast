@@ -115,10 +115,7 @@ final class AppModel {
         send(.startSession(task: draft.task, config: config), at: now)
         liveActivity.start(task: draft.task, armedAt: armedAtDate)
         syncActivity()
-        Task {
-            _ = await notifications.requestAuthorization()
-            self.rescheduleQuestions()
-        }
+        armNotifications()
     }
 
     func end() {
@@ -242,6 +239,20 @@ final class AppModel {
         detector.threshold = Constants.sensitivityLadder[draft.sensitivity - 1]
         detector.start()
         startClock()
+        UIApplication.shared.isIdleTimerDisabled = true
+        // A resumed session is still a session: it needs the question scheduled and,
+        // if this is the first run, the permission asked for.
+        liveActivity.start(task: s.task, armedAt: armedAtDate)
+        armNotifications()
+    }
+
+    /// Asks once, then (re)schedules. Safe to call repeatedly — iOS only shows the
+    /// prompt the first time.
+    private func armNotifications() {
+        Task {
+            _ = await notifications.requestAuthorization()
+            self.rescheduleQuestions()
+        }
     }
 
     // MARK: - Clock and trace
