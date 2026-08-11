@@ -55,6 +55,17 @@ struct SetupView: View {
                 .lineLimit(1...3)
                 .focused($taskFocused)
                 .submitLabel(.done)
+                // A vertical-axis TextField inserts a newline instead of submitting,
+                // so onSubmit never fires and the keyboard stays up. Catch the return
+                // here — a task is one sentence, it never wants a line break.
+                .onChange(of: model.draft.task) { _, entered in
+                    guard entered.contains("\n") else { return }
+                    model.draft.task =
+                        entered
+                        .replacingOccurrences(of: "\n", with: " ")
+                        .trimmingCharacters(in: .whitespaces)
+                    taskFocused = false
+                }
             Rectangle()
                 .fill(Token.ink)
                 .frame(height: 2)
