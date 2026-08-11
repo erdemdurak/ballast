@@ -1,6 +1,7 @@
 import CallKit
 import Foundation
 import SwiftUI
+import UIKit
 
 enum Route {
     case setup
@@ -32,6 +33,11 @@ final class AppModel {
     private var lastEngineTick: TimeInterval = 0
     private var bucketPeak: Double = 0
     private var bucketStart: TimeInterval = 0
+    private var awaySince: TimeInterval?
+
+    /// Total time the app spent out of the foreground during this session — time iOS
+    /// gave us no motion at all. Surfaced rather than hidden.
+    private(set) var awayTotal: TimeInterval = 0
 
     init(store: Store = Store()) {
         self.store = store
@@ -91,10 +97,13 @@ final class AppModel {
         store.begin(task: draft.task, at: now)
         trace = []
         closed = nil
+        awayTotal = 0
+        awaySince = nil
         detector.threshold = Constants.sensitivityLadder[draft.sensitivity - 1]
         detector.start()
         route = .session
         startClock()
+        UIApplication.shared.isIdleTimerDisabled = true
         send(.startSession(task: draft.task, config: config), at: now)
     }
 
@@ -104,6 +113,29 @@ final class AppModel {
         closed = store.end(at: now)
         detector.stop()
         stopClock()
+        UIApplication.shared.isIdleTimerDisabled = false
+    }
+
+    /// iOS suspends accelerometer delivery outside the foreground, so a session that
+    /// leaves the screen is a session that sees nothing. Keep the screen awake while
+    /// one is running, and account for any gap when the app comes back.
+    func setForeground(_ active: Bool) {
+        guard state.sessionStart != nil else {
+            UIApplication.shared.isIdleTimerDisabled = false
+            return
+        }
+        if active {
+            if let since = awaySince { awayTotal += Date().timeIntervalSince1970 - since }
+            awaySince = nil
+            UIApplication.shared.isIdleTimerDisabled = true
+            detector.start()
+            startClock()
+        } else {
+            awaySince = Date().timeIntervalSince1970
+            UIApplication.shared.isIdleTimerDisabled = false
+            detector.stop()
+            stopClock()
+        }
     }
 
     func logSlip() { send(.slip) }

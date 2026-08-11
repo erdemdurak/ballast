@@ -54,3 +54,8 @@
 "a11y.trace.quiet" = "Quiet for the last %lld minutes.";
 "a11y.trace.active" = "Moving now.";
 "a11y.hold" = "Carry on, available in %lld seconds.";
+
+/* Option 2: foreground-only watching. iOS stops delivering motion the moment the
+   app leaves the foreground, so the app says plainly when it was not watching. */
+"session.watching" = "Watching while this screen is open. The screen stays awake.";
+"session.away" = "Away %@ · not watched";

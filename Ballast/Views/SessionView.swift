@@ -36,6 +36,16 @@ struct SessionView: View {
                     .font(Face.body(13))
                     .foregroundStyle(Token.ink2)
                     .fixedSize(horizontal: false, vertical: true)
+            } else {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(S.t("session.watching"))
+                        .font(Face.body(13))
+                        .foregroundStyle(Token.mute)
+                        .fixedSize(horizontal: false, vertical: true)
+                    if model.awayTotal >= 1 {
+                        Eyebrow(text: S.t("session.away", clock(model.awayTotal)), color: Token.slip)
+                    }
+                }
             }
         }
         .padding(24)
