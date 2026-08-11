@@ -1,0 +1,63 @@
+/* Ballast — it
+   The four intervention strings (ask.title, ask.list, ask.down, ask.through)
+   are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
+   question never reads as an accusation and the dismissal never as giving in.
+   These still need a native read before launch. */
+
+"setup.title" = "Scrivi l'unica cosa.";
+"setup.sub" = "Non viene bloccato niente. Quando riprendi il telefono, questo ti fa una sola domanda.";
+"setup.task.label" = "Il tuo lavoro";
+"setup.task.placeholder" = "Finire la relazione di chimica";
+"setup.interval" = "Aspetta prima di chiedere";
+"setup.mode" = "Chiedimi";
+"setup.mode.slip" = "Dopo un feed";
+"setup.mode.any" = "Ogni volta";
+"setup.sens" = "Sensibilità";
+"setup.start" = "Inizia";
+"session.anchor" = "Volevi";
+"session.armedIn" = "Domanda tra";
+"session.armed" = "Pronto — la prossima volta chiede";
+"session.quiet" = "Calmo";
+"session.slipBtn" = "Ho aperto un feed";
+"session.end" = "Chiudi";
+"ask.eyebrow" = "Pausa";
+"ask.title" = "Ne vale la pena adesso?";
+"ask.list" = "È ancora lì";
+"ask.body.slip" = "Hai aperto un feed %lld minuti fa, e ora riprendi il telefono.";
+"ask.body.any" = "Sono %lld minuti, e ora riprendi il telefono.";
+"ask.down" = "Posalo";
+"ask.through" = "Vai avanti";
+"ask.through.held" = "Vai avanti tra %lld";
+"closed.title" = "Sessione chiusa";
+"closed.down" = "Posato";
+"closed.next" = "Scrivi la prossima";
+"perm.motion.pre" = "Ballast usa il sensore di movimento per accorgersi quando prendi il telefono. Legge il movimento, nient'altro.";
+"perm.usage.pre" = "Lascia che Ballast veda quando si apre un'app di feed, così non devi dirglielo tu. L'elenco resta su questo telefono.";
+"empty.noSessions" = "Ancora nessuna sessione. Scrivi qualcosa e inizia.";
+"error.motionDenied" = "Il movimento è disattivato, quindi le riprese non vengono contate. Puoi comunque segnare i feed a mano, o attivare il movimento in Impostazioni.";
+"session.inSession" = "In corso";
+"setup.recent" = "Recenti";
+"setup.holdZero" = "Togli i quattro secondi";
+"setup.holdZero.hint" = "Per chi un pulsante a tempo mette in difficoltà. Nient'altro cambia.";
+"closed.length" = "Durata";
+"closed.feeds" = "Feed aperti";
+"closed.pickups" = "Volte che l'hai ripreso";
+"closed.questions" = "Domande fatte";
+"closed.putDown" = "Posato %lld volte su %lld";
+"closed.longer" = "La prossima volta datti un po' più di tempo.";
+"a11y.hold" = "Vai avanti, disponibile tra %lld secondi.";
+"notif.body" = "Volevi: %@";
+"perm.notif.pre" = "Ballast fa la sua domanda con una notifica, così può raggiungerti anche da chiuso.";
+"setup.feeds" = "App osservate";
+"setup.feeds.pick" = "Scegli le app";
+"perm.screentime.pre" = "Ballast chiede a Screen Time di avvisarlo quando un'app di feed è rimasta aperta un minuto. Apple restituisce identificativi anonimi — Ballast non sa mai quali app hai scelto.";
+"setup.duration" = "Quanto dovrebbe durare";
+"session.leftOnWork" = "%lld min rimasti";
+"notif.remaining" = "Mancano %lld minuti a: %@. È finito?";
+"notif.overrun" = "Tempo scaduto per: %@. È finito?";
+"live.done" = "È finito?";
+"session.noInterruptions" = "Nessuna interruzione";
+"session.interrupted" = "Interrotto %lld volte";
+"closed.interruptedBy" = "Ecco cosa ti ha interrotto";
+"setup.steps" = "Interruzioni contate per app";
+"setup.steps.hint" = "Ognuna vale un minuto d'uso. Alza se una sessione lunga smette di contare, abbassa se Screen Time non parte.";

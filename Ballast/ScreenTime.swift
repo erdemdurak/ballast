@@ -33,10 +33,7 @@ final class ScreenTime {
     /// frozen here when monitoring starts.
     private(set) var orderedTokens: [ApplicationToken] = []
 
-    /// How many threshold crossings we can attribute per app in a day. Each event is
-    /// a separate DeviceActivityEvent, and the framework does not document a hard
-    /// ceiling, so this stays deliberately modest.
-    private static let stepsPerApp = 8
+
 
     init() {
         if let data = UserDefaults.standard.data(forKey: storageKey),
@@ -74,7 +71,7 @@ final class ScreenTime {
     /// There is no app-open callback on iOS. `DeviceActivityMonitor` is threshold-driven
     /// only, so the smallest useful granularity is a minute of accumulated use — which
     /// also filters out a three-second glance at a notification.
-    func startMonitoring() {
+    func startMonitoring(stepsPerApp: Int = 8) {
         guard authorized, watchedCount > 0 else {
             refreshStatus()
             return
@@ -94,7 +91,7 @@ final class ScreenTime {
         }
         var events: [DeviceActivityEvent.Name: DeviceActivityEvent] = [:]
         for (index, token) in orderedTokens.enumerated() {
-            for step in 1...Self.stepsPerApp {
+            for step in 1...max(1, stepsPerApp) {
                 events[DeviceActivityEvent.Name("ballast.\(index).\(step)")] =
                     DeviceActivityEvent(
                         applications: [token],

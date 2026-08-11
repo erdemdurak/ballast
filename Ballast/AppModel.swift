@@ -129,7 +129,7 @@ final class AppModel {
         SharedState.sessionActive = true
         // Cleared at the start, not the end: the closed screen still needs them.
         SharedState.clearInterruptions()
-        screenTime.startMonitoring()
+        screenTime.startMonitoring(stepsPerApp: draft.interruptionSteps)
     }
 
     func end() {

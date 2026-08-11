@@ -1,0 +1,63 @@
+/* Ballast — ar
+   The four intervention strings (ask.title, ask.list, ask.down, ask.through)
+   are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
+   question never reads as an accusation and the dismissal never as giving in.
+   These still need a native read before launch. */
+
+"setup.title" = "اكتب الشيء الواحد.";
+"setup.sub" = "لا شيء يُحجب. حين تعود إلى هاتفك، يسألك هذا سؤالًا واحدًا.";
+"setup.task.label" = "مهمتك";
+"setup.task.placeholder" = "إنهاء تقرير الكيمياء";
+"setup.interval" = "الانتظار قبل السؤال";
+"setup.mode" = "اسألني";
+"setup.mode.slip" = "بعد التصفح";
+"setup.mode.any" = "في كل مرة";
+"setup.sens" = "الحساسية";
+"setup.start" = "ابدأ";
+"session.anchor" = "قلت إنك ستقوم بـ";
+"session.armedIn" = "السؤال بعد";
+"session.armed" = "جاهز — المرة القادمة سيسأل";
+"session.quiet" = "هادئ";
+"session.slipBtn" = "فتحت تطبيق تصفح";
+"session.end" = "إنهاء";
+"ask.eyebrow" = "توقف";
+"ask.title" = "هل يستحق الأمر الآن؟";
+"ask.list" = "ما زال في قائمتك";
+"ask.body.slip" = "فتحت تطبيق تصفح قبل %lld دقيقة، وها أنت تعود إلى هاتفك.";
+"ask.body.any" = "مضت %lld دقيقة، وها أنت تعود إلى هاتفك.";
+"ask.down" = "ضعه جانبًا";
+"ask.through" = "تابع";
+"ask.through.held" = "تابع بعد %lld";
+"closed.title" = "انتهت الجلسة";
+"closed.down" = "وُضع جانبًا";
+"closed.next" = "حدّد التالي";
+"perm.motion.pre" = "يستخدم Ballast مستشعر الحركة ليلاحظ متى ترفع هاتفك. يقرأ الحركة فقط، لا شيء غير ذلك.";
+"perm.usage.pre" = "دع Ballast يرى بنفسه متى يُفتح تطبيق تصفح، حتى لا تضطر لإخباره. تبقى القائمة على هذا الهاتف.";
+"empty.noSessions" = "لا جلسات بعد. اكتب شيئًا وابدأ.";
+"error.motionDenied" = "الحركة معطّلة، لذا لا تُحتسب مرات الالتقاط. ما زال بإمكانك تسجيل التصفح يدويًا، أو تفعيل الحركة من الإعدادات.";
+"session.inSession" = "قيد العمل";
+"setup.recent" = "الأخيرة";
+"setup.holdZero" = "إزالة الثواني الأربع";
+"setup.holdZero.hint" = "لمن يشكّل الزر المؤقّت عائقًا له. لا يتغير شيء آخر.";
+"closed.length" = "المدة";
+"closed.feeds" = "مرات التصفح";
+"closed.pickups" = "مرات الالتقاط";
+"closed.questions" = "الأسئلة المطروحة";
+"closed.putDown" = "وضعته جانبًا %lld من %lld";
+"closed.longer" = "في المرة القادمة امنح نفسك وقتًا أطول قليلًا.";
+"a11y.hold" = "تابع، متاح بعد %lld ثانية.";
+"notif.body" = "قلت إنك ستقوم بـ: %@";
+"perm.notif.pre" = "يطرح Ballast سؤاله عبر إشعار، ليصل إليك والتطبيق مغلق.";
+"setup.feeds" = "التطبيقات المُراقَبة";
+"setup.feeds.pick" = "اختر التطبيقات";
+"perm.screentime.pre" = "يطلب Ballast من Screen Time إخباره حين يبقى تطبيق تصفح مفتوحًا دقيقة. تعيد Apple معرّفات مجهولة — لا يعرف Ballast أبدًا أي تطبيقات اخترت.";
+"setup.duration" = "كم ينبغي أن يستغرق العمل";
+"session.leftOnWork" = "بقيت %lld دقيقة";
+"notif.remaining" = "بقيت %lld دقيقة على: %@. هل انتهى؟";
+"notif.overrun" = "انتهى الوقت المخصص لـ: %@. هل انتهى؟";
+"live.done" = "هل انتهى؟";
+"session.noInterruptions" = "لا مقاطعات بعد";
+"session.interrupted" = "قوطعت %lld مرات";
+"closed.interruptedBy" = "هذه ما قطعت عملك";
+"setup.steps" = "عدد المقاطعات المحسوبة لكل تطبيق";
+"setup.steps.hint" = "كل واحدة تعادل دقيقة استخدام. ارفعها إذا توقف العدّ في جلسة طويلة، واخفضها إذا لم يبدأ Screen Time.";

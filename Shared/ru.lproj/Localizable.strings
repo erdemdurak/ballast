@@ -1,0 +1,63 @@
+/* Ballast — ru
+   The four intervention strings (ask.title, ask.list, ask.down, ask.through)
+   are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
+   question never reads as an accusation and the dismissal never as giving in.
+   These still need a native read before launch. */
+
+"setup.title" = "Назови одно дело.";
+"setup.sub" = "Ничего не блокируется. Когда снова возьмёшь телефон, здесь будет один вопрос.";
+"setup.task.label" = "Твоя задача";
+"setup.task.placeholder" = "Дописать отчёт по химии";
+"setup.interval" = "Подождать перед вопросом";
+"setup.mode" = "Спрашивать";
+"setup.mode.slip" = "После ленты";
+"setup.mode.any" = "Каждый раз";
+"setup.sens" = "Чувствительность";
+"setup.start" = "Начать";
+"session.anchor" = "Ты собирался";
+"session.armedIn" = "Вопрос через";
+"session.armed" = "Готово — спросит в следующий раз";
+"session.quiet" = "Тихо";
+"session.slipBtn" = "Я открыл ленту";
+"session.end" = "Завершить";
+"ask.eyebrow" = "Пауза";
+"ask.title" = "Сейчас это того стоит?";
+"ask.list" = "Всё ещё в списке";
+"ask.body.slip" = "Ты открывал ленту %lld минут назад и снова взял телефон.";
+"ask.body.any" = "Прошло %lld минут, и ты снова взял телефон.";
+"ask.down" = "Отложить";
+"ask.through" = "Продолжить";
+"ask.through.held" = "Продолжить через %lld";
+"closed.title" = "Сессия закрыта";
+"closed.down" = "Отложено";
+"closed.next" = "Назначить следующее";
+"perm.motion.pre" = "Ballast использует датчик движения, чтобы заметить, когда ты берёшь телефон. Он читает движение и ничего больше.";
+"perm.usage.pre" = "Пусть Ballast сам видит, когда открывается лента, чтобы тебе не приходилось об этом говорить. Список остаётся на этом телефоне.";
+"empty.noSessions" = "Сессий пока нет. Назови дело и начни.";
+"error.motionDenied" = "Движение выключено, поэтому не считается. Ленты можно отмечать вручную или включить движение в настройках.";
+"session.inSession" = "Идёт работа";
+"setup.recent" = "Недавние";
+"setup.holdZero" = "Убрать четыре секунды";
+"setup.holdZero.hint" = "Для тех, кому кнопка с задержкой мешает. Больше ничего не меняется.";
+"closed.length" = "Длительность";
+"closed.feeds" = "Открыто лент";
+"closed.pickups" = "Взял телефон";
+"closed.questions" = "Задано вопросов";
+"closed.putDown" = "Отложил %lld из %lld раз";
+"closed.longer" = "В следующий раз дай себе чуть больше времени.";
+"a11y.hold" = "Продолжить, будет доступно через %lld секунд.";
+"notif.body" = "Ты собирался: %@";
+"perm.notif.pre" = "Ballast задаёт вопрос уведомлением, чтобы дотянуться до тебя при закрытом приложении.";
+"setup.feeds" = "Приложения под наблюдением";
+"setup.feeds.pick" = "Выбрать приложения";
+"perm.screentime.pre" = "Ballast просит Screen Time сообщить, когда приложение ленты было открыто минуту. Apple возвращает анонимные идентификаторы — Ballast никогда не узнаёт, какие приложения ты выбрал.";
+"setup.duration" = "Сколько должна занять работа";
+"session.leftOnWork" = "осталось %lld мин";
+"notif.remaining" = "Осталось %lld минут: %@. Уже готово?";
+"notif.overrun" = "Время вышло: %@. Уже готово?";
+"live.done" = "Уже готово?";
+"session.noInterruptions" = "Перерывов пока нет";
+"session.interrupted" = "Прерывался %lld раз";
+"closed.interruptedBy" = "Вот что тебя отвлекло";
+"setup.steps" = "Сколько перерывов считать на приложение";
+"setup.steps.hint" = "Каждый — это минута использования. Увеличь, если длинная сессия перестаёт считаться; уменьши, если Screen Time не запускается.";

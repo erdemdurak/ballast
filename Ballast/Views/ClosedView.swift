@@ -18,16 +18,6 @@ struct ClosedView: View {
                     .foregroundStyle(Token.ink)
                     .fixedSize(horizontal: false, vertical: true)
 
-                VStack(alignment: .leading, spacing: 6) {
-                    Rectangle().fill(Token.line).frame(height: 0.5)
-                    TraceView(
-                        samples: record.trace.map { Double($0) / 127 * 6 },
-                        events: record.events,
-                        now: record.endedAt ?? record.startedAt,
-                        window: max(record.length, 1))
-                    Rectangle().fill(Token.line).frame(height: 0.5)
-                }
-
                 VStack(spacing: 0) {
                     row(S.t("closed.length"), clock(record.length))
                     row(S.t("closed.feeds"), "\(record.count(.slip))")

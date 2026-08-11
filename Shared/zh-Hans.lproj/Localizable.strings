@@ -1,0 +1,63 @@
+/* Ballast — zh-Hans
+   The four intervention strings (ask.title, ask.list, ask.down, ask.through)
+   are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
+   question never reads as an accusation and the dismissal never as giving in.
+   These still need a native read before launch. */
+
+"setup.title" = "写下此刻要做的那一件事。";
+"setup.sub" = "不会拦住任何东西。等你再拿起手机时，这里只问一句。";
+"setup.task.label" = "你的任务";
+"setup.task.placeholder" = "写完化学实验报告";
+"setup.interval" = "多久后再问";
+"setup.mode" = "何时问我";
+"setup.mode.slip" = "刷过之后";
+"setup.mode.any" = "每次拿起";
+"setup.sens" = "灵敏度";
+"setup.start" = "开始";
+"session.anchor" = "你说要";
+"session.armedIn" = "距离下次询问";
+"session.armed" = "已就绪 — 下次拿起就问";
+"session.quiet" = "安静";
+"session.slipBtn" = "我刷了一下";
+"session.end" = "结束";
+"ask.eyebrow" = "停一下";
+"ask.title" = "现在值得吗？";
+"ask.list" = "还没做完";
+"ask.body.slip" = "%lld 分钟前你刷了一下，现在又拿起了手机。";
+"ask.body.any" = "已经 %lld 分钟了，你又拿起了手机。";
+"ask.down" = "放下";
+"ask.through" = "继续";
+"ask.through.held" = "继续（%lld）";
+"closed.title" = "本次结束";
+"closed.down" = "放下了";
+"closed.next" = "写下一件";
+"perm.motion.pre" = "Ballast 用运动传感器察觉你何时拿起手机。它只读取动作，别的什么都不读。";
+"perm.usage.pre" = "让 Ballast 自己看到信息流应用何时打开，你就不用告诉它。名单不会离开这台手机。";
+"empty.noSessions" = "还没有记录。写下一件事，开始吧。";
+"error.motionDenied" = "运动权限已关闭，因此不统计拿起次数。你仍可以手动记录信息流，或在设置中开启。";
+"session.inSession" = "进行中";
+"setup.recent" = "最近";
+"setup.holdZero" = "去掉四秒等待";
+"setup.holdZero.hint" = "给那些被计时按钮挡住的人。其余一切不变。";
+"closed.length" = "时长";
+"closed.feeds" = "打开的信息流";
+"closed.pickups" = "拿起次数";
+"closed.questions" = "询问次数";
+"closed.putDown" = "%lld / %lld 次放下了";
+"closed.longer" = "下次给自己多留一点时间。";
+"a11y.hold" = "继续，%lld 秒后可用。";
+"notif.body" = "你说要：%@";
+"perm.notif.pre" = "Ballast 用通知来问，这样应用关着也能找到你。";
+"setup.feeds" = "留意的应用";
+"setup.feeds.pick" = "选择应用";
+"perm.screentime.pre" = "Ballast 请 Screen Time 在某个信息流应用打开满一分钟时告知。Apple 返回的是匿名标识，Ballast 始终不知道你选了哪些应用。";
+"setup.duration" = "这件事打算做多久";
+"session.leftOnWork" = "还剩 %lld 分钟";
+"notif.remaining" = "还剩 %lld 分钟：%@。做完了吗？";
+"notif.overrun" = "时间到了：%@。做完了吗？";
+"live.done" = "做完了吗？";
+"session.noInterruptions" = "还没有被打断";
+"session.interrupted" = "被打断 %lld 次";
+"closed.interruptedBy" = "打断你的是这些";
+"setup.steps" = "每个应用记录的打断次数";
+"setup.steps.hint" = "每一次代表一分钟使用。长时间工作不再计数就调高，Screen Time 无法启动就调低。";

@@ -8,6 +8,9 @@ struct Prefs: Codable {
     var holdSeconds: TimeInterval = Constants.hold
     /// How long the work itself should take. The countdown the user actually cares about.
     var durationMin: Int = 60
+    /// Threshold crossings countable per app per day. Apple documents no ceiling on
+    /// DeviceActivityEvent count, so this is adjustable and starts modest.
+    var interruptionSteps: Int = 8
 }
 
 struct Ev: Codable {

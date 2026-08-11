@@ -1,0 +1,63 @@
+/* Ballast — tr
+   The four intervention strings (ask.title, ask.list, ask.down, ask.through)
+   are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
+   question never reads as an accusation and the dismissal never as giving in.
+   These still need a native read before launch. */
+
+"setup.title" = "Tek bir şey yaz.";
+"setup.sub" = "Hiçbir şey engellenmez. Sen işine dönerken bu, sana tek bir soru sorar.";
+"setup.task.label" = "İşin";
+"setup.task.placeholder" = "Kimya raporunu bitir";
+"setup.interval" = "Sormadan önce bekle";
+"setup.mode" = "Bana sor";
+"setup.mode.slip" = "Akıştan sonra";
+"setup.mode.any" = "Her elime alışta";
+"setup.sens" = "Eline alma hassasiyeti";
+"setup.start" = "Başlat";
+"session.anchor" = "Şunu yapacaktın";
+"session.armedIn" = "Soruya kalan";
+"session.armed" = "Hazır — sıradaki alışta sorar";
+"session.quiet" = "Sessiz";
+"session.slipBtn" = "Bir akış açtım";
+"session.end" = "Bitir";
+"ask.eyebrow" = "Dur";
+"ask.title" = "Buna değer mi?";
+"ask.list" = "Hâlâ listende";
+"ask.body.slip" = "%lld dakika önce bir akış açtın, şimdi telefonu yine elime aldın.";
+"ask.body.any" = "%lld dakikadır buradasın ve telefonu yine elime aldın.";
+"ask.down" = "Bırak";
+"ask.through" = "Devam et";
+"ask.through.held" = "Devam et — %lld";
+"closed.title" = "Oturum kapandı";
+"closed.down" = "Bırakıldı";
+"closed.next" = "Sıradakini yaz";
+"perm.motion.pre" = "Ballast, telefonu ne zaman elime aldığını anlamak için hareket sensörünü kullanır. Yalnızca hareketi okur, başka bir şeyi değil.";
+"perm.usage.pre" = "Bir akış uygulaması açıldığında Ballast bunu kendisi görsün, sen söylemek zorunda kalma. Liste bu telefondan çıkmaz.";
+"empty.noSessions" = "Henüz oturum yok. Bir şey yaz ve başla.";
+"error.motionDenied" = "Hareket kapalı, bu yüzden eline alışlar sayılmıyor. Akışları elle işaretleyebilir ya da Ayarlar'dan hareketi açabilirsin.";
+"session.inSession" = "Oturumda";
+"setup.recent" = "Son oturumlar";
+"setup.holdZero" = "Dört saniyelik beklemeyi kaldır";
+"setup.holdZero.hint" = "Süreli bir düğmenin zorlaştırdığı herkes için. Başka hiçbir şey değişmez.";
+"closed.length" = "Süre";
+"closed.feeds" = "Açılan akış";
+"closed.pickups" = "Eline alma";
+"closed.questions" = "Sorulan soru";
+"closed.putDown" = "%lld / %lld kez bıraktın";
+"closed.longer" = "Bir dahakine biraz daha uzun bekleyelim.";
+"a11y.hold" = "Devam et, %lld saniye sonra kullanılabilir.";
+"notif.body" = "Şunu yapacaktın: %@";
+"perm.notif.pre" = "Ballast sorusunu bildirimle sorar; böylece uygulama kapalıyken de sana ulaşabilir.";
+"setup.feeds" = "İzlenecek uygulamalar";
+"setup.feeds.pick" = "Uygulama seç";
+"perm.screentime.pre" = "Ballast, bir akış uygulamasının bir dakikadır açık olduğunu Screen Time'dan öğrenir. Apple anonim işaretler döndürür — Ballast hangi uygulamaları seçtiğini hiçbir zaman öğrenmez.";
+"setup.duration" = "İş ne kadar sürmeli";
+"session.leftOnWork" = "%lld dk kaldı";
+"notif.remaining" = "%lld dakika kaldı: %@. Bitti mi?";
+"notif.overrun" = "Süre doldu: %@. Bitti mi?";
+"live.done" = "Bitti mi?";
+"session.noInterruptions" = "Henüz bölünme yok";
+"session.interrupted" = "%lld kez bölündün";
+"closed.interruptedBy" = "İşini bunlar böldü";
+"setup.steps" = "Uygulama başına sayılan bölünme";
+"setup.steps.hint" = "Her biri bir dakikalık kullanım demek. Uzun oturumda saymayı bırakırsa artır, Screen Time başlamazsa azalt.";

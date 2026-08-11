@@ -113,6 +113,24 @@ struct SetupView: View {
                 }
             }
             .buttonStyle(OutlineButtonStyle(color: Token.ink))
+            HStack {
+                Eyebrow(text: S.t("setup.steps"))
+                Spacer()
+                Text("\(model.draft.interruptionSteps)")
+                    .font(Face.data(13, .medium))
+                    .foregroundStyle(Token.ink)
+            }
+            Slider(
+                value: Binding(
+                    get: { Double(model.draft.interruptionSteps) },
+                    set: { model.draft.interruptionSteps = Int($0) }),
+                in: 1...12, step: 1
+            )
+            .tint(Token.ink)
+            Text(S.t("setup.steps.hint"))
+                .font(Face.body(13))
+                .foregroundStyle(Token.mute)
+                .fixedSize(horizontal: false, vertical: true)
             Text(S.t("perm.screentime.pre"))
                 .font(Face.body(13))
                 .foregroundStyle(Token.mute)

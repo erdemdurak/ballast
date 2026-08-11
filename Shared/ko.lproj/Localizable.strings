@@ -1,0 +1,63 @@
+/* Ballast — ko
+   The four intervention strings (ask.title, ask.list, ask.down, ask.through)
+   are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
+   question never reads as an accusation and the dismissal never as giving in.
+   These still need a native read before launch. */
+
+"setup.title" = "지금 할 한 가지를 적으세요.";
+"setup.sub" = "아무것도 막지 않습니다. 다시 휴대폰을 들었을 때 한 가지만 묻습니다.";
+"setup.task.label" = "지금 하는 일";
+"setup.task.placeholder" = "화학 실험 보고서 마무리하기";
+"setup.interval" = "묻기 전에 기다릴 시간";
+"setup.mode" = "물어볼 때";
+"setup.mode.slip" = "피드를 본 뒤";
+"setup.mode.any" = "들 때마다";
+"setup.sens" = "민감도";
+"setup.start" = "시작";
+"session.anchor" = "하려던 일";
+"session.armedIn" = "다음 질문까지";
+"session.armed" = "다음에 들면 물어봅니다";
+"session.quiet" = "조용함";
+"session.slipBtn" = "피드를 열었어요";
+"session.end" = "끝내기";
+"ask.eyebrow" = "잠깐";
+"ask.title" = "지금 그럴 만한가요?";
+"ask.list" = "아직 남아 있어요";
+"ask.body.slip" = "%lld분 전에 피드를 열었고, 방금 다시 휴대폰을 들었습니다.";
+"ask.body.any" = "%lld분 지났고, 방금 다시 휴대폰을 들었습니다.";
+"ask.down" = "내려놓기";
+"ask.through" = "계속하기";
+"ask.through.held" = "계속하기 (%lld)";
+"closed.title" = "세션 종료";
+"closed.down" = "내려놓음";
+"closed.next" = "다음 정하기";
+"perm.motion.pre" = "Ballast는 휴대폰을 드는 순간을 알기 위해 모션 센서를 씁니다. 읽는 것은 움직임뿐입니다.";
+"perm.usage.pre" = "피드 앱이 열리는 것을 Ballast가 스스로 알게 해두면, 직접 알릴 필요가 없습니다. 목록은 이 휴대폰을 벗어나지 않습니다.";
+"empty.noSessions" = "아직 기록이 없습니다. 하나 정하고 시작하세요.";
+"error.motionDenied" = "모션이 꺼져 있어 드는 횟수를 세지 않습니다. 피드는 직접 기록할 수 있고, 설정에서 모션을 켤 수도 있습니다.";
+"session.inSession" = "진행 중";
+"setup.recent" = "최근";
+"setup.holdZero" = "4초 기다림 없애기";
+"setup.holdZero.hint" = "시간이 걸리는 버튼이 불편한 분들을 위해. 나머지는 그대로입니다.";
+"closed.length" = "시간";
+"closed.feeds" = "연 피드";
+"closed.pickups" = "든 횟수";
+"closed.questions" = "물어본 횟수";
+"closed.putDown" = "%lld / %lld번 내려놓았습니다";
+"closed.longer" = "다음엔 조금 더 넉넉하게 잡아보세요.";
+"a11y.hold" = "계속하기, %lld초 후에 누를 수 있습니다.";
+"notif.body" = "하려던 일: %@";
+"perm.notif.pre" = "Ballast는 알림으로 묻습니다. 앱이 닫혀 있어도 닿기 위해서입니다.";
+"setup.feeds" = "지켜볼 앱";
+"setup.feeds.pick" = "앱 고르기";
+"perm.screentime.pre" = "피드 앱이 1분 열려 있었다는 것을 Screen Time이 Ballast에 알려줍니다. Apple이 주는 것은 익명 식별자라, 어떤 앱을 골랐는지 Ballast는 알 수 없습니다.";
+"setup.duration" = "이 일에 쓸 시간";
+"session.leftOnWork" = "%lld분 남음";
+"notif.remaining" = "%lld분 남았습니다: %@. 끝났나요?";
+"notif.overrun" = "시간이 다 됐습니다: %@. 끝났나요?";
+"live.done" = "끝났나요?";
+"session.noInterruptions" = "아직 끊긴 적 없음";
+"session.interrupted" = "%lld번 끊겼습니다";
+"closed.interruptedBy" = "이것들이 끊었습니다";
+"setup.steps" = "앱마다 세는 끊김 횟수";
+"setup.steps.hint" = "하나가 1분 사용입니다. 긴 작업에서 세지 않으면 늘리고, Screen Time이 시작되지 않으면 줄이세요.";

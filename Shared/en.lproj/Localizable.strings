@@ -37,10 +37,6 @@
 
 /* Not in §9 — introduced by the build, listed here so they translate with the rest. */
 "session.inSession" = "In session";
-"session.simulate" = "Simulate a pick-up";
-"session.motionLive" = "Motion · live";
-"session.motionOff" = "Motion · off";
-"session.counts" = "%lld pick-ups · %lld";
 "setup.recent" = "Recent";
 "setup.holdZero" = "Remove the four-second hold";
 "setup.holdZero.hint" = "For anyone a timed button makes the app hostile to. Everything else is unchanged.";
@@ -50,15 +46,10 @@
 "closed.questions" = "Questions asked";
 "closed.putDown" = "Put it down %lld of %lld";
 "closed.longer" = "Try a longer wait next time.";
-"a11y.trace" = "Motion trace. %@ %lld pick-ups this session.";
-"a11y.trace.quiet" = "Quiet for the last %lld minutes.";
-"a11y.trace.active" = "Moving now.";
 "a11y.hold" = "Carry on, available in %lld seconds.";
 
 /* Option 2: foreground-only watching. iOS stops delivering motion the moment the
    app leaves the foreground, so the app says plainly when it was not watching. */
-"session.watching" = "Watching while this screen is open. The screen stays awake.";
-"session.away" = "Away %@ · not watched";
 
 /* The scheduled question. This is the interruption; the Live Activity is only a surface. */
 "notif.body" = "You said you'd %@";
@@ -79,5 +70,6 @@
 /* Interruptions — Screen Time attributing threshold crossings to individual apps. */
 "session.noInterruptions" = "No interruptions yet";
 "session.interrupted" = "Interrupted %lld times";
-"closed.interruptions" = "Interruptions";
 "closed.interruptedBy" = "You broke off for these";
+"setup.steps" = "Interruptions counted per app";
+"setup.steps.hint" = "Each one is a minute of use. Raise it if a long session stops counting, lower it if Screen Time refuses to start.";

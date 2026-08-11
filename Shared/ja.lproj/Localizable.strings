@@ -1,0 +1,63 @@
+/* Ballast — ja
+   The four intervention strings (ask.title, ask.list, ask.down, ask.through)
+   are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
+   question never reads as an accusation and the dismissal never as giving in.
+   These still need a native read before launch. */
+
+"setup.title" = "いま向き合うことを、ひとつだけ。";
+"setup.sub" = "何もブロックしません。あとでまた手に取ったとき、ひとことだけ尋ねます。";
+"setup.task.label" = "いまの作業";
+"setup.task.placeholder" = "化学のレポートを仕上げる";
+"setup.interval" = "尋ねるまでの間隔";
+"setup.mode" = "尋ねるタイミング";
+"setup.mode.slip" = "フィードを見たあと";
+"setup.mode.any" = "手に取るたび";
+"setup.sens" = "感度";
+"setup.start" = "はじめる";
+"session.anchor" = "いま向き合っているのは";
+"session.armedIn" = "次に尋ねるまで";
+"session.armed" = "次に手に取ったら尋ねます";
+"session.quiet" = "静かです";
+"session.slipBtn" = "フィードを開きました";
+"session.end" = "おわる";
+"ask.eyebrow" = "ひと呼吸";
+"ask.title" = "いま、それでいいですか。";
+"ask.list" = "まだ途中です";
+"ask.body.slip" = "%lld 分前にフィードを開いて、いままた手に取りました。";
+"ask.body.any" = "始めてから %lld 分。いままた手に取りました。";
+"ask.down" = "置く";
+"ask.through" = "このまま続ける";
+"ask.through.held" = "このまま続ける（%lld）";
+"closed.title" = "おわりました";
+"closed.down" = "置いた";
+"closed.next" = "次を決める";
+"perm.motion.pre" = "Ballastはモーションセンサーで、端末を手に取ったことだけを見ています。読み取るのは動きだけです。";
+"perm.usage.pre" = "フィードのアプリが開かれたことをBallastが自分で気づけるようにします。一覧はこの端末から出ません。";
+"empty.noSessions" = "まだ記録はありません。ひとつ決めて、はじめましょう。";
+"error.motionDenied" = "モーションがオフのため、手に取った回数は数えられません。フィードは手動で記録できます。設定からオンにもできます。";
+"session.inSession" = "作業中";
+"setup.recent" = "履歴";
+"setup.holdZero" = "4秒の待ちをなくす";
+"setup.holdZero.hint" = "時間つきのボタンが負担になる場合に。ほかは何も変わりません。";
+"closed.length" = "時間";
+"closed.feeds" = "開いたフィード";
+"closed.pickups" = "手に取った回数";
+"closed.questions" = "尋ねた回数";
+"closed.putDown" = "%lld / %lld 回、置きました";
+"closed.longer" = "次はもう少し長めにしてみましょう。";
+"a11y.hold" = "このまま続ける。あと %lld 秒で押せます。";
+"notif.body" = "向き合っていたのは：%@";
+"perm.notif.pre" = "Ballastは通知で尋ねます。アプリが閉じていても届くようにするためです。";
+"setup.feeds" = "見守るアプリ";
+"setup.feeds.pick" = "アプリを選ぶ";
+"perm.screentime.pre" = "フィードのアプリが1分開かれたことを、Screen TimeからBallastに知らせてもらいます。Appleが返すのは匿名の識別子で、どのアプリを選んだかBallastにはわかりません。";
+"setup.duration" = "かける時間";
+"session.leftOnWork" = "残り %lld 分";
+"notif.remaining" = "残り %lld 分：%@。終わりましたか。";
+"notif.overrun" = "時間になりました：%@。終わりましたか。";
+"live.done" = "終わりましたか。";
+"session.noInterruptions" = "まだ中断はありません";
+"session.interrupted" = "%lld 回中断しました";
+"closed.interruptedBy" = "途切れたきっかけ";
+"setup.steps" = "アプリごとに数える中断の回数";
+"setup.steps.hint" = "1回が1分の利用にあたります。長い作業で数が止まるなら増やし、Screen Timeが始まらないなら減らしてください。";
