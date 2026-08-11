@@ -32,6 +32,13 @@ enum SharedState {
         set { defaults?.set(newValue, forKey: "lastSlip") }
     }
 
+    /// Minutes left on the work. Read by the monitor and by the Shortcuts intent,
+    /// both of which run outside the app.
+    static var minutesLeft: Int {
+        guard endsAt > 0 else { return 0 }
+        return max(0, Int((endsAt - Date().timeIntervalSince1970) / 60))
+    }
+
     /// Whether a session is running. The monitor stays silent otherwise.
     static var sessionActive: Bool {
         get { defaults?.bool(forKey: "sessionActive") ?? false }

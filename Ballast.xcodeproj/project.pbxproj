@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BA00000000000000000070 /* BallastWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA00000000000000000031 /* BallastWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BA00000000000000000071 /* BallastMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA00000000000000000032 /* BallastMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -18,13 +17,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BA00000000000000000042;
 			remoteInfo = BallastWidget;
-		};
-		BA00000000000000000048 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BA00000000000000000041 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BA00000000000000000043;
-			remoteInfo = BallastMonitor;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -284,11 +276,6 @@
 			isa = PBXTargetDependency;
 			target = BA00000000000000000042 /* BallastWidget */;
 			targetProxy = BA00000000000000000046 /* PBXContainerItemProxy */;
-		};
-		BA00000000000000000047 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BA00000000000000000043 /* BallastMonitor */;
-			targetProxy = BA00000000000000000048 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

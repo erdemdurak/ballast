@@ -5,5 +5,6 @@ import WidgetKit
 struct BallastWidgetBundle: WidgetBundle {
     var body: some Widget {
         BallastLiveActivity()
+        BallastTaskWidget()
     }
 }
