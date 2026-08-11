@@ -12,8 +12,8 @@ private func start(_ mode: Mode) -> (Event, TimeInterval) {
 }
 
 /// Applies a script of (event, time) pairs and returns the final state.
-private func run(_ script: [(Event, TimeInterval)]) -> State {
-    var s = State()
+private func run(_ script: [(Event, TimeInterval)]) -> SessionState {
+    var s = SessionState()
     for (event, now) in script { (s, _) = reduce(s, event, now) }
     return s
 }
@@ -147,7 +147,7 @@ private struct Row {
 }
 
 @Test func blankTaskStartsNothing() {
-    let (s, effects) = reduce(State(), .startSession(task: "   ", config: Config()), t0)
+    let (s, effects) = reduce(SessionState(), .startSession(task: "   ", config: Config()), t0)
     #expect(s.sessionStart == nil)
     #expect(s.phase(at: t0) == .idle)
     #expect(effects.isEmpty)
@@ -170,7 +170,7 @@ private struct Row {
 }
 
 @Test func aZeroHoldSurvivesToThePresentation() {
-    var s = State()
+    var s = SessionState()
     (s, _) = reduce(s, .startSession(task: task, config: Config(holdSeconds: 0)), t0)
     (s, _) = reduce(s, .slip, t0)
     let (_, effects) = reduce(s, .pickup, t0 + 20 * min)
@@ -179,8 +179,8 @@ private struct Row {
 
 @Test func eventsOutsideASessionDoNothing() {
     for event in [Event.slip, .pickup, .endSession, .dismiss(.down)] {
-        let (s, effects) = reduce(State(), event, t0)
-        #expect(s == State(), "\(event)")
+        let (s, effects) = reduce(SessionState(), event, t0)
+        #expect(s == SessionState(), "\(event)")
         #expect(effects.isEmpty, "\(event)")
     }
 }

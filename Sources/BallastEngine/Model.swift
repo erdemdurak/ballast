@@ -5,7 +5,7 @@ public enum Mode: String, Codable, Sendable {
     case any
 }
 
-/// Derived from the timestamps in `State`, never stored. Storing it is what let the
+/// Derived from the timestamps in `SessionState`, never stored. Storing it is what let the
 /// diagram and the pseudocode drift apart.
 public enum Phase: Equatable, Sendable {
     case idle
@@ -71,7 +71,7 @@ public enum Effect: Equatable, Sendable {
     case dismissAsking
 }
 
-public struct State: Equatable, Sendable {
+public struct SessionState: Equatable, Sendable {
     public var task: String
     public var config: Config
     public var sessionStart: TimeInterval?

@@ -1,7 +1,7 @@
 import Foundation
 
 /// The whole product logic. Pure: no clocks, no I/O, no platform types.
-public func reduce(_ state: State, _ event: Event, _ now: TimeInterval) -> (State, [Effect]) {
+public func reduce(_ state: SessionState, _ event: Event, _ now: TimeInterval) -> (SessionState, [Effect]) {
     var s = state
 
     switch event {
@@ -9,7 +9,7 @@ public func reduce(_ state: State, _ event: Event, _ now: TimeInterval) -> (Stat
         let trimmed = task.trimmingCharacters(in: .whitespacesAndNewlines)
         // There is no session without a task.
         guard !trimmed.isEmpty else { return (state, []) }
-        s = State(task: trimmed, config: config, sessionStart: now)
+        s = SessionState(task: trimmed, config: config, sessionStart: now)
         return (s, [])
 
     case .endSession:

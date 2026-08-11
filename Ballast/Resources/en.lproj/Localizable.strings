@@ -1,0 +1,56 @@
+"setup.title" = "Name the one thing.";
+"setup.sub" = "Nothing gets blocked. When you pick up after a scroll, this asks you one question.";
+"setup.task.label" = "Your task";
+"setup.task.placeholder" = "Finish the chemistry lab write-up";
+"setup.interval" = "Wait before asking";
+"setup.mode" = "Ask me";
+"setup.mode.slip" = "After a scroll";
+"setup.mode.any" = "On any pick-up";
+"setup.sens" = "Pick-up sensitivity";
+"setup.start" = "Start";
+
+"session.anchor" = "You said you'd";
+"session.armedIn" = "Question armed in";
+"session.armed" = "Armed — next pick-up asks";
+"session.quiet" = "Quiet";
+"session.slipBtn" = "I opened a feed";
+"session.end" = "End";
+
+"ask.eyebrow" = "Pause";
+"ask.title" = "Are you sure?";
+"ask.list" = "Still on your list";
+"ask.body.slip" = "You opened a feed %lld minutes ago, and you've just picked the phone up again.";
+"ask.body.any" = "You've been at this %lld minutes, and you've just picked the phone up.";
+"ask.down" = "Put it down";
+"ask.through" = "Carry on";
+"ask.through.held" = "Carry on in %lld";
+
+"closed.title" = "Session closed";
+"closed.down" = "Put it down";
+"closed.next" = "Set the next one";
+
+"perm.motion.pre" = "Ballast needs the motion sensor to notice when you pick the phone up. It reads movement, nothing else.";
+"perm.usage.pre" = "Let Ballast see when a feed app opens, so you don't have to tell it. The list stays on this phone.";
+
+"empty.noSessions" = "No sessions yet. Name something and start.";
+"error.motionDenied" = "Motion is off, so pick-ups aren't counted. You can still log feeds by hand, or turn motion on in Settings.";
+
+/* Not in §9 — introduced by the build, listed here so they translate with the rest. */
+"session.inSession" = "In session";
+"session.simulate" = "Simulate a pick-up";
+"session.motionLive" = "Motion · live";
+"session.motionOff" = "Motion · off";
+"session.counts" = "%lld pick-ups · %lld";
+"setup.recent" = "Recent";
+"setup.holdZero" = "Remove the four-second hold";
+"setup.holdZero.hint" = "For anyone a timed button makes the app hostile to. Everything else is unchanged.";
+"closed.length" = "Length";
+"closed.feeds" = "Feeds opened";
+"closed.pickups" = "Pick-ups";
+"closed.questions" = "Questions asked";
+"closed.putDown" = "Put it down %lld of %lld";
+"closed.longer" = "Try a longer wait next time.";
+"a11y.trace" = "Motion trace. %@ %lld pick-ups this session.";
+"a11y.trace.quiet" = "Quiet for the last %lld minutes.";
+"a11y.trace.active" = "Moving now.";
+"a11y.hold" = "Carry on, available in %lld seconds.";
