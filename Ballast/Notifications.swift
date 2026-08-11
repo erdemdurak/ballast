@@ -45,7 +45,12 @@ final class Notifications: NSObject {
         var scheduled = 0
         let center = UNUserNotificationCenter.current()
 
-        while scheduled < Self.maxPending, fire.timeIntervalSince(now) < 12 * 60 * 60 {
+        // Stop at the deadline. Running to a fixed 12-hour window meant a 15-minute
+        // task kept asking for the rest of the day, and the only way to stop it was
+        // to open the app and end the session.
+        let horizon = endsAt ?? now.addingTimeInterval(12 * 60 * 60)
+
+        while scheduled < Self.maxPending, fire < horizon {
             if fire > now {
                 // Each reminder states the time left on the work at the moment it
                 // will actually arrive, not when it was scheduled.
@@ -74,6 +79,21 @@ final class Notifications: NSObject {
                 scheduled += 1
             }
             fire = fire.addingTimeInterval(interval)
+        }
+
+        // One last word when the time is up, then silence until the next session.
+        if let endsAt, endsAt > now {
+            let content = UNMutableNotificationContent()
+            content.title = S.t("ask.title")
+            content.body = S.t("notif.overrun", task)
+            content.sound = .default
+            content.interruptionLevel = .timeSensitive
+            center.add(
+                UNNotificationRequest(
+                    identifier: "ballast.question.final",
+                    content: content,
+                    trigger: UNTimeIntervalNotificationTrigger(
+                        timeInterval: endsAt.timeIntervalSince(now), repeats: false)))
         }
         refreshStatus()
     }
