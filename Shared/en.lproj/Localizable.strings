@@ -59,3 +59,7 @@
    app leaves the foreground, so the app says plainly when it was not watching. */
 "session.watching" = "Watching while this screen is open. The screen stays awake.";
 "session.away" = "Away %@ · not watched";
+
+/* The scheduled question. This is the interruption; the Live Activity is only a surface. */
+"notif.body" = "You said you'd %@";
+"perm.notif.pre" = "Ballast asks its question with a notification, so it can reach you when the app is closed.";

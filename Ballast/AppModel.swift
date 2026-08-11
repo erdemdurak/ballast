@@ -2,6 +2,7 @@ import CallKit
 import Foundation
 import SwiftUI
 import UIKit
+import UserNotifications
 
 enum Route {
     case setup
@@ -27,6 +28,7 @@ final class AppModel {
     let store: Store
     let detector = MotionDetector()
     let liveActivity = LiveActivityController()
+    let notifications = Notifications()
 
     private var timer: Timer?
     private let callObserver = CXCallObserver()
@@ -52,6 +54,11 @@ final class AppModel {
         }
         callDelegate = watcher
         callObserver.setDelegate(watcher, queue: .main)
+
+        UNUserNotificationCenter.current().delegate = notifications
+        // Tapping the question is a pick-up: let the engine decide, exactly as it
+        // does for a real one.
+        notifications.onOpen = { [weak self] in self?.send(.pickup) }
 
         if let open = store.open { resume(open) }
     }
@@ -108,6 +115,10 @@ final class AppModel {
         send(.startSession(task: draft.task, config: config), at: now)
         liveActivity.start(task: draft.task, armedAt: armedAtDate)
         syncActivity()
+        Task {
+            _ = await notifications.requestAuthorization()
+            self.rescheduleQuestions()
+        }
     }
 
     func end() {
@@ -118,6 +129,7 @@ final class AppModel {
         stopClock()
         UIApplication.shared.isIdleTimerDisabled = false
         liveActivity.end()
+        notifications.cancel()
     }
 
     /// iOS suspends accelerometer delivery outside the foreground, so a session that
@@ -175,6 +187,20 @@ final class AppModel {
     private func syncActivity() {
         guard state.sessionStart != nil else { return }
         liveActivity.update(armedAt: armedAtDate, asking: state.isAsking)
+        rescheduleQuestions()
+    }
+
+    /// The app is asleep when the questions come due, so the whole series is scheduled
+    /// ahead and rebuilt whenever the anchor moves.
+    private func rescheduleQuestions() {
+        guard state.sessionStart != nil, let anchor = state.anchor else {
+            notifications.cancel()
+            return
+        }
+        notifications.schedule(
+            task: state.task,
+            from: Date(timeIntervalSince1970: anchor),
+            every: state.config.interval)
     }
 
     private func apply(_ effect: Effect, at now: TimeInterval, anchorBefore: TimeInterval?) {
