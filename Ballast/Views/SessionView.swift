@@ -42,6 +42,9 @@ struct SessionView: View {
                         .font(Face.body(13))
                         .foregroundStyle(Token.mute)
                         .fixedSize(horizontal: false, vertical: true)
+                    Eyebrow(
+                        text: "Lock screen · \(model.liveActivity.status)",
+                        color: model.liveActivity.status == "on" ? Token.calm : Token.slip)
                     if model.awayTotal >= 1 {
                         Eyebrow(text: S.t("session.away", clock(model.awayTotal)), color: Token.slip)
                     }
