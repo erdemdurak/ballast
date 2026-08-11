@@ -1,4 +1,4 @@
-/* Ballast — ar
+/* Paperweight — ar
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "انتهت الجلسة";
 "closed.down" = "وُضع جانبًا";
 "closed.next" = "حدّد التالي";
-"perm.usage.pre" = "دع Ballast يرى بنفسه متى يُفتح تطبيق تصفح، حتى لا تضطر لإخباره. تبقى القائمة على هذا الهاتف.";
+"perm.usage.pre" = "دع Paperweight يرى بنفسه متى يُفتح تطبيق تصفح، حتى لا تضطر لإخباره. تبقى القائمة على هذا الهاتف.";
 "empty.noSessions" = "لا جلسات بعد. اكتب شيئًا وابدأ.";
 "session.inSession" = "قيد العمل";
 "setup.recent" = "الأخيرة";
@@ -41,10 +41,10 @@
 "closed.longer" = "في المرة القادمة امنح نفسك وقتًا أطول قليلًا.";
 "a11y.hold" = "تابع، متاح بعد %lld ثانية.";
 "notif.body" = "قلت إنك ستقوم بـ: %@";
-"perm.notif.pre" = "يطرح Ballast سؤاله عبر إشعار، ليصل إليك والتطبيق مغلق.";
+"perm.notif.pre" = "يطرح Paperweight سؤاله عبر إشعار، ليصل إليك والتطبيق مغلق.";
 "setup.feeds" = "التطبيقات المُراقَبة";
 "setup.feeds.pick" = "اختر التطبيقات";
-"perm.screentime.pre" = "يطلب Ballast من Screen Time إخباره حين يبقى تطبيق تصفح مفتوحًا دقيقة. تعيد Apple معرّفات مجهولة — لا يعرف Ballast أبدًا أي تطبيقات اخترت.";
+"perm.screentime.pre" = "يطلب Paperweight من Screen Time إخباره حين يبقى تطبيق تصفح مفتوحًا دقيقة. تعيد Apple معرّفات مجهولة — لا يعرف Paperweight أبدًا أي تطبيقات اخترت.";
 "setup.duration" = "كم ينبغي أن يستغرق العمل";
 "session.leftOnWork" = "بقيت %lld دقيقة";
 "notif.remaining" = "بقيت %lld دقيقة على: %@. هل انتهى؟";

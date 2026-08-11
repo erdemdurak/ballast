@@ -1,4 +1,4 @@
-/* Ballast — fr
+/* Paperweight — fr
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "Séance terminée";
 "closed.down" = "Reposé";
 "closed.next" = "Définir la suivante";
-"perm.usage.pre" = "Laisse Ballast voir quand une appli de fil s'ouvre, pour ne pas avoir à le dire toi-même. La liste reste sur ce téléphone.";
+"perm.usage.pre" = "Laisse Paperweight voir quand une appli de fil s'ouvre, pour ne pas avoir à le dire toi-même. La liste reste sur ce téléphone.";
 "empty.noSessions" = "Aucune séance. Nomme quelque chose et commence.";
 "session.inSession" = "En cours";
 "setup.recent" = "Récent";
@@ -41,10 +41,10 @@
 "closed.longer" = "La prochaine fois, laisse-toi un peu plus de temps.";
 "a11y.hold" = "Continuer, disponible dans %lld secondes.";
 "notif.body" = "Tu voulais : %@";
-"perm.notif.pre" = "Ballast pose sa question par notification, pour pouvoir t'atteindre même fermé.";
+"perm.notif.pre" = "Paperweight pose sa question par notification, pour pouvoir t'atteindre même fermé.";
 "setup.feeds" = "Applis surveillées";
 "setup.feeds.pick" = "Choisir des applis";
-"perm.screentime.pre" = "Ballast demande à Screen Time de le prévenir quand une appli de fil est restée ouverte une minute. Apple renvoie des jetons anonymes — Ballast n'apprend jamais quelles applis tu as choisies.";
+"perm.screentime.pre" = "Paperweight demande à Screen Time de le prévenir quand une appli de fil est restée ouverte une minute. Apple renvoie des jetons anonymes — Paperweight n'apprend jamais quelles applis tu as choisies.";
 "setup.duration" = "Durée prévue du travail";
 "session.leftOnWork" = "%lld min restantes";
 "notif.remaining" = "Encore %lld minutes pour : %@. C'est fini ?";

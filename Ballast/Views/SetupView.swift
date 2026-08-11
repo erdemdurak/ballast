@@ -13,7 +13,7 @@ struct SetupView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
-                Eyebrow(text: "Ballast", color: Token.ink)
+                Eyebrow(text: "Paperweight", color: Token.ink)
                     .padding(.top, 8)
 
                 VStack(alignment: .leading, spacing: 10) {

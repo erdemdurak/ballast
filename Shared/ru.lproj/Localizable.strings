@@ -1,4 +1,4 @@
-/* Ballast — ru
+/* Paperweight — ru
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "Сессия закрыта";
 "closed.down" = "Отложено";
 "closed.next" = "Назначить следующее";
-"perm.usage.pre" = "Пусть Ballast сам видит, когда открывается лента, чтобы тебе не приходилось об этом говорить. Список остаётся на этом телефоне.";
+"perm.usage.pre" = "Пусть Paperweight сам видит, когда открывается лента, чтобы тебе не приходилось об этом говорить. Список остаётся на этом телефоне.";
 "empty.noSessions" = "Сессий пока нет. Назови дело и начни.";
 "session.inSession" = "Идёт работа";
 "setup.recent" = "Недавние";
@@ -41,10 +41,10 @@
 "closed.longer" = "В следующий раз дай себе чуть больше времени.";
 "a11y.hold" = "Продолжить, будет доступно через %lld секунд.";
 "notif.body" = "Ты собирался: %@";
-"perm.notif.pre" = "Ballast задаёт вопрос уведомлением, чтобы дотянуться до тебя при закрытом приложении.";
+"perm.notif.pre" = "Paperweight задаёт вопрос уведомлением, чтобы дотянуться до тебя при закрытом приложении.";
 "setup.feeds" = "Приложения под наблюдением";
 "setup.feeds.pick" = "Выбрать приложения";
-"perm.screentime.pre" = "Ballast просит Screen Time сообщить, когда приложение ленты было открыто минуту. Apple возвращает анонимные идентификаторы — Ballast никогда не узнаёт, какие приложения ты выбрал.";
+"perm.screentime.pre" = "Paperweight просит Screen Time сообщить, когда приложение ленты было открыто минуту. Apple возвращает анонимные идентификаторы — Paperweight никогда не узнаёт, какие приложения ты выбрал.";
 "setup.duration" = "Сколько должна занять работа";
 "session.leftOnWork" = "осталось %lld мин";
 "notif.remaining" = "Осталось %lld минут: %@. Уже готово?";

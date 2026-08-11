@@ -50,7 +50,7 @@ struct BallastTaskWidget: Widget {
             TaskWidgetView(entry: entry)
                 .containerBackground(Token.paper, for: .widget)
         }
-        .configurationDisplayName("Ballast")
+        .configurationDisplayName("Paperweight")
         .description("The one thing you named, and how long is left.")
         .supportedFamilies([
             .systemSmall, .systemMedium,
@@ -66,7 +66,7 @@ private struct TaskWidgetView: View {
     var body: some View {
         switch family {
         case .accessoryInline:
-            Text(entry.active ? "\(entry.minutesLeft)m · \(entry.task)" : "Ballast")
+            Text(entry.active ? "\(entry.minutesLeft)m · \(entry.task)" : "Paperweight")
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 2) {
                 Text(S.t("session.anchor").uppercased(with: .current))

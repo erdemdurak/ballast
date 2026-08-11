@@ -1,4 +1,4 @@
-/* Ballast — tr
+/* Paperweight — tr
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "Oturum kapandı";
 "closed.down" = "Bırakıldı";
 "closed.next" = "Sıradakini yaz";
-"perm.usage.pre" = "Bir akış uygulaması açıldığında Ballast bunu kendisi görsün, sen söylemek zorunda kalma. Liste bu telefondan çıkmaz.";
+"perm.usage.pre" = "Bir akış uygulaması açıldığında Paperweight bunu kendisi görsün, sen söylemek zorunda kalma. Liste bu telefondan çıkmaz.";
 "empty.noSessions" = "Henüz oturum yok. Bir şey yaz ve başla.";
 "session.inSession" = "Oturumda";
 "setup.recent" = "Son oturumlar";
@@ -41,10 +41,10 @@
 "closed.longer" = "Bir dahakine biraz daha uzun bekleyelim.";
 "a11y.hold" = "Devam et, %lld saniye sonra kullanılabilir.";
 "notif.body" = "Şunu yapacaktın: %@";
-"perm.notif.pre" = "Ballast sorusunu bildirimle sorar; böylece uygulama kapalıyken de sana ulaşabilir.";
+"perm.notif.pre" = "Paperweight sorusunu bildirimle sorar; böylece uygulama kapalıyken de sana ulaşabilir.";
 "setup.feeds" = "İzlenecek uygulamalar";
 "setup.feeds.pick" = "Uygulama seç";
-"perm.screentime.pre" = "Ballast, bir akış uygulamasının bir dakikadır açık olduğunu Screen Time'dan öğrenir. Apple anonim işaretler döndürür — Ballast hangi uygulamaları seçtiğini hiçbir zaman öğrenmez.";
+"perm.screentime.pre" = "Paperweight, bir akış uygulamasının bir dakikadır açık olduğunu Screen Time'dan öğrenir. Apple anonim işaretler döndürür — Paperweight hangi uygulamaları seçtiğini hiçbir zaman öğrenmez.";
 "setup.duration" = "İş ne kadar sürmeli";
 "session.leftOnWork" = "%lld dk kaldı";
 "notif.remaining" = "%lld dakika kaldı: %@. Bitti mi?";

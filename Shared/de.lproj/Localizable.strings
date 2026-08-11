@@ -1,4 +1,4 @@
-/* Ballast — de
+/* Paperweight — de
    The four intervention strings (ask.title, ask.list, ask.down, ask.through)
    are adaptations, not translations: IMPLEMENTATION.md §10 requires that the
    question never reads as an accusation and the dismissal never as giving in.
@@ -27,7 +27,7 @@
 "closed.title" = "Sitzung beendet";
 "closed.down" = "Weggelegt";
 "closed.next" = "Die nächste festlegen";
-"perm.usage.pre" = "Ballast darf sehen, wann eine Feed-App geöffnet wird, damit du es nicht selbst sagen musst. Die Liste bleibt auf diesem Handy.";
+"perm.usage.pre" = "Paperweight darf sehen, wann eine Feed-App geöffnet wird, damit du es nicht selbst sagen musst. Die Liste bleibt auf diesem Handy.";
 "empty.noSessions" = "Noch keine Sitzungen. Nenne etwas und leg los.";
 "session.inSession" = "In Arbeit";
 "setup.recent" = "Zuletzt";
@@ -41,10 +41,10 @@
 "closed.longer" = "Beim nächsten Mal ruhig etwas länger warten.";
 "a11y.hold" = "Weitermachen, in %lld Sekunden verfügbar.";
 "notif.body" = "Du wolltest: %@";
-"perm.notif.pre" = "Ballast stellt seine Frage per Mitteilung, damit es dich auch bei geschlossener App erreicht.";
+"perm.notif.pre" = "Paperweight stellt seine Frage per Mitteilung, damit es dich auch bei geschlossener App erreicht.";
 "setup.feeds" = "Beobachtete Apps";
 "setup.feeds.pick" = "Apps wählen";
-"perm.screentime.pre" = "Ballast lässt sich von Screen Time sagen, wenn eine Feed-App eine Minute lang offen war. Apple gibt anonyme Kennungen zurück — Ballast erfährt nie, welche Apps du gewählt hast.";
+"perm.screentime.pre" = "Paperweight lässt sich von Screen Time sagen, wenn eine Feed-App eine Minute lang offen war. Apple gibt anonyme Kennungen zurück — Paperweight erfährt nie, welche Apps du gewählt hast.";
 "setup.duration" = "Wie lange die Arbeit dauern soll";
 "session.leftOnWork" = "noch %lld Min.";
 "notif.remaining" = "Noch %lld Minuten für: %@. Schon fertig?";

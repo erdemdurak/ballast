@@ -25,7 +25,7 @@
 "closed.down" = "Put it down";
 "closed.next" = "Set the next one";
 
-"perm.usage.pre" = "Let Ballast see when a feed app opens, so you don't have to tell it. The list stays on this phone.";
+"perm.usage.pre" = "Let Paperweight see when a feed app opens, so you don't have to tell it. The list stays on this phone.";
 
 "empty.noSessions" = "No sessions yet. Name something and start.";
 
@@ -47,12 +47,12 @@
 
 /* The scheduled question. This is the interruption; the Live Activity is only a surface. */
 "notif.body" = "You said you'd %@";
-"perm.notif.pre" = "Ballast asks its question with a notification, so it can reach you when the app is closed.";
+"perm.notif.pre" = "Paperweight asks its question with a notification, so it can reach you when the app is closed.";
 
-/* Screen Time — the detection half only. Ballast never shields. */
+/* Screen Time — the detection half only. Paperweight never shields. */
 "setup.feeds" = "Feeds to watch";
 "setup.feeds.pick" = "Choose apps";
-"perm.screentime.pre" = "Ballast asks Screen Time to tell it when a feed app has been open for a minute. Apple hands back anonymous tokens — Ballast never learns which apps you picked.";
+"perm.screentime.pre" = "Paperweight asks Screen Time to tell it when a feed app has been open for a minute. Apple hands back anonymous tokens — Paperweight never learns which apps you picked.";
 
 /* The work itself, not the interval. This is the countdown the user watches. */
 "setup.duration" = "How long the work should take";
