@@ -29,6 +29,7 @@ final class AppModel {
     let detector = MotionDetector()
     let liveActivity = LiveActivityController()
     let notifications = Notifications()
+    let screenTime = ScreenTime()
 
     private var timer: Timer?
     private let callObserver = CXCallObserver()
@@ -60,7 +61,12 @@ final class AppModel {
         // does for a real one.
         notifications.onOpen = { [weak self] in self?.send(.pickup) }
 
-        if let open = store.open { resume(open) }
+        // After resume: draining first would clear the timestamp with no session
+        // to receive it.
+        if let open = store.open {
+            resume(open)
+            drainMonitorSlip()
+        }
     }
 
     // MARK: - Derived
@@ -116,6 +122,11 @@ final class AppModel {
         liveActivity.start(task: draft.task, armedAt: armedAtDate)
         syncActivity()
         armNotifications()
+
+        SharedState.task = draft.task
+        SharedState.intervalMin = draft.intervalMin
+        SharedState.sessionActive = true
+        screenTime.startMonitoring()
     }
 
     func end() {
@@ -127,6 +138,8 @@ final class AppModel {
         UIApplication.shared.isIdleTimerDisabled = false
         liveActivity.end()
         notifications.cancel()
+        SharedState.sessionActive = false
+        screenTime.stopMonitoring()
     }
 
     /// iOS suspends accelerometer delivery outside the foreground, so a session that
@@ -138,6 +151,7 @@ final class AppModel {
             return
         }
         if active {
+            drainMonitorSlip()
             if let since = awaySince { awayTotal += Date().timeIntervalSince1970 - since }
             awaySince = nil
             UIApplication.shared.isIdleTimerDisabled = true
@@ -244,6 +258,15 @@ final class AppModel {
         // if this is the first run, the permission asked for.
         liveActivity.start(task: s.task, armedAt: armedAtDate)
         armNotifications()
+    }
+
+    /// The monitor runs in another process and can only leave a timestamp behind.
+    /// Fold anything it recorded into the engine the moment the app runs again.
+    private func drainMonitorSlip() {
+        let recorded = SharedState.lastSlip
+        guard recorded > 0, recorded > (state.lastSlip ?? 0) else { return }
+        SharedState.lastSlip = 0
+        send(.slip, at: recorded)
     }
 
     /// Asks once, then (re)schedules. Safe to call repeatedly — iOS only shows the

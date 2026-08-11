@@ -63,3 +63,8 @@
 /* The scheduled question. This is the interruption; the Live Activity is only a surface. */
 "notif.body" = "You said you'd %@";
 "perm.notif.pre" = "Ballast asks its question with a notification, so it can reach you when the app is closed.";
+
+/* Screen Time — the detection half only. Ballast never shields. */
+"setup.feeds" = "Feeds to watch";
+"setup.feeds.pick" = "Choose apps";
+"perm.screentime.pre" = "Ballast asks Screen Time to tell it when a feed app has been open for a minute. Apple hands back anonymous tokens — Ballast never learns which apps you picked.";

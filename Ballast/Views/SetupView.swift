@@ -1,8 +1,10 @@
+import FamilyControls
 import SwiftUI
 
 struct SetupView: View {
     @Bindable var model: AppModel
     @FocusState private var taskFocused: Bool
+    @State private var showPicker = false
 
     private var canStart: Bool {
         !model.draft.task.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
@@ -27,6 +29,7 @@ struct SetupView: View {
                 field
                 interval
                 mode
+                feeds
                 sensitivity
                 holdToggle
 
@@ -89,6 +92,33 @@ struct SetupView: View {
             }
             .pickerStyle(.segmented)
         }
+    }
+
+    /// Screen Time is what lets the question fire because you slipped rather than
+    /// because a timer expired.
+    private var feeds: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Eyebrow(text: S.t("setup.feeds"))
+                Spacer()
+                Text(model.screenTime.status)
+                    .font(Face.data(13, .medium))
+                    .foregroundStyle(
+                        model.screenTime.watchedCount > 0 ? Token.calm : Token.mute)
+            }
+            Button(S.t("setup.feeds.pick")) {
+                Task {
+                    if !model.screenTime.authorized { await model.screenTime.authorize() }
+                    if model.screenTime.authorized { showPicker = true }
+                }
+            }
+            .buttonStyle(OutlineButtonStyle(color: Token.ink))
+            Text(S.t("perm.screentime.pre"))
+                .font(Face.body(13))
+                .foregroundStyle(Token.mute)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .familyActivityPicker(isPresented: $showPicker, selection: $model.screenTime.selection)
     }
 
     private var sensitivity: some View {
