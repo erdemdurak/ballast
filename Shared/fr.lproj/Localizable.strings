@@ -12,7 +12,6 @@
 "setup.mode" = "Demande-moi";
 "setup.mode.slip" = "Après un fil";
 "setup.mode.any" = "À chaque fois";
-"setup.sens" = "Sensibilité";
 "setup.start" = "Commencer";
 "session.anchor" = "Tu voulais";
 "session.armedIn" = "Question dans";
@@ -31,10 +30,8 @@
 "closed.title" = "Séance terminée";
 "closed.down" = "Reposé";
 "closed.next" = "Définir la suivante";
-"perm.motion.pre" = "Ballast utilise le capteur de mouvement pour remarquer quand tu prends ton téléphone. Il lit le mouvement, rien d'autre.";
 "perm.usage.pre" = "Laisse Ballast voir quand une appli de fil s'ouvre, pour ne pas avoir à le dire toi-même. La liste reste sur ce téléphone.";
 "empty.noSessions" = "Aucune séance. Nomme quelque chose et commence.";
-"error.motionDenied" = "Le mouvement est désactivé, les reprises ne sont donc pas comptées. Tu peux toujours signaler les fils à la main, ou activer le mouvement dans Réglages.";
 "session.inSession" = "En cours";
 "setup.recent" = "Récent";
 "setup.holdZero" = "Retirer les quatre secondes";

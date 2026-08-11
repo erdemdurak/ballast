@@ -11,17 +11,6 @@ public enum Constants {
     public static let nudgeCooldown: TimeInterval = 60
     /// One reach = one pick-up, not eight.
     public static let pickupDebounce: TimeInterval = 25
-    /// A pick-up requires prior stillness, or walking triggers it.
-    public static let restBeforePickup: TimeInterval = 12
     /// The friction itself.
     public static let hold: TimeInterval = 4
-    /// Below the noise floor of a phone on a table.
-    public static let stillnessDelta = 0.3
-
-    /// Δ-magnitude thresholds, very low → very high. Read by the platform motion
-    /// detector, not by the engine.
-    public static let sensitivityLadder = [4.5, 3.2, 2.2, 1.4, 0.9]
-
-    /// 1-based, per `prefs.sensitivity`. Normal = 2.2.
-    public static let defaultSensitivity = 3
 }

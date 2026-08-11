@@ -3,7 +3,6 @@ import Foundation
 struct Prefs: Codable {
     var task = ""
     var intervalMin = Constants.defaultIntervalMin
-    var sensitivity = Constants.defaultSensitivity
     var mode: Mode = .slip
     var holdSeconds: TimeInterval = Constants.hold
     /// How long the work itself should take. The countdown the user actually cares about.
@@ -65,14 +64,6 @@ final class Store {
     func append(_ kind: RecordKind, at t: TimeInterval) {
         open?.events.append(Ev(t: t, type: kind))
         persist()
-    }
-
-    /// Held in memory and written out with the next event or at session end. A trace
-    /// bucket is not an event, and rewriting the whole store every 5 s to save one
-    /// byte of decoration is not worth the churn.
-    func appendTrace(_ magnitude: Double) {
-        let capped = Int8(clamping: Int((min(magnitude, 6) / 6 * 127).rounded()))
-        open?.trace.append(capped)
     }
 
     @discardableResult

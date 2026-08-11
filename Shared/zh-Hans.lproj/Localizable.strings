@@ -12,7 +12,6 @@
 "setup.mode" = "何时问我";
 "setup.mode.slip" = "刷过之后";
 "setup.mode.any" = "每次拿起";
-"setup.sens" = "灵敏度";
 "setup.start" = "开始";
 "session.anchor" = "你说要";
 "session.armedIn" = "距离下次询问";
@@ -31,10 +30,8 @@
 "closed.title" = "本次结束";
 "closed.down" = "放下了";
 "closed.next" = "写下一件";
-"perm.motion.pre" = "Ballast 用运动传感器察觉你何时拿起手机。它只读取动作，别的什么都不读。";
 "perm.usage.pre" = "让 Ballast 自己看到信息流应用何时打开，你就不用告诉它。名单不会离开这台手机。";
 "empty.noSessions" = "还没有记录。写下一件事，开始吧。";
-"error.motionDenied" = "运动权限已关闭，因此不统计拿起次数。你仍可以手动记录信息流，或在设置中开启。";
 "session.inSession" = "进行中";
 "setup.recent" = "最近";
 "setup.holdZero" = "去掉四秒等待";

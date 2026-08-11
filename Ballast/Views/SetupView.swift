@@ -30,7 +30,6 @@ struct SetupView: View {
                 duration
                 mode
                 feeds
-                sensitivity
                 holdToggle
 
                 Button(S.t("setup.start")) { model.start() }
@@ -142,29 +141,6 @@ struct SetupView: View {
             selection: Binding(
                 get: { model.screenTime.selection },
                 set: { model.screenTime.selection = $0 }))
-    }
-
-    private var sensitivity: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Eyebrow(text: S.t("setup.sens"))
-                Spacer()
-                Text(sensitivityName)
-                    .font(Face.data(13, .medium))
-                    .foregroundStyle(Token.ink)
-            }
-            Slider(
-                value: Binding(
-                    get: { Double(model.draft.sensitivity) },
-                    set: { model.draft.sensitivity = Int($0) }),
-                in: 1...5, step: 1
-            )
-            .tint(Token.ink)
-        }
-    }
-
-    private var sensitivityName: String {
-        ["Very low", "Low", "Normal", "High", "Very high"][model.draft.sensitivity - 1]
     }
 
     private var holdToggle: some View {

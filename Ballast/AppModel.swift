@@ -18,15 +18,12 @@ final class AppModel {
     private(set) var route: Route = .setup
     private(set) var closed: SessionRecord?
 
-    /// Peak |Δ| per 110 ms bucket. 160 samples ≈ 18 seconds.
-    private(set) var trace: [Double] = []
     private(set) var askedAt: TimeInterval = 0
     private(set) var nowTick: TimeInterval = Date().timeIntervalSince1970
 
     var draft: Prefs
 
     let store: Store
-    let detector = MotionDetector()
     let liveActivity = LiveActivityController()
     let notifications = Notifications()
     let screenTime = ScreenTime()
@@ -35,8 +32,6 @@ final class AppModel {
     private let callObserver = CXCallObserver()
     private var callDelegate: CallWatcher?
     private var lastEngineTick: TimeInterval = 0
-    private var bucketPeak: Double = 0
-    private var bucketStart: TimeInterval = 0
     private var awaySince: TimeInterval?
 
     /// Total time the app spent out of the foreground during this session — time iOS
@@ -46,9 +41,6 @@ final class AppModel {
     init(store: Store = Store()) {
         self.store = store
         self.draft = store.prefs
-
-        detector.onPickup = { [weak self] t in self?.send(.pickup, at: t) }
-        detector.onSample = { [weak self] magnitude in self?.sample(magnitude) }
 
         let watcher = CallWatcher { [weak self] active in
             self?.send(.callChanged(active))
@@ -74,7 +66,7 @@ final class AppModel {
     var config: Config {
         Config(
             intervalMin: draft.intervalMin, mode: draft.mode,
-            holdSeconds: draft.holdSeconds, sensitivity: draft.sensitivity)
+            holdSeconds: draft.holdSeconds)
     }
 
     var phase: Phase { state.phase(at: nowTick) }
@@ -109,12 +101,9 @@ final class AppModel {
         store.save(prefs: draft)
         let now = Date().timeIntervalSince1970
         store.begin(task: draft.task, at: now)
-        trace = []
         closed = nil
         awayTotal = 0
         awaySince = nil
-        detector.threshold = Constants.sensitivityLadder[draft.sensitivity - 1]
-        detector.start()
         route = .session
         startClock()
         UIApplication.shared.isIdleTimerDisabled = true
@@ -136,7 +125,6 @@ final class AppModel {
         let now = Date().timeIntervalSince1970
         send(.endSession, at: now)
         closed = store.end(at: now)
-        detector.stop()
         stopClock()
         UIApplication.shared.isIdleTimerDisabled = false
         liveActivity.end()
@@ -158,13 +146,11 @@ final class AppModel {
             if let since = awaySince { awayTotal += Date().timeIntervalSince1970 - since }
             awaySince = nil
             UIApplication.shared.isIdleTimerDisabled = true
-            detector.start()
-            startClock()
+                startClock()
         } else {
             awaySince = Date().timeIntervalSince1970
             UIApplication.shared.isIdleTimerDisabled = false
-            detector.stop()
-            stopClock()
+                stopClock()
         }
     }
 
@@ -263,11 +249,8 @@ final class AppModel {
             }
         }
         state = s
-        trace = []
         askedAt = s.lastNudge ?? 0
         route = s.isAsking ? .asking : .session
-        detector.threshold = Constants.sensitivityLadder[draft.sensitivity - 1]
-        detector.start()
         startClock()
         UIApplication.shared.isIdleTimerDisabled = true
         // A resumed session is still a session: it needs the question scheduled and,
@@ -316,21 +299,6 @@ final class AppModel {
         }
     }
 
-    private func sample(_ magnitude: Double) {
-        trace.append(magnitude)
-        if trace.count > 160 { trace.removeFirst(trace.count - 160) }
-
-        // The live trace is 110 ms samples; the stored one is 5 s buckets, peak held,
-        // for the whole-session picture on the closed screen.
-        let now = Date().timeIntervalSince1970
-        if bucketStart == 0 { bucketStart = now }
-        bucketPeak = max(bucketPeak, magnitude)
-        if now - bucketStart >= 5 {
-            store.appendTrace(bucketPeak)
-            bucketPeak = 0
-            bucketStart = now
-        }
-    }
 }
 
 /// `CXCallObserver` keeps only a weak delegate, so this is held by the model.

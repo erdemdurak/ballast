@@ -12,7 +12,6 @@
 "setup.mode" = "尋ねるタイミング";
 "setup.mode.slip" = "フィードを見たあと";
 "setup.mode.any" = "手に取るたび";
-"setup.sens" = "感度";
 "setup.start" = "はじめる";
 "session.anchor" = "いま向き合っているのは";
 "session.armedIn" = "次に尋ねるまで";
@@ -31,10 +30,8 @@
 "closed.title" = "おわりました";
 "closed.down" = "置いた";
 "closed.next" = "次を決める";
-"perm.motion.pre" = "Ballastはモーションセンサーで、端末を手に取ったことだけを見ています。読み取るのは動きだけです。";
 "perm.usage.pre" = "フィードのアプリが開かれたことをBallastが自分で気づけるようにします。一覧はこの端末から出ません。";
 "empty.noSessions" = "まだ記録はありません。ひとつ決めて、はじめましょう。";
-"error.motionDenied" = "モーションがオフのため、手に取った回数は数えられません。フィードは手動で記録できます。設定からオンにもできます。";
 "session.inSession" = "作業中";
 "setup.recent" = "履歴";
 "setup.holdZero" = "4秒の待ちをなくす";

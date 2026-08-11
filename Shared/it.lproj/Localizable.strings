@@ -12,7 +12,6 @@
 "setup.mode" = "Chiedimi";
 "setup.mode.slip" = "Dopo un feed";
 "setup.mode.any" = "Ogni volta";
-"setup.sens" = "Sensibilità";
 "setup.start" = "Inizia";
 "session.anchor" = "Volevi";
 "session.armedIn" = "Domanda tra";
@@ -31,10 +30,8 @@
 "closed.title" = "Sessione chiusa";
 "closed.down" = "Posato";
 "closed.next" = "Scrivi la prossima";
-"perm.motion.pre" = "Ballast usa il sensore di movimento per accorgersi quando prendi il telefono. Legge il movimento, nient'altro.";
 "perm.usage.pre" = "Lascia che Ballast veda quando si apre un'app di feed, così non devi dirglielo tu. L'elenco resta su questo telefono.";
 "empty.noSessions" = "Ancora nessuna sessione. Scrivi qualcosa e inizia.";
-"error.motionDenied" = "Il movimento è disattivato, quindi le riprese non vengono contate. Puoi comunque segnare i feed a mano, o attivare il movimento in Impostazioni.";
 "session.inSession" = "In corso";
 "setup.recent" = "Recenti";
 "setup.holdZero" = "Togli i quattro secondi";

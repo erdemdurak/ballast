@@ -3,7 +3,6 @@ import SwiftUI
 
 struct SessionView: View {
     @Bindable var model: AppModel
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
@@ -29,21 +28,14 @@ struct SessionView: View {
                     .buttonStyle(OutlineButtonStyle(color: Token.slip))
             }
 
-            if model.detector.unavailable {
-                Text(S.t("error.motionDenied"))
-                    .font(Face.body(13))
-                    .foregroundStyle(Token.ink2)
-                    .fixedSize(horizontal: false, vertical: true)
-            } else {
-                VStack(alignment: .leading, spacing: 4) {
-                    Eyebrow(
-                        text: "Reminders · \(model.notifications.status)",
-                        color: model.notifications.status.contains("queued")
-                            ? Token.calm : Token.slip)
-                    Eyebrow(
-                        text: "Lock screen · \(model.liveActivity.status)",
-                        color: model.liveActivity.status == "on" ? Token.calm : Token.slip)
-                }
+            VStack(alignment: .leading, spacing: 4) {
+                Eyebrow(
+                    text: "Reminders · \(model.notifications.status)",
+                    color: model.notifications.status.contains("queued")
+                        ? Token.calm : Token.slip)
+                Eyebrow(
+                    text: "Lock screen · \(model.liveActivity.status)",
+                    color: model.liveActivity.status == "on" ? Token.calm : Token.slip)
             }
         }
         .padding(24)

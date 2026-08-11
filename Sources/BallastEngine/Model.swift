@@ -20,18 +20,15 @@ public struct Config: Equatable, Sendable {
     public var mode: Mode
     /// Reducible to 0 through accessibility settings only.
     public var holdSeconds: TimeInterval
-    public var sensitivity: Int
 
     public init(
         intervalMin: Int = Constants.defaultIntervalMin,
         mode: Mode = .slip,
-        holdSeconds: TimeInterval = Constants.hold,
-        sensitivity: Int = Constants.defaultSensitivity
+        holdSeconds: TimeInterval = Constants.hold
     ) {
         self.intervalMin = intervalMin
         self.mode = mode
         self.holdSeconds = holdSeconds
-        self.sensitivity = sensitivity
     }
 
     public var interval: TimeInterval { TimeInterval(intervalMin * 60) }

@@ -12,7 +12,6 @@
 "setup.mode" = "Pregúntame";
 "setup.mode.slip" = "Después de un feed";
 "setup.mode.any" = "Cada vez";
-"setup.sens" = "Sensibilidad";
 "setup.start" = "Empezar";
 "session.anchor" = "Ibas a";
 "session.armedIn" = "Pregunta en";
@@ -31,10 +30,8 @@
 "closed.title" = "Sesión cerrada";
 "closed.down" = "Lo dejaste";
 "closed.next" = "Escribe la siguiente";
-"perm.motion.pre" = "Ballast usa el sensor de movimiento para notar cuándo coges el móvil. Lee movimiento, nada más.";
 "perm.usage.pre" = "Deja que Ballast vea cuándo se abre una app de feed, así no tienes que decírselo. La lista se queda en este móvil.";
 "empty.noSessions" = "Aún no hay sesiones. Escribe algo y empieza.";
-"error.motionDenied" = "El movimiento está desactivado, así que no se cuentan. Puedes marcar los feeds a mano o activar el movimiento en Ajustes.";
 "session.inSession" = "En marcha";
 "setup.recent" = "Reciente";
 "setup.holdZero" = "Quitar los cuatro segundos";

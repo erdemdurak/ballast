@@ -6,7 +6,6 @@
 "setup.mode" = "Ask me";
 "setup.mode.slip" = "After a scroll";
 "setup.mode.any" = "On any pick-up";
-"setup.sens" = "Pick-up sensitivity";
 "setup.start" = "Start";
 
 "session.anchor" = "You said you'd";
@@ -29,11 +28,9 @@
 "closed.down" = "Put it down";
 "closed.next" = "Set the next one";
 
-"perm.motion.pre" = "Ballast needs the motion sensor to notice when you pick the phone up. It reads movement, nothing else.";
 "perm.usage.pre" = "Let Ballast see when a feed app opens, so you don't have to tell it. The list stays on this phone.";
 
 "empty.noSessions" = "No sessions yet. Name something and start.";
-"error.motionDenied" = "Motion is off, so pick-ups aren't counted. You can still log feeds by hand, or turn motion on in Settings.";
 
 /* Not in §9 — introduced by the build, listed here so they translate with the rest. */
 "session.inSession" = "In session";

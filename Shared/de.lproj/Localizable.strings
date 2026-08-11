@@ -12,7 +12,6 @@
 "setup.mode" = "Frag mich";
 "setup.mode.slip" = "Nach einem Feed";
 "setup.mode.any" = "Bei jedem Griff";
-"setup.sens" = "Empfindlichkeit";
 "setup.start" = "Starten";
 "session.anchor" = "Du wolltest";
 "session.armedIn" = "Frage kommt in";
@@ -31,10 +30,8 @@
 "closed.title" = "Sitzung beendet";
 "closed.down" = "Weggelegt";
 "closed.next" = "Die nächste festlegen";
-"perm.motion.pre" = "Ballast nutzt den Bewegungssensor, um zu merken, wenn du zum Handy greifst. Es liest Bewegung, sonst nichts.";
 "perm.usage.pre" = "Ballast darf sehen, wann eine Feed-App geöffnet wird, damit du es nicht selbst sagen musst. Die Liste bleibt auf diesem Handy.";
 "empty.noSessions" = "Noch keine Sitzungen. Nenne etwas und leg los.";
-"error.motionDenied" = "Bewegung ist aus, Griffe werden also nicht gezählt. Du kannst Feeds weiterhin selbst eintragen oder Bewegung in den Einstellungen aktivieren.";
 "session.inSession" = "In Arbeit";
 "setup.recent" = "Zuletzt";
 "setup.holdZero" = "Die vier Sekunden entfernen";

@@ -12,7 +12,6 @@
 "setup.mode" = "Bana sor";
 "setup.mode.slip" = "Akıştan sonra";
 "setup.mode.any" = "Her elime alışta";
-"setup.sens" = "Eline alma hassasiyeti";
 "setup.start" = "Başlat";
 "session.anchor" = "Şunu yapacaktın";
 "session.armedIn" = "Soruya kalan";
@@ -31,10 +30,8 @@
 "closed.title" = "Oturum kapandı";
 "closed.down" = "Bırakıldı";
 "closed.next" = "Sıradakini yaz";
-"perm.motion.pre" = "Ballast, telefonu ne zaman elime aldığını anlamak için hareket sensörünü kullanır. Yalnızca hareketi okur, başka bir şeyi değil.";
 "perm.usage.pre" = "Bir akış uygulaması açıldığında Ballast bunu kendisi görsün, sen söylemek zorunda kalma. Liste bu telefondan çıkmaz.";
 "empty.noSessions" = "Henüz oturum yok. Bir şey yaz ve başla.";
-"error.motionDenied" = "Hareket kapalı, bu yüzden eline alışlar sayılmıyor. Akışları elle işaretleyebilir ya da Ayarlar'dan hareketi açabilirsin.";
 "session.inSession" = "Oturumda";
 "setup.recent" = "Son oturumlar";
 "setup.holdZero" = "Dört saniyelik beklemeyi kaldır";
