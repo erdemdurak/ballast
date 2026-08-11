@@ -26,7 +26,7 @@ struct RemindIntent: AppIntent {
         let left = SharedState.minutesLeft
         let body =
             left > 0
-            ? S.t("notif.remaining", left, task)
+            ? S.t("notif.remaining", S.minutes(left), task)
             : S.t("notif.overrun", task)
 
         let content = UNMutableNotificationContent()

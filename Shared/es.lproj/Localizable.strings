@@ -18,8 +18,8 @@
 "ask.eyebrow" = "Pausa";
 "ask.title" = "¿Merece la pena ahora?";
 "ask.list" = "Sigue en tu lista";
-"ask.body.slip" = "Abriste un feed hace %lld minutos y acabas de coger el móvil otra vez.";
-"ask.body.any" = "Llevas %lld minutos y acabas de coger el móvil.";
+"ask.body.slip" = "Abriste un feed hace %@ y acabas de coger el móvil otra vez.";
+"ask.body.any" = "Llevas %@ y acabas de coger el móvil.";
 "ask.down" = "Déjalo";
 "ask.through" = "Seguir";
 "ask.through.held" = "Seguir en %lld";
@@ -43,11 +43,11 @@
 "setup.feeds.pick" = "Elegir apps";
 "perm.screentime.pre" = "Hold Focus le pide a Screen Time que le avise cuando una app de feed lleva un minuto abierta. Apple devuelve identificadores anónimos — Hold Focus nunca sabe qué apps elegiste.";
 "setup.duration" = "Cuánto debería durar";
-"notif.remaining" = "Quedan %lld minutos de: %@. ¿Ya está?";
+"notif.remaining" = "Quedan %@ de: %@. ¿Ya está?";
 "notif.overrun" = "Se acabó el tiempo de: %@. ¿Ya está?";
 "live.done" = "¿Ya está?";
 "session.noInterruptions" = "Sin interrupciones";
-"session.interrupted" = "Interrumpido %lld veces";
+"session.interrupted" = "Interrupciones · %lld";
 "closed.interruptedBy" = "Esto te cortó";
 "setup.steps" = "Interrupciones contadas por app";
 "setup.steps.hint" = "Cada una es un minuto de uso. Súbelo si una sesión larga deja de contar, bájalo si Screen Time no arranca.";

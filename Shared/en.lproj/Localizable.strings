@@ -14,8 +14,8 @@
 "ask.eyebrow" = "Pause";
 "ask.title" = "Are you sure?";
 "ask.list" = "Still on your list";
-"ask.body.slip" = "You opened a feed %lld minutes ago, and you've just picked the phone up again.";
-"ask.body.any" = "You've been at this %lld minutes, and you've just picked the phone up.";
+"ask.body.slip" = "You opened a feed %@ ago, and you've just picked the phone up again.";
+"ask.body.any" = "You've been at this %@, and you've just picked the phone up.";
 "ask.down" = "Put it down";
 "ask.through" = "Carry on";
 "ask.through.held" = "Carry on in %lld";
@@ -53,13 +53,13 @@
 
 /* The work itself, not the interval. This is the countdown the user watches. */
 "setup.duration" = "How long the work should take";
-"notif.remaining" = "%lld minutes left on: %@. Done?";
+"notif.remaining" = "%@ left on: %@. Done?";
 "notif.overrun" = "Time is up on: %@. Done?";
 "live.done" = "Is this done?";
 
 /* Interruptions — Screen Time attributing threshold crossings to individual apps. */
 "session.noInterruptions" = "No interruptions yet";
-"session.interrupted" = "Interrupted %lld times";
+"session.interrupted" = "Interruptions · %lld";
 "closed.interruptedBy" = "You broke off for these";
 "setup.steps" = "Interruptions counted per app";
 "setup.steps.hint" = "Each one is a minute of use. Raise it if a long session stops counting, lower it if Screen Time refuses to start.";

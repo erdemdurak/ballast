@@ -29,7 +29,7 @@ struct AskingView: View {
             Text(
                 S.t(
                     model.askedAfterSlip ? "ask.body.slip" : "ask.body.any",
-                    model.minutesSinceAnchor)
+                    S.minutes(model.minutesSinceAnchor))
             )
             .font(Face.body(17))
             .foregroundStyle(Token.ink2)

@@ -18,8 +18,8 @@
 "ask.eyebrow" = "Dur";
 "ask.title" = "Buna değer mi?";
 "ask.list" = "Hâlâ listende";
-"ask.body.slip" = "%lld dakika önce bir akış açtın, şimdi telefonu yine elime aldın.";
-"ask.body.any" = "%lld dakikadır buradasın ve telefonu yine elime aldın.";
+"ask.body.slip" = "%@ önce bir akış açtın, şimdi telefonu yine elime aldın.";
+"ask.body.any" = "%@ dır buradasın ve telefonu yine elime aldın.";
 "ask.down" = "Bırak";
 "ask.through" = "Devam et";
 "ask.through.held" = "Devam et — %lld";
@@ -43,11 +43,11 @@
 "setup.feeds.pick" = "Uygulama seç";
 "perm.screentime.pre" = "Hold Focus, bir akış uygulamasının bir dakikadır açık olduğunu Screen Time'dan öğrenir. Apple anonim işaretler döndürür — Hold Focus hangi uygulamaları seçtiğini hiçbir zaman öğrenmez.";
 "setup.duration" = "İş ne kadar sürmeli";
-"notif.remaining" = "%lld dakika kaldı: %@. Bitti mi?";
+"notif.remaining" = "%@ kaldı: %@. Bitti mi?";
 "notif.overrun" = "Süre doldu: %@. Bitti mi?";
 "live.done" = "Bitti mi?";
 "session.noInterruptions" = "Henüz bölünme yok";
-"session.interrupted" = "%lld kez bölündün";
+"session.interrupted" = "Bölünme · %lld";
 "closed.interruptedBy" = "İşini bunlar böldü";
 "setup.steps" = "Uygulama başına sayılan bölünme";
 "setup.steps.hint" = "Her biri bir dakikalık kullanım demek. Uzun oturumda saymayı bırakırsa artır, Screen Time başlamazsa azalt.";

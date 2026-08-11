@@ -18,8 +18,8 @@
 "ask.eyebrow" = "Kurz";
 "ask.title" = "Ist es das gerade wert?";
 "ask.list" = "Steht noch an";
-"ask.body.slip" = "Vor %lld Minuten hattest du einen Feed offen, und jetzt greifst du wieder zum Handy.";
-"ask.body.any" = "Du bist seit %lld Minuten dabei, und jetzt greifst du wieder zum Handy.";
+"ask.body.slip" = "Vor %@ hattest du einen Feed offen, und jetzt greifst du wieder zum Handy.";
+"ask.body.any" = "Du bist seit %@ dabei, und jetzt greifst du wieder zum Handy.";
 "ask.down" = "Weglegen";
 "ask.through" = "Weitermachen";
 "ask.through.held" = "Weitermachen in %lld";
@@ -43,11 +43,11 @@
 "setup.feeds.pick" = "Apps wählen";
 "perm.screentime.pre" = "Hold Focus lässt sich von Screen Time sagen, wenn eine Feed-App eine Minute lang offen war. Apple gibt anonyme Kennungen zurück — Hold Focus erfährt nie, welche Apps du gewählt hast.";
 "setup.duration" = "Wie lange die Arbeit dauern soll";
-"notif.remaining" = "Noch %lld Minuten für: %@. Schon fertig?";
+"notif.remaining" = "Noch %@ für: %@. Schon fertig?";
 "notif.overrun" = "Die Zeit ist um für: %@. Schon fertig?";
 "live.done" = "Schon fertig?";
 "session.noInterruptions" = "Noch keine Unterbrechungen";
-"session.interrupted" = "%lld Mal unterbrochen";
+"session.interrupted" = "Unterbrechungen · %lld";
 "closed.interruptedBy" = "Das hat dich herausgerissen";
 "setup.steps" = "Gezählte Unterbrechungen pro App";
 "setup.steps.hint" = "Jede steht für eine Minute Nutzung. Erhöhen, wenn lange Sitzungen nicht mehr gezählt werden; senken, wenn Screen Time nicht startet.";

@@ -31,7 +31,7 @@ class BallastMonitor: DeviceActivityMonitor {
 
         let content = UNMutableNotificationContent()
         content.title = S.t("ask.title")
-        content.body = S.t("notif.body", task)
+        content.body = S.t("notif.remaining", S.minutes(SharedState.minutesLeft), task)
         content.sound = .default
         content.interruptionLevel = .timeSensitive
 

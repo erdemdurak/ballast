@@ -18,8 +18,8 @@
 "ask.eyebrow" = "ひと呼吸";
 "ask.title" = "いま、それでいいですか。";
 "ask.list" = "まだ途中です";
-"ask.body.slip" = "%lld 分前にフィードを開いて、いままた手に取りました。";
-"ask.body.any" = "始めてから %lld 分。いままた手に取りました。";
+"ask.body.slip" = "%@前にフィードを開いて、いままた手に取りました。";
+"ask.body.any" = "始めてから%@。いままた手に取りました。";
 "ask.down" = "置く";
 "ask.through" = "このまま続ける";
 "ask.through.held" = "このまま続ける（%lld）";
@@ -43,11 +43,11 @@
 "setup.feeds.pick" = "アプリを選ぶ";
 "perm.screentime.pre" = "フィードのアプリが1分開かれたことを、Screen TimeからBallastに知らせてもらいます。Appleが返すのは匿名の識別子で、どのアプリを選んだかBallastにはわかりません。";
 "setup.duration" = "かける時間";
-"notif.remaining" = "残り %lld 分：%@。終わりましたか。";
+"notif.remaining" = "残り%@：%@。終わりましたか。";
 "notif.overrun" = "時間になりました：%@。終わりましたか。";
 "live.done" = "終わりましたか。";
 "session.noInterruptions" = "まだ中断はありません";
-"session.interrupted" = "%lld 回中断しました";
+"session.interrupted" = "中断 · %lld";
 "closed.interruptedBy" = "途切れたきっかけ";
 "setup.steps" = "アプリごとに数える中断の回数";
 "setup.steps.hint" = "1回が1分の利用にあたります。長い作業で数が止まるなら増やし、Screen Timeが始まらないなら減らしてください。";

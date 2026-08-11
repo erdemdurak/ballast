@@ -18,8 +18,8 @@
 "ask.eyebrow" = "Pause";
 "ask.title" = "Ça en vaut la peine ?";
 "ask.list" = "Toujours sur ta liste";
-"ask.body.slip" = "Tu as ouvert un fil il y a %lld minutes, et tu reprends ton téléphone.";
-"ask.body.any" = "Ça fait %lld minutes, et tu reprends ton téléphone.";
+"ask.body.slip" = "Tu as ouvert un fil il y a %@, et tu reprends ton téléphone.";
+"ask.body.any" = "Ça fait %@, et tu reprends ton téléphone.";
 "ask.down" = "Le reposer";
 "ask.through" = "Continuer";
 "ask.through.held" = "Continuer dans %lld";
@@ -43,11 +43,11 @@
 "setup.feeds.pick" = "Choisir des applis";
 "perm.screentime.pre" = "Hold Focus demande à Screen Time de le prévenir quand une appli de fil est restée ouverte une minute. Apple renvoie des jetons anonymes — Hold Focus n'apprend jamais quelles applis tu as choisies.";
 "setup.duration" = "Durée prévue du travail";
-"notif.remaining" = "Encore %lld minutes pour : %@. C'est fini ?";
+"notif.remaining" = "Encore %@ pour : %@. C'est fini ?";
 "notif.overrun" = "Le temps est écoulé pour : %@. C'est fini ?";
 "live.done" = "C'est fini ?";
 "session.noInterruptions" = "Aucune interruption";
-"session.interrupted" = "Interrompu %lld fois";
+"session.interrupted" = "Interruptions · %lld";
 "closed.interruptedBy" = "Voilà ce qui t'a coupé";
 "setup.steps" = "Interruptions comptées par appli";
 "setup.steps.hint" = "Chacune vaut une minute d'usage. Augmente si une longue séance cesse d'être comptée, diminue si Screen Time refuse de démarrer.";

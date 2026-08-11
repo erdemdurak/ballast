@@ -55,7 +55,7 @@ final class Notifications: NSObject {
                     let left = Int((endsAt.timeIntervalSince(fire) / 60).rounded())
                     content.body =
                         left > 0
-                        ? S.t("notif.remaining", left, task)
+                        ? S.t("notif.remaining", S.minutes(left), task)
                         : S.t("notif.overrun", task)
                 } else {
                     content.body = S.t("notif.body", task)

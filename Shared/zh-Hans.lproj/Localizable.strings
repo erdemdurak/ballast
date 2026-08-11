@@ -18,8 +18,8 @@
 "ask.eyebrow" = "停一下";
 "ask.title" = "现在值得吗？";
 "ask.list" = "还没做完";
-"ask.body.slip" = "%lld 分钟前你刷了一下，现在又拿起了手机。";
-"ask.body.any" = "已经 %lld 分钟了，你又拿起了手机。";
+"ask.body.slip" = "%@前你刷了一下，现在又拿起了手机。";
+"ask.body.any" = "已经%@了，你又拿起了手机。";
 "ask.down" = "放下";
 "ask.through" = "继续";
 "ask.through.held" = "继续（%lld）";
@@ -43,11 +43,11 @@
 "setup.feeds.pick" = "选择应用";
 "perm.screentime.pre" = "Hold Focus 请 Screen Time 在某个信息流应用打开满一分钟时告知。Apple 返回的是匿名标识，Hold Focus 始终不知道你选了哪些应用。";
 "setup.duration" = "这件事打算做多久";
-"notif.remaining" = "还剩 %lld 分钟：%@。做完了吗？";
+"notif.remaining" = "还剩%@：%@。做完了吗？";
 "notif.overrun" = "时间到了：%@。做完了吗？";
 "live.done" = "做完了吗？";
 "session.noInterruptions" = "还没有被打断";
-"session.interrupted" = "被打断 %lld 次";
+"session.interrupted" = "打断 · %lld";
 "closed.interruptedBy" = "打断你的是这些";
 "setup.steps" = "每个应用记录的打断次数";
 "setup.steps.hint" = "每一次代表一分钟使用。长时间工作不再计数就调高，Screen Time 无法启动就调低。";
