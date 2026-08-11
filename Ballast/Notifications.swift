@@ -32,8 +32,8 @@ final class Notifications: NSObject {
     }
 
     /// Schedules a question at every interval from `anchor` for the rest of the day.
-    /// `interruptionLevel` stays `.active`: `.timeSensitive` needs an entitlement, and
-    /// entitlements are what we cannot sign for yet.
+    /// `.timeSensitive` so a Focus mode does not silence the reminder — the whole
+    /// point is reaching someone who is trying to concentrate.
     func schedule(
         task: String, from anchor: Date, every interval: TimeInterval, endsAt: Date?
     ) {
@@ -61,7 +61,7 @@ final class Notifications: NSObject {
                     content.body = S.t("notif.body", task)
                 }
                 content.sound = .default
-                content.interruptionLevel = .active
+                content.interruptionLevel = .timeSensitive
 
                 let request = UNNotificationRequest(
                     identifier: "ballast.question.\(scheduled)",

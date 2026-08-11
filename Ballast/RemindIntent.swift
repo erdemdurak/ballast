@@ -33,7 +33,7 @@ struct RemindIntent: AppIntent {
         content.title = S.t("ask.title")
         content.body = body
         content.sound = .default
-        content.interruptionLevel = .active
+        content.interruptionLevel = .timeSensitive
 
         // No trigger: deliver now, while the app being opened is still on screen.
         try? await UNUserNotificationCenter.current().add(

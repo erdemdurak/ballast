@@ -26,7 +26,7 @@ class BallastMonitor: DeviceActivityMonitor {
         content.title = S.t("ask.title")
         content.body = S.t("notif.body", task)
         content.sound = .default
-        content.interruptionLevel = .active
+        content.interruptionLevel = .timeSensitive
 
         // The interval is deliberate: the question arrives once the impulse has had
         // time to become invisible again.
