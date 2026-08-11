@@ -30,6 +30,8 @@ final class AppModel {
     private let callObserver = CXCallObserver()
     private var callDelegate: CallWatcher?
     private var lastEngineTick: TimeInterval = 0
+    private var bucketPeak: Double = 0
+    private var bucketStart: TimeInterval = 0
 
     init(store: Store = Store()) {
         self.store = store
@@ -194,6 +196,17 @@ final class AppModel {
     private func sample(_ magnitude: Double) {
         trace.append(magnitude)
         if trace.count > 160 { trace.removeFirst(trace.count - 160) }
+
+        // The live trace is 110 ms samples; the stored one is 5 s buckets, peak held,
+        // for the whole-session picture on the closed screen.
+        let now = Date().timeIntervalSince1970
+        if bucketStart == 0 { bucketStart = now }
+        bucketPeak = max(bucketPeak, magnitude)
+        if now - bucketStart >= 5 {
+            store.appendTrace(bucketPeak)
+            bucketPeak = 0
+            bucketStart = now
+        }
     }
 }
 

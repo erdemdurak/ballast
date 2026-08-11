@@ -62,10 +62,12 @@ final class Store {
         persist()
     }
 
+    /// Held in memory and written out with the next event or at session end. A trace
+    /// bucket is not an event, and rewriting the whole store every 5 s to save one
+    /// byte of decoration is not worth the churn.
     func appendTrace(_ magnitude: Double) {
         let capped = Int8(clamping: Int((min(magnitude, 6) / 6 * 127).rounded()))
         open?.trace.append(capped)
-        persist()
     }
 
     @discardableResult
