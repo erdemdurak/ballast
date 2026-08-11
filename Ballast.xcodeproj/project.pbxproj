@@ -8,11 +8,14 @@
 
 /* Begin PBXFileReference section */
 		BA00000000000000000030 /* Ballast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ballast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA00000000000000000031 /* BallastWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BallastWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BA00000000000000000001 /* Ballast */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Ballast; sourceTree = "<group>"; };
 		BA00000000000000000002 /* BallastEngine */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); name = BallastEngine; path = "Sources/BallastEngine"; sourceTree = "<group>"; };
+		BA00000000000000000003 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
+		BA00000000000000000004 /* BallastWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = BallastWidget; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,7 +26,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA00000000000000000015 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA00000000000000000013 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BA00000000000000000070 /* BallastWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXBuildFile section */
+		BA00000000000000000070 /* BallastWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = BA00000000000000000031 /* BallastWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXTargetDependency section */
+		BA00000000000000000045 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA00000000000000000042 /* BallastWidget */;
+			targetProxy = BA00000000000000000046 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXContainerItemProxy section */
+		BA00000000000000000046 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA00000000000000000041 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA00000000000000000042;
+			remoteInfo = BallastWidget;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXGroup section */
 		BA00000000000000000020 = {
@@ -31,6 +77,8 @@
 			children = (
 				BA00000000000000000001 /* Ballast */,
 				BA00000000000000000002 /* BallastEngine */,
+				BA00000000000000000003 /* Shared */,
+				BA00000000000000000004 /* BallastWidget */,
 				BA00000000000000000021 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				BA00000000000000000030 /* Ballast.app */,
+				BA00000000000000000031 /* BallastWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,19 +102,44 @@
 				BA00000000000000000011 /* Sources */,
 				BA00000000000000000010 /* Frameworks */,
 				BA00000000000000000012 /* Resources */,
+				BA00000000000000000013 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA00000000000000000045 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BA00000000000000000001 /* Ballast */,
+				BA00000000000000000002 /* BallastEngine */,
+				BA00000000000000000003 /* Shared */,
+			);
+			name = Ballast;
+			productName = Ballast;
+			productReference = BA00000000000000000030 /* Ballast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA00000000000000000042 /* BallastWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA00000000000000000052 /* Build configuration list for PBXNativeTarget "BallastWidget" */;
+			buildPhases = (
+				BA00000000000000000014 /* Sources */,
+				BA00000000000000000015 /* Frameworks */,
+				BA00000000000000000016 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				BA00000000000000000001 /* Ballast */,
+				BA00000000000000000004 /* BallastWidget */,
 				BA00000000000000000002 /* BallastEngine */,
+				BA00000000000000000003 /* Shared */,
 			);
-			name = Ballast;
-			productName = Ballast;
-			productReference = BA00000000000000000030 /* Ballast.app */;
-			productType = "com.apple.product-type.application";
+			name = BallastWidget;
+			productName = BallastWidget;
+			productReference = BA00000000000000000031 /* BallastWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -97,6 +171,7 @@
 			projectRoot = "";
 			targets = (
 				BA00000000000000000040 /* Ballast */,
+				BA00000000000000000042 /* BallastWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -109,10 +184,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA00000000000000000016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA00000000000000000011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA00000000000000000014 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -179,6 +268,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Ballast;
 				INFOPLIST_KEY_NSMotionUsageDescription = "Ballast uses the motion sensor to notice when you pick your phone up. It reads movement, nothing else.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -206,6 +296,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Ballast;
 				INFOPLIST_KEY_NSMotionUsageDescription = "Ballast uses the motion sensor to notice when you pick your phone up. It reads movement, nothing else.";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -215,6 +306,54 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.ballast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BA00000000000000000064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "BallastWidget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Ballast;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = app.ballast.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BA00000000000000000065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "BallastWidget-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Ballast;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = app.ballast.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -238,6 +377,15 @@
 			buildConfigurations = (
 				BA00000000000000000060 /* Debug */,
 				BA00000000000000000061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA00000000000000000052 /* Build configuration list for PBXNativeTarget "BallastWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA00000000000000000064 /* Debug */,
+				BA00000000000000000065 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

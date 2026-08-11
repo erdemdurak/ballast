@@ -26,6 +26,7 @@ final class AppModel {
 
     let store: Store
     let detector = MotionDetector()
+    let liveActivity = LiveActivityController()
 
     private var timer: Timer?
     private let callObserver = CXCallObserver()
@@ -105,6 +106,8 @@ final class AppModel {
         startClock()
         UIApplication.shared.isIdleTimerDisabled = true
         send(.startSession(task: draft.task, config: config), at: now)
+        liveActivity.start(task: draft.task, armedAt: armedAtDate)
+        syncActivity()
     }
 
     func end() {
@@ -114,6 +117,7 @@ final class AppModel {
         detector.stop()
         stopClock()
         UIApplication.shared.isIdleTimerDisabled = false
+        liveActivity.end()
     }
 
     /// iOS suspends accelerometer delivery outside the foreground, so a session that
@@ -160,6 +164,17 @@ final class AppModel {
         let (next, effects) = reduce(state, event, now)
         state = next
         for effect in effects { apply(effect, at: now, anchorBefore: anchorBefore) }
+        if case .tick = event {} else { syncActivity() }
+    }
+
+    /// When the next pick-up starts asking, as a wall-clock date for the Lock Screen.
+    private var armedAtDate: Date? {
+        state.anchor.map { Date(timeIntervalSince1970: $0 + state.config.interval) }
+    }
+
+    private func syncActivity() {
+        guard state.sessionStart != nil else { return }
+        liveActivity.update(armedAt: armedAtDate, asking: state.isAsking)
     }
 
     private func apply(_ effect: Effect, at now: TimeInterval, anchorBefore: TimeInterval?) {
