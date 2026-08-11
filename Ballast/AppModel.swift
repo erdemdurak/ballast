@@ -56,8 +56,22 @@ final class AppModel {
         // After resume: draining first would clear the timestamp with no session
         // to receive it.
         if let open = store.open {
-            resume(open)
-            drainMonitorSlip()
+            // A session whose deadline has passed should not still be asking. Close it
+            // on launch instead of leaving a queue nobody can reach a button to cancel.
+            let deadline = open.startedAt + Double(open.durationMin) * 60
+            if Date().timeIntervalSince1970 > deadline {
+                closed = store.end(at: deadline)
+                notifications.cancel()
+                SharedState.sessionActive = false
+                route = .closed
+            } else {
+                resume(open)
+                drainMonitorSlip()
+            }
+        } else {
+            // No session, no reminders. Anything still queued is from a build or a
+            // session that no longer exists.
+            notifications.cancel()
         }
     }
 

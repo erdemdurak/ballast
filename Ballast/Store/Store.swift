@@ -28,6 +28,26 @@ struct SessionRecord: Codable, Identifiable {
     /// Int8 per 5 s bucket, capped magnitude.
     var trace: [Int8] = []
 
+    /// Records written before a field existed must still load. A stored session that
+    /// cannot be decoded is a session the user cannot end — and its reminders keep
+    /// arriving with no way to stop them.
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = try c.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        task = try c.decodeIfPresent(String.self, forKey: .task) ?? ""
+        startedAt = try c.decodeIfPresent(TimeInterval.self, forKey: .startedAt) ?? 0
+        durationMin = try c.decodeIfPresent(Int.self, forKey: .durationMin) ?? 60
+        endedAt = try c.decodeIfPresent(TimeInterval.self, forKey: .endedAt)
+        events = try c.decodeIfPresent([Ev].self, forKey: .events) ?? []
+        trace = try c.decodeIfPresent([Int8].self, forKey: .trace) ?? []
+    }
+
+    init(task: String = "", startedAt: TimeInterval = 0, durationMin: Int = 60) {
+        self.task = task
+        self.startedAt = startedAt
+        self.durationMin = durationMin
+    }
+
     var length: TimeInterval { (endedAt ?? startedAt) - startedAt }
     func count(_ kind: RecordKind) -> Int { events.filter { $0.type == kind }.count }
 }
