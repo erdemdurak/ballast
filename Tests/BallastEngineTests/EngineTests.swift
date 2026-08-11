@@ -207,3 +207,39 @@ private struct Row {
         #expect(effects.isEmpty, "\(event)")
     }
 }
+
+// MARK: - Interruptions
+
+@Test func tallyCountsPerApp() {
+    let entries = ["0:100", "1:110", "0:120", "0:130", "2:140", "1:150"]
+    #expect(
+        tallyInterruptions(entries) == [
+            Interruption(index: 0, count: 3),
+            Interruption(index: 1, count: 2),
+            Interruption(index: 2, count: 1),
+        ])
+}
+
+@Test func tiesBreakOnIndexSoRowsDoNotSwap() {
+    // Dictionary order is not stable; without the tie-break these two could trade
+    // places between redraws.
+    let once = tallyInterruptions(["3:1", "1:2"])
+    #expect(once == [Interruption(index: 1, count: 1), Interruption(index: 3, count: 1)])
+    for _ in 0..<50 {
+        #expect(tallyInterruptions(["3:1", "1:2"]) == once)
+    }
+}
+
+@Test func malformedEntriesAreDropped() {
+    // The monitor is another process; this input is not ours to trust.
+    let entries = ["", ":", "x:1", "-2:5", "0:1", "abc", "1:2:3"]
+    #expect(
+        tallyInterruptions(entries) == [
+            Interruption(index: 0, count: 1),
+            Interruption(index: 1, count: 1),
+        ])
+}
+
+@Test func anEmptySessionTalliesNothing() {
+    #expect(tallyInterruptions([]).isEmpty)
+}

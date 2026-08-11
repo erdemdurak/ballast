@@ -57,14 +57,9 @@ enum SharedState {
     static func clearInterruptions() { interruptions = [] }
 
     /// (appIndex, count) for the current session, most interrupted first.
-    static func interruptionCounts() -> [(index: Int, count: Int)] {
-        var tally: [Int: Int] = [:]
-        for entry in interruptions {
-            guard let index = Int(entry.split(separator: ":").first ?? "") else { continue }
-            tally[index, default: 0] += 1
-        }
-        return tally.map { (index: $0.key, count: $0.value) }
-            .sorted { $0.count > $1.count }
+    /// The tally itself lives in the engine, where it is tested.
+    static func interruptionCounts() -> [Interruption] {
+        tallyInterruptions(interruptions)
     }
 
     /// Whether a session is running. The monitor stays silent otherwise.

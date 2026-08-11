@@ -8,7 +8,6 @@
 "setup.sub" = "何もブロックしません。あとでまた手に取ったとき、ひとことだけ尋ねます。";
 "setup.task.label" = "いまの作業";
 "setup.task.placeholder" = "化学のレポートを仕上げる";
-"setup.interval" = "尋ねるまでの間隔";
 "setup.start" = "はじめる";
 "session.anchor" = "いま向き合っているのは";
 "session.armedIn" = "次に尋ねるまで";
@@ -25,9 +24,7 @@
 "ask.through" = "このまま続ける";
 "ask.through.held" = "このまま続ける（%lld）";
 "closed.title" = "おわりました";
-"closed.down" = "置いた";
 "closed.next" = "次を決める";
-"perm.usage.pre" = "フィードのアプリが開かれたことをBallastが自分で気づけるようにします。一覧はこの端末から出ません。";
 "empty.noSessions" = "まだ記録はありません。ひとつ決めて、はじめましょう。";
 "session.inSession" = "作業中";
 "setup.recent" = "履歴";
@@ -46,7 +43,6 @@
 "setup.feeds.pick" = "アプリを選ぶ";
 "perm.screentime.pre" = "フィードのアプリが1分開かれたことを、Screen TimeからBallastに知らせてもらいます。Appleが返すのは匿名の識別子で、どのアプリを選んだかBallastにはわかりません。";
 "setup.duration" = "かける時間";
-"session.leftOnWork" = "残り %lld 分";
 "notif.remaining" = "残り %lld 分：%@。終わりましたか。";
 "notif.overrun" = "時間になりました：%@。終わりましたか。";
 "live.done" = "終わりましたか。";
@@ -55,3 +51,5 @@
 "closed.interruptedBy" = "途切れたきっかけ";
 "setup.steps" = "アプリごとに数える中断の回数";
 "setup.steps.hint" = "1回が1分の利用にあたります。長い作業で数が止まるなら増やし、Screen Timeが始まらないなら減らしてください。";
+"setup.wipe" = "履歴をすべて消す";
+"error.load" = "以前の記録を読み込めませんでした。下の一覧は不完全かもしれません。";

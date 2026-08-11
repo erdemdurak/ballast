@@ -20,6 +20,9 @@ struct SessionRecord: Codable, Identifiable {
     var id = UUID()
     var task = ""
     var startedAt: TimeInterval = 0
+    /// Frozen at the start. Reading the live preference meant moving the slider
+    /// mid-session moved the deadline underneath the user.
+    var durationMin: Int = 60
     var endedAt: TimeInterval?
     var events: [Ev] = []
     /// Int8 per 5 s bucket, capped magnitude.
@@ -55,8 +58,8 @@ final class Store {
         persist()
     }
 
-    func begin(task: String, at t: TimeInterval) {
-        open = SessionRecord(task: task, startedAt: t)
+    func begin(task: String, durationMin: Int, at t: TimeInterval) {
+        open = SessionRecord(task: task, startedAt: t, durationMin: durationMin)
         persist()
     }
 

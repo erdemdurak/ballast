@@ -8,7 +8,6 @@
 "setup.sub" = "Rien n'est bloqué. Quand tu reprends ton téléphone, ceci te pose une seule question.";
 "setup.task.label" = "Ta tâche";
 "setup.task.placeholder" = "Finir le compte rendu de chimie";
-"setup.interval" = "Attendre avant de demander";
 "setup.start" = "Commencer";
 "session.anchor" = "Tu voulais";
 "session.armedIn" = "Question dans";
@@ -25,9 +24,7 @@
 "ask.through" = "Continuer";
 "ask.through.held" = "Continuer dans %lld";
 "closed.title" = "Séance terminée";
-"closed.down" = "Reposé";
 "closed.next" = "Définir la suivante";
-"perm.usage.pre" = "Laisse Hold Focus voir quand une appli de fil s'ouvre, pour ne pas avoir à le dire toi-même. La liste reste sur ce téléphone.";
 "empty.noSessions" = "Aucune séance. Nomme quelque chose et commence.";
 "session.inSession" = "En cours";
 "setup.recent" = "Récent";
@@ -46,7 +43,6 @@
 "setup.feeds.pick" = "Choisir des applis";
 "perm.screentime.pre" = "Hold Focus demande à Screen Time de le prévenir quand une appli de fil est restée ouverte une minute. Apple renvoie des jetons anonymes — Hold Focus n'apprend jamais quelles applis tu as choisies.";
 "setup.duration" = "Durée prévue du travail";
-"session.leftOnWork" = "%lld min restantes";
 "notif.remaining" = "Encore %lld minutes pour : %@. C'est fini ?";
 "notif.overrun" = "Le temps est écoulé pour : %@. C'est fini ?";
 "live.done" = "C'est fini ?";
@@ -55,3 +51,5 @@
 "closed.interruptedBy" = "Voilà ce qui t'a coupé";
 "setup.steps" = "Interruptions comptées par appli";
 "setup.steps.hint" = "Chacune vaut une minute d'usage. Augmente si une longue séance cesse d'être comptée, diminue si Screen Time refuse de démarrer.";
+"setup.wipe" = "Effacer l'historique";
+"error.load" = "Les séances précédentes n'ont pas pu être lues ; la liste ci-dessous peut être incomplète.";

@@ -8,7 +8,6 @@
 "setup.sub" = "不会拦住任何东西。等你再拿起手机时，这里只问一句。";
 "setup.task.label" = "你的任务";
 "setup.task.placeholder" = "写完化学实验报告";
-"setup.interval" = "多久后再问";
 "setup.start" = "开始";
 "session.anchor" = "你说要";
 "session.armedIn" = "距离下次询问";
@@ -25,9 +24,7 @@
 "ask.through" = "继续";
 "ask.through.held" = "继续（%lld）";
 "closed.title" = "本次结束";
-"closed.down" = "放下了";
 "closed.next" = "写下一件";
-"perm.usage.pre" = "让 Hold Focus 自己看到信息流应用何时打开，你就不用告诉它。名单不会离开这台手机。";
 "empty.noSessions" = "还没有记录。写下一件事，开始吧。";
 "session.inSession" = "进行中";
 "setup.recent" = "最近";
@@ -46,7 +43,6 @@
 "setup.feeds.pick" = "选择应用";
 "perm.screentime.pre" = "Hold Focus 请 Screen Time 在某个信息流应用打开满一分钟时告知。Apple 返回的是匿名标识，Hold Focus 始终不知道你选了哪些应用。";
 "setup.duration" = "这件事打算做多久";
-"session.leftOnWork" = "还剩 %lld 分钟";
 "notif.remaining" = "还剩 %lld 分钟：%@。做完了吗？";
 "notif.overrun" = "时间到了：%@。做完了吗？";
 "live.done" = "做完了吗？";
@@ -55,3 +51,5 @@
 "closed.interruptedBy" = "打断你的是这些";
 "setup.steps" = "每个应用记录的打断次数";
 "setup.steps.hint" = "每一次代表一分钟使用。长时间工作不再计数就调高，Screen Time 无法启动就调低。";
+"setup.wipe" = "清除全部记录";
+"error.load" = "无法读取此前的记录，下面的列表可能不完整。";

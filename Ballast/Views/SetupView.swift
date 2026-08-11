@@ -183,6 +183,18 @@ struct SetupView: View {
                     }
                     Divider().overlay(Token.line)
                 }
+                // No confirmation gauntlet, per §3.
+                Button(S.t("setup.wipe")) { model.store.wipe() }
+                    .font(Face.body(14))
+                    .foregroundStyle(Token.slip)
+                    .frame(minHeight: Token.minTarget)
+            }
+            if let failure = model.store.loadError {
+                Text(S.t("error.load"))
+                    .font(Face.body(13))
+                    .foregroundStyle(Token.slip)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityHint(failure)
             }
         }
     }

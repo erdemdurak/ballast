@@ -28,15 +28,6 @@ struct SessionView: View {
                     .buttonStyle(OutlineButtonStyle(color: Token.slip))
             }
 
-            VStack(alignment: .leading, spacing: 4) {
-                Eyebrow(
-                    text: "Reminders · \(model.notifications.status)",
-                    color: model.notifications.status.contains("queued")
-                        ? Token.calm : Token.slip)
-                Eyebrow(
-                    text: "Lock screen · \(model.liveActivity.status)",
-                    color: model.liveActivity.status == "on" ? Token.calm : Token.slip)
-            }
         }
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

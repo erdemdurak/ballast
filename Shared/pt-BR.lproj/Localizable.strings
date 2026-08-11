@@ -8,7 +8,6 @@
 "setup.sub" = "Nada é bloqueado. Quando você pegar o celular de novo, isto faz uma única pergunta.";
 "setup.task.label" = "Sua tarefa";
 "setup.task.placeholder" = "Terminar o relatório de química";
-"setup.interval" = "Esperar antes de perguntar";
 "setup.start" = "Começar";
 "session.anchor" = "Você ia";
 "session.armedIn" = "Pergunta em";
@@ -25,9 +24,7 @@
 "ask.through" = "Seguir";
 "ask.through.held" = "Seguir em %lld";
 "closed.title" = "Sessão encerrada";
-"closed.down" = "Deixou de lado";
 "closed.next" = "Escreva a próxima";
-"perm.usage.pre" = "Deixe o Hold Focus ver quando um app de feed abre, assim você não precisa avisar. A lista fica neste celular.";
 "empty.noSessions" = "Nenhuma sessão ainda. Escreva algo e comece.";
 "session.inSession" = "Em andamento";
 "setup.recent" = "Recentes";
@@ -46,7 +43,6 @@
 "setup.feeds.pick" = "Escolher apps";
 "perm.screentime.pre" = "O Hold Focus pede ao Screen Time que avise quando um app de feed ficou um minuto aberto. A Apple devolve identificadores anônimos — o Hold Focus nunca sabe quais apps você escolheu.";
 "setup.duration" = "Quanto o trabalho deve levar";
-"session.leftOnWork" = "%lld min restantes";
 "notif.remaining" = "Faltam %lld minutos para: %@. Já terminou?";
 "notif.overrun" = "O tempo acabou para: %@. Já terminou?";
 "live.done" = "Já terminou?";
@@ -55,3 +51,5 @@
 "closed.interruptedBy" = "Foi isto que te cortou";
 "setup.steps" = "Interrupções contadas por app";
 "setup.steps.hint" = "Cada uma vale um minuto de uso. Aumente se uma sessão longa parar de contar, diminua se o Screen Time não iniciar.";
+"setup.wipe" = "Apagar o histórico";
+"error.load" = "Não foi possível ler as sessões anteriores; a lista abaixo pode estar incompleta.";

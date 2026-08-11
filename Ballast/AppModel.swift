@@ -104,7 +104,7 @@ final class AppModel {
         guard !draft.task.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         store.save(prefs: draft)
         let now = Date().timeIntervalSince1970
-        store.begin(task: draft.task, at: now)
+        store.begin(task: draft.task, durationMin: draft.durationMin, at: now)
         closed = nil
         awayTotal = 0
         awaySince = nil
@@ -182,7 +182,8 @@ final class AppModel {
     /// When the work is due. Held on the store so it survives process death.
     var endsAtDate: Date? {
         guard let start = state.sessionStart else { return nil }
-        return Date(timeIntervalSince1970: start + Double(draft.durationMin) * 60)
+        let minutes = store.open?.durationMin ?? closed?.durationMin ?? draft.durationMin
+        return Date(timeIntervalSince1970: start + Double(minutes) * 60)
     }
 
     /// Minutes left on the work, for the reminder copy.

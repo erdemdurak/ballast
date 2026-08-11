@@ -8,7 +8,6 @@
 "setup.sub" = "لا شيء يُحجب. حين تعود إلى هاتفك، يسألك هذا سؤالًا واحدًا.";
 "setup.task.label" = "مهمتك";
 "setup.task.placeholder" = "إنهاء تقرير الكيمياء";
-"setup.interval" = "الانتظار قبل السؤال";
 "setup.start" = "ابدأ";
 "session.anchor" = "قلت إنك ستقوم بـ";
 "session.armedIn" = "السؤال بعد";
@@ -25,9 +24,7 @@
 "ask.through" = "تابع";
 "ask.through.held" = "تابع بعد %lld";
 "closed.title" = "انتهت الجلسة";
-"closed.down" = "وُضع جانبًا";
 "closed.next" = "حدّد التالي";
-"perm.usage.pre" = "دع Hold Focus يرى بنفسه متى يُفتح تطبيق تصفح، حتى لا تضطر لإخباره. تبقى القائمة على هذا الهاتف.";
 "empty.noSessions" = "لا جلسات بعد. اكتب شيئًا وابدأ.";
 "session.inSession" = "قيد العمل";
 "setup.recent" = "الأخيرة";
@@ -46,7 +43,6 @@
 "setup.feeds.pick" = "اختر التطبيقات";
 "perm.screentime.pre" = "يطلب Hold Focus من Screen Time إخباره حين يبقى تطبيق تصفح مفتوحًا دقيقة. تعيد Apple معرّفات مجهولة — لا يعرف Hold Focus أبدًا أي تطبيقات اخترت.";
 "setup.duration" = "كم ينبغي أن يستغرق العمل";
-"session.leftOnWork" = "بقيت %lld دقيقة";
 "notif.remaining" = "بقيت %lld دقيقة على: %@. هل انتهى؟";
 "notif.overrun" = "انتهى الوقت المخصص لـ: %@. هل انتهى؟";
 "live.done" = "هل انتهى؟";
@@ -55,3 +51,5 @@
 "closed.interruptedBy" = "هذه ما قطعت عملك";
 "setup.steps" = "عدد المقاطعات المحسوبة لكل تطبيق";
 "setup.steps.hint" = "كل واحدة تعادل دقيقة استخدام. ارفعها إذا توقف العدّ في جلسة طويلة، واخفضها إذا لم يبدأ Screen Time.";
+"setup.wipe" = "امسح كل السجل";
+"error.load" = "تعذّرت قراءة الجلسات السابقة، وقد تكون القائمة أدناه ناقصة.";

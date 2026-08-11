@@ -2,7 +2,6 @@
 "setup.sub" = "Nothing gets blocked. When you pick up after a scroll, this asks you one question.";
 "setup.task.label" = "Your task";
 "setup.task.placeholder" = "Finish the chemistry lab write-up";
-"setup.interval" = "Wait before asking";
 "setup.start" = "Start";
 
 "session.anchor" = "You said you'd";
@@ -22,10 +21,8 @@
 "ask.through.held" = "Carry on in %lld";
 
 "closed.title" = "Session closed";
-"closed.down" = "Put it down";
 "closed.next" = "Set the next one";
 
-"perm.usage.pre" = "Let Hold Focus see when a feed app opens, so you don't have to tell it. The list stays on this phone.";
 
 "empty.noSessions" = "No sessions yet. Name something and start.";
 
@@ -56,7 +53,6 @@
 
 /* The work itself, not the interval. This is the countdown the user watches. */
 "setup.duration" = "How long the work should take";
-"session.leftOnWork" = "%lld min left";
 "notif.remaining" = "%lld minutes left on: %@. Done?";
 "notif.overrun" = "Time is up on: %@. Done?";
 "live.done" = "Is this done?";
@@ -67,3 +63,5 @@
 "closed.interruptedBy" = "You broke off for these";
 "setup.steps" = "Interruptions counted per app";
 "setup.steps.hint" = "Each one is a minute of use. Raise it if a long session stops counting, lower it if Screen Time refuses to start.";
+"setup.wipe" = "Erase all history";
+"error.load" = "Earlier sessions could not be read, so the list below may be incomplete.";

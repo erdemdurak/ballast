@@ -8,7 +8,6 @@
 "setup.sub" = "Hiçbir şey engellenmez. Sen işine dönerken bu, sana tek bir soru sorar.";
 "setup.task.label" = "İşin";
 "setup.task.placeholder" = "Kimya raporunu bitir";
-"setup.interval" = "Sormadan önce bekle";
 "setup.start" = "Başlat";
 "session.anchor" = "Şunu yapacaktın";
 "session.armedIn" = "Soruya kalan";
@@ -25,9 +24,7 @@
 "ask.through" = "Devam et";
 "ask.through.held" = "Devam et — %lld";
 "closed.title" = "Oturum kapandı";
-"closed.down" = "Bırakıldı";
 "closed.next" = "Sıradakini yaz";
-"perm.usage.pre" = "Bir akış uygulaması açıldığında Hold Focus bunu kendisi görsün, sen söylemek zorunda kalma. Liste bu telefondan çıkmaz.";
 "empty.noSessions" = "Henüz oturum yok. Bir şey yaz ve başla.";
 "session.inSession" = "Oturumda";
 "setup.recent" = "Son oturumlar";
@@ -46,7 +43,6 @@
 "setup.feeds.pick" = "Uygulama seç";
 "perm.screentime.pre" = "Hold Focus, bir akış uygulamasının bir dakikadır açık olduğunu Screen Time'dan öğrenir. Apple anonim işaretler döndürür — Hold Focus hangi uygulamaları seçtiğini hiçbir zaman öğrenmez.";
 "setup.duration" = "İş ne kadar sürmeli";
-"session.leftOnWork" = "%lld dk kaldı";
 "notif.remaining" = "%lld dakika kaldı: %@. Bitti mi?";
 "notif.overrun" = "Süre doldu: %@. Bitti mi?";
 "live.done" = "Bitti mi?";
@@ -55,3 +51,5 @@
 "closed.interruptedBy" = "İşini bunlar böldü";
 "setup.steps" = "Uygulama başına sayılan bölünme";
 "setup.steps.hint" = "Her biri bir dakikalık kullanım demek. Uzun oturumda saymayı bırakırsa artır, Screen Time başlamazsa azalt.";
+"setup.wipe" = "Tüm geçmişi sil";
+"error.load" = "Önceki oturumlar okunamadı, aşağıdaki liste eksik olabilir.";
