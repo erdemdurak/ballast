@@ -53,3 +53,16 @@
 "setup.steps.hint" = "Ognuna vale un minuto d'uso. Alza se una sessione lunga smette di contare, abbassa se Screen Time non parte.";
 "setup.wipe" = "Cancella lo storico";
 "error.load" = "Non è stato possibile leggere le sessioni precedenti; l'elenco qui sotto può essere incompleto.";
+
+/* Screen Time status, the immediate slip alarm, and session completion. */
+"status.notSetUp" = "non configurato";
+"status.denied" = "negato";
+"status.notAllowed" = "non consentito";
+"status.noApps" = "nessuna app scelta";
+"status.chosen" = "%lld scelte";
+"status.watching" = "%lld osservate";
+"status.failed" = "avvio non riuscito";
+"notif.slipNow" = "Ne hai aperta una. Volevi: %@";
+"closed.markDone" = "Segna come fatto";
+"recent.done" = "fatto";
+"recent.unfinished" = "non finito";

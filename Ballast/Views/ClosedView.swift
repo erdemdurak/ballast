@@ -41,8 +41,16 @@ struct ClosedView: View {
 
             Spacer()
 
-            Button(S.t("closed.next")) { model.newSession() }
-                .buttonStyle(FilledButtonStyle())
+            VStack(spacing: 12) {
+                if let record, !record.completed {
+                    Button(S.t("closed.markDone")) { model.markDone() }
+                        .buttonStyle(FilledButtonStyle())
+                } else {
+                    Eyebrow(text: S.t("recent.done"), color: Token.calm)
+                }
+                Button(S.t("closed.next")) { model.newSession() }
+                    .buttonStyle(OutlineButtonStyle())
+            }
         }
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

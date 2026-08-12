@@ -78,15 +78,19 @@ struct SetupView: View {
             HStack {
                 Eyebrow(text: S.t("setup.duration"))
                 Spacer()
-                Text("\(model.draft.durationMin) min")
+                Text(S.duration(minutes: model.draft.durationMin))
                     .font(Face.data(13, .medium))
                     .foregroundStyle(Token.ink)
             }
             Slider(
                 value: Binding(
-                    get: { Double(model.draft.durationMin) },
-                    set: { model.draft.durationMin = Int($0) }),
-                in: 15...240, step: 15
+                    get: {
+                        Double(
+                            Constants.durationSteps.firstIndex(of: model.draft.durationMin)
+                                ?? Constants.durationSteps.firstIndex(of: 60) ?? 5)
+                    },
+                    set: { model.draft.durationMin = Constants.durationSteps[Int($0)] }),
+                in: 0...Double(Constants.durationSteps.count - 1), step: 1
             )
             .tint(Token.ink)
         }
@@ -176,10 +180,11 @@ struct SetupView: View {
                             .lineLimit(1)
                         Spacer()
                         Text(
-                            "\(clock(session.length)) · \(session.count(.down))/\(session.count(.nudge))"
+                            session.completed
+                                ? S.t("recent.done") : S.t("recent.unfinished")
                         )
                         .font(Face.data(13))
-                        .foregroundStyle(Token.mute)
+                        .foregroundStyle(session.completed ? Token.calm : Token.slip)
                     }
                     Divider().overlay(Token.line)
                 }

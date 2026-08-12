@@ -53,3 +53,16 @@
 "setup.steps.hint" = "Her biri bir dakikalık kullanım demek. Uzun oturumda saymayı bırakırsa artır, Screen Time başlamazsa azalt.";
 "setup.wipe" = "Tüm geçmişi sil";
 "error.load" = "Önceki oturumlar okunamadı, aşağıdaki liste eksik olabilir.";
+
+/* Screen Time status, the immediate slip alarm, and session completion. */
+"status.notSetUp" = "kurulmadı";
+"status.denied" = "reddedildi";
+"status.notAllowed" = "izin yok";
+"status.noApps" = "uygulama seçilmedi";
+"status.chosen" = "%lld seçili";
+"status.watching" = "%lld izleniyor";
+"status.failed" = "başlatılamadı";
+"notif.slipNow" = "Bunlardan birini açtın. Şunu yapacaktın: %@";
+"closed.markDone" = "Bitti olarak işaretle";
+"recent.done" = "bitti";
+"recent.unfinished" = "bitmedi";

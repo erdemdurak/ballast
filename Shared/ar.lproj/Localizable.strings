@@ -53,3 +53,16 @@
 "setup.steps.hint" = "كل واحدة تعادل دقيقة استخدام. ارفعها إذا توقف العدّ في جلسة طويلة، واخفضها إذا لم يبدأ Screen Time.";
 "setup.wipe" = "امسح كل السجل";
 "error.load" = "تعذّرت قراءة الجلسات السابقة، وقد تكون القائمة أدناه ناقصة.";
+
+/* Screen Time status, the immediate slip alarm, and session completion. */
+"status.notSetUp" = "غير مُعد";
+"status.denied" = "مرفوض";
+"status.notAllowed" = "لا يوجد إذن";
+"status.noApps" = "لم تُختر تطبيقات";
+"status.chosen" = "%lld مختارة";
+"status.watching" = "مراقبة %lld";
+"status.failed" = "تعذّر البدء";
+"notif.slipNow" = "فتحت واحدًا منها للتو. قلت إنك ستقوم بـ: %@";
+"closed.markDone" = "ضع علامة تم";
+"recent.done" = "تم";
+"recent.unfinished" = "غير مكتمل";

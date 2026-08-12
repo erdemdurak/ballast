@@ -39,6 +39,9 @@ public enum Event: Equatable, Sendable {
     case endSession
     case slip
     case pickup
+    /// The user tapped a reminder. The question was already asked; refusing to show
+    /// it because an interval or cooldown says so leaves a tap that does nothing.
+    case askNow
     case tick
     case dismiss(Dismissal)
     case callChanged(Bool)

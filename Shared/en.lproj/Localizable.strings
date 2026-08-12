@@ -65,3 +65,16 @@
 "setup.steps.hint" = "Each one is a minute of use. Raise it if a long session stops counting, lower it if Screen Time refuses to start.";
 "setup.wipe" = "Erase all history";
 "error.load" = "Earlier sessions could not be read, so the list below may be incomplete.";
+
+/* Screen Time status, the immediate slip alarm, and session completion. */
+"status.notSetUp" = "not set up";
+"status.denied" = "denied";
+"status.notAllowed" = "not allowed";
+"status.noApps" = "no apps chosen";
+"status.chosen" = "%lld chosen";
+"status.watching" = "watching %lld";
+"status.failed" = "could not start";
+"notif.slipNow" = "You opened one of these. You said you'd: %@";
+"closed.markDone" = "Mark it done";
+"recent.done" = "done";
+"recent.unfinished" = "unfinished";

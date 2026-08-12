@@ -243,3 +243,27 @@ private struct Row {
 @Test func anEmptySessionTalliesNothing() {
     #expect(tallyInterruptions([]).isEmpty)
 }
+
+// MARK: - Tapping a reminder
+
+@Test func askNowAlwaysOpensTheQuestion() {
+    // The reminder already asked; a tap that silently does nothing is worse than
+    // no reminder at all. No interval, no cooldown, no anchor required.
+    let fresh = run([start(.any)])
+    let (asked, effects) = reduce(fresh, .askNow, t0 + 5)
+    #expect(asks(effects))
+    #expect(records(effects, .nudge))
+    #expect(asked.phase(at: t0 + 5) == .asking)
+}
+
+@Test func askNowIsIgnoredWithoutASession() {
+    let (s, effects) = reduce(SessionState(), .askNow, t0)
+    #expect(effects.isEmpty)
+    #expect(s == SessionState())
+}
+
+@Test func askNowDoesNotStackOnAnOpenQuestion() {
+    let asking = run([start(.any), (.pickup, t0 + 20 * min)])
+    let (_, effects) = reduce(asking, .askNow, t0 + 20 * min + 1)
+    #expect(effects.isEmpty)
+}

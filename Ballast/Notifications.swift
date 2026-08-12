@@ -81,20 +81,6 @@ final class Notifications: NSObject {
             fire = fire.addingTimeInterval(interval)
         }
 
-        // One last word when the time is up, then silence until the next session.
-        if let endsAt, endsAt > now {
-            let content = UNMutableNotificationContent()
-            content.title = S.t("ask.title")
-            content.body = S.t("notif.overrun", task)
-            content.sound = .default
-            content.interruptionLevel = .timeSensitive
-            center.add(
-                UNNotificationRequest(
-                    identifier: "ballast.question.final",
-                    content: content,
-                    trigger: UNTimeIntervalNotificationTrigger(
-                        timeInterval: endsAt.timeIntervalSince(now), repeats: false)))
-        }
         refreshStatus()
     }
 

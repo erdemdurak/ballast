@@ -53,3 +53,16 @@
 "setup.steps.hint" = "Каждый — это минута использования. Увеличь, если длинная сессия перестаёт считаться; уменьши, если Screen Time не запускается.";
 "setup.wipe" = "Удалить историю";
 "error.load" = "Прошлые сессии не удалось прочитать — список ниже может быть неполным.";
+
+/* Screen Time status, the immediate slip alarm, and session completion. */
+"status.notSetUp" = "не настроено";
+"status.denied" = "отказано";
+"status.notAllowed" = "нет доступа";
+"status.noApps" = "приложения не выбраны";
+"status.chosen" = "выбрано %lld";
+"status.watching" = "наблюдение за %lld";
+"status.failed" = "не удалось запустить";
+"notif.slipNow" = "Ты открыл одно из них. Ты собирался: %@";
+"closed.markDone" = "Отметить выполненным";
+"recent.done" = "готово";
+"recent.unfinished" = "не закончено";

@@ -63,6 +63,16 @@ public func reduce(_ state: SessionState, _ event: Event, _ now: TimeInterval) -
             .present(.asking(holdSeconds: s.config.holdSeconds)),
         ])
 
+    case .askNow:
+        guard s.sessionStart != nil, !s.isAsking else { return (state, []) }
+        s.lastNudge = now
+        if s.config.mode == .slip { s.lastSlip = nil }
+        s.isAsking = true
+        return (s, [
+            .record(.nudge, at: now),
+            .present(.asking(holdSeconds: s.config.holdSeconds)),
+        ])
+
     case .tick:
         // The phase is derived, so a tick changes nothing. It exists for the countdown.
         return (state, [])

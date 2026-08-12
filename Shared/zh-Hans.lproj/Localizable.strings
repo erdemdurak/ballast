@@ -53,3 +53,16 @@
 "setup.steps.hint" = "每一次代表一分钟使用。长时间工作不再计数就调高，Screen Time 无法启动就调低。";
 "setup.wipe" = "清除全部记录";
 "error.load" = "无法读取此前的记录，下面的列表可能不完整。";
+
+/* Screen Time status, the immediate slip alarm, and session completion. */
+"status.notSetUp" = "未设置";
+"status.denied" = "已拒绝";
+"status.notAllowed" = "没有权限";
+"status.noApps" = "未选择应用";
+"status.chosen" = "已选 %lld 个";
+"status.watching" = "正在留意 %lld 个";
+"status.failed" = "无法启动";
+"notif.slipNow" = "你刚打开了其中一个。你说要：%@";
+"closed.markDone" = "标记为完成";
+"recent.done" = "已完成";
+"recent.unfinished" = "未完成";

@@ -53,3 +53,16 @@
 "setup.steps.hint" = "1回が1分の利用にあたります。長い作業で数が止まるなら増やし、Screen Timeが始まらないなら減らしてください。";
 "setup.wipe" = "履歴をすべて消す";
 "error.load" = "以前の記録を読み込めませんでした。下の一覧は不完全かもしれません。";
+
+/* Screen Time status, the immediate slip alarm, and session completion. */
+"status.notSetUp" = "未設定";
+"status.denied" = "許可されていません";
+"status.notAllowed" = "権限なし";
+"status.noApps" = "アプリ未選択";
+"status.chosen" = "%lld 件選択";
+"status.watching" = "%lld 件を見守り中";
+"status.failed" = "開始できません";
+"notif.slipNow" = "いま開きましたね。向き合っていたのは：%@";
+"closed.markDone" = "できたことにする";
+"recent.done" = "完了";
+"recent.unfinished" = "途中";

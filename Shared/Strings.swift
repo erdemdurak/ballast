@@ -3,6 +3,12 @@ import Foundation
 /// Every user-visible string comes from here. Anything with a number is a format
 /// template — never concatenate.
 enum S {
+    /// "45 min", "1 hr 15 min" — in the reader's own language.
+    static func duration(minutes: Int) -> String {
+        Duration.seconds(minutes * 60)
+            .formatted(.units(allowed: [.hours, .minutes], width: .abbreviated))
+    }
+
     /// Minutes as the current locale writes them — "1 minute", "8 minutes",
     /// "1 Minute", "8 dakika". Formatting the number into the sentence by hand is
     /// what produced "1 minutes" in every language at once.

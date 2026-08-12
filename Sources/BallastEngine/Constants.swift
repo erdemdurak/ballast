@@ -11,6 +11,10 @@ public enum Constants {
     public static let nudgeCooldown: TimeInterval = 60
     /// One reach = one pick-up, not eight.
     public static let pickupDebounce: TimeInterval = 25
+    /// 5-minute steps up to an hour, then quarter hours. A linear slider spent most
+    /// of its travel on durations nobody picks.
+    public static let durationSteps = [5, 10, 15, 30, 45, 60, 75, 90, 120, 150, 180, 240]
+
     /// The friction itself.
     public static let hold: TimeInterval = 4
 }

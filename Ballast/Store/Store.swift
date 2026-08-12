@@ -27,6 +27,9 @@ struct SessionRecord: Codable, Identifiable {
     var events: [Ev] = []
     /// Int8 per 5 s bucket, capped magnitude.
     var trace: [Int8] = []
+    /// Only the user can say the work got done. Time running out is not the same
+    /// thing, and the history should not pretend otherwise.
+    var completed: Bool = false
 
     /// Records written before a field existed must still load. A stored session that
     /// cannot be decoded is a session the user cannot end — and its reminders keep
@@ -40,6 +43,7 @@ struct SessionRecord: Codable, Identifiable {
         endedAt = try c.decodeIfPresent(TimeInterval.self, forKey: .endedAt)
         events = try c.decodeIfPresent([Ev].self, forKey: .events) ?? []
         trace = try c.decodeIfPresent([Int8].self, forKey: .trace) ?? []
+        completed = try c.decodeIfPresent(Bool.self, forKey: .completed) ?? false
     }
 
     init(task: String = "", startedAt: TimeInterval = 0, durationMin: Int = 60) {
@@ -97,6 +101,13 @@ final class Store {
         prune()
         persist()
         return record
+    }
+
+    /// Marks the most recent session finished, once the user says so.
+    func markCompleted(_ id: UUID) {
+        guard let i = sessions.firstIndex(where: { $0.id == id }) else { return }
+        sessions[i].completed = true
+        persist()
     }
 
     func wipe() {

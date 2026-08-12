@@ -51,10 +51,17 @@ final class AppModel {
         UNUserNotificationCenter.current().delegate = notifications
         // Tapping the question is a pick-up: let the engine decide, exactly as it
         // does for a real one.
-        notifications.onOpen = { [weak self] in self?.send(.pickup) }
+        notifications.onOpen = { [weak self] in self?.send(.askNow) }
 
         // After resume: draining first would clear the timestamp with no session
         // to receive it.
+        // Choosing apps mid-session has to restart monitoring, or the new choice is
+        // watched only from the next session onwards.
+        screenTime.onSelectionChanged = { [weak self] in
+            guard let self, self.state.sessionStart != nil else { return }
+            self.screenTime.startMonitoring(stepsPerApp: self.draft.interruptionSteps)
+        }
+
         if let open = store.open {
             // A session whose deadline has passed should not still be asking. Close it
             // on launch instead of leaving a queue nobody can reach a button to cancel.
@@ -175,6 +182,13 @@ final class AppModel {
     func logSlip() { send(.slip) }
 
     func dismiss(_ how: Dismissal) { send(.dismiss(how)) }
+
+    /// Time running out is not the same as the work being done, so only this says so.
+    func markDone() {
+        guard let record = closed else { return }
+        store.markCompleted(record.id)
+        closed = store.sessions.first { $0.id == record.id }
+    }
 
     func newSession() {
         closed = nil

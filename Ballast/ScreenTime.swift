@@ -19,11 +19,18 @@ extension DeviceActivityEvent.Name {
 @Observable
 @MainActor
 final class ScreenTime {
+    /// Called when the watched apps change, so a session already running starts
+    /// watching the new choice instead of the old one.
+    var onSelectionChanged: (() -> Void)?
+
     var selection = FamilyActivitySelection() {
-        didSet { persist() }
+        didSet {
+            persist()
+            onSelectionChanged?()
+        }
     }
 
-    private(set) var status = "not set up"
+    private(set) var status = S.t("status.notSetUp")
 
     private let center = DeviceActivityCenter()
     private let storageKey = "ballast.selection"
@@ -63,7 +70,7 @@ final class ScreenTime {
             try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
             refreshStatus()
         } catch {
-            status = "denied"
+            status = S.t("status.denied")
             print("Ballast: Screen Time authorisation failed — \(error)")
         }
     }
@@ -107,9 +114,9 @@ final class ScreenTime {
         center.stopMonitoring([.daily])
         do {
             try center.startMonitoring(.daily, during: schedule, events: events)
-            status = "watching \(watchedCount)"
+            status = S.t("status.watching", watchedCount)
         } catch {
-            status = "failed: \(error)"
+            status = S.t("status.failed")
             print("Ballast: could not start monitoring — \(error)")
         }
     }
@@ -121,11 +128,11 @@ final class ScreenTime {
 
     private func refreshStatus() {
         if !authorized {
-            status = "not allowed"
+            status = S.t("status.notAllowed")
         } else if watchedCount == 0 {
-            status = "no apps chosen"
+            status = S.t("status.noApps")
         } else {
-            status = "\(watchedCount) chosen"
+            status = S.t("status.chosen", watchedCount)
         }
     }
 

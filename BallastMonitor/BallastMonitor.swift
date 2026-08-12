@@ -31,17 +31,17 @@ class BallastMonitor: DeviceActivityMonitor {
 
         let content = UNMutableNotificationContent()
         content.title = S.t("ask.title")
-        content.body = S.t("notif.remaining", S.minutes(SharedState.minutesLeft), task)
-        content.sound = .default
+        content.body = S.t("notif.slipNow", task)
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("alarm.wav"))
         content.interruptionLevel = .timeSensitive
 
-        // The interval is deliberate: the question arrives once the impulse has had
-        // time to become invisible again.
-        let delay = TimeInterval(SharedState.intervalMin * 60)
+        // Now, not later. Delaying this by the reminder interval meant opening a
+        // watched app produced silence, and the warning landed twenty minutes after
+        // the moment it was about.
         let request = UNNotificationRequest(
-            identifier: SharedState.notificationID,
+            identifier: "\(SharedState.notificationID).\(Int(now))",
             content: content,
-            trigger: UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false))
+            trigger: nil)
 
         UNUserNotificationCenter.current().add(request)
     }
