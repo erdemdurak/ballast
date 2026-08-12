@@ -267,3 +267,14 @@ private struct Row {
     let (_, effects) = reduce(asking, .askNow, t0 + 20 * min + 1)
     #expect(effects.isEmpty)
 }
+
+// MARK: - The reminder interval follows the work
+
+@Test func aShortTaskIsAskedWithinItsOwnLength() {
+    // 5 minutes of work asked at 20 would never be asked at all.
+    #expect(Constants.reminderInterval(intervalMin: 20, durationMin: 5) == 5)
+    #expect(Constants.reminderInterval(intervalMin: 20, durationMin: 15) == 15)
+    #expect(Constants.reminderInterval(intervalMin: 20, durationMin: 60) == 20)
+    #expect(Constants.reminderInterval(intervalMin: 20, durationMin: 240) == 20)
+    #expect(Constants.reminderInterval(intervalMin: 20, durationMin: 0) == 1)
+}

@@ -69,16 +69,21 @@ final class AppModel {
             if Date().timeIntervalSince1970 > deadline {
                 closed = store.end(at: deadline)
                 notifications.cancel()
+                liveActivity.end()
                 SharedState.sessionActive = false
+                SharedState.endsAt = 0
                 route = .closed
             } else {
                 resume(open)
                 drainMonitorSlip()
             }
         } else {
-            // No session, no reminders. Anything still queued is from a build or a
-            // session that no longer exists.
+            // No session: no reminders, no Lock Screen countdown, nothing left over
+            // from a session that no longer exists.
             notifications.cancel()
+            liveActivity.end()
+            SharedState.sessionActive = false
+            SharedState.endsAt = 0
         }
     }
 
@@ -86,7 +91,8 @@ final class AppModel {
 
     var config: Config {
         Config(
-            intervalMin: draft.intervalMin,
+            intervalMin: Constants.reminderInterval(
+                intervalMin: draft.intervalMin, durationMin: draft.durationMin),
             holdSeconds: draft.holdSeconds)
     }
 
@@ -188,6 +194,7 @@ final class AppModel {
         guard let record = closed else { return }
         store.markCompleted(record.id)
         closed = store.sessions.first { $0.id == record.id }
+        liveActivity.end()
     }
 
     func newSession() {

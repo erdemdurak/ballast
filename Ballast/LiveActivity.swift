@@ -15,6 +15,14 @@ final class LiveActivityController {
     /// cannot do this", and the two need telling apart.
     private(set) var status: String = "—"
 
+    init() {
+        // Activities outlive the process that started them. Without adopting the one
+        // already running, a relaunch cannot end it and the Lock Screen keeps counting
+        // down a session that is over.
+        activity = Activity<BallastAttributes>.activities.first
+        if activity != nil { status = "on" }
+    }
+
     var enabled: Bool { ActivityAuthorizationInfo().areActivitiesEnabled }
 
     func start(task: String, armedAt: Date?, endsAt: Date?) {

@@ -15,6 +15,12 @@ public enum Constants {
     /// of its travel on durations nobody picks.
     public static let durationSteps = [5, 10, 15, 30, 45, 60, 75, 90, 120, 150, 180, 240]
 
+    /// A reminder that lands after the work is over is no reminder at all. Five
+    /// minutes of work gets asked at five minutes, not at twenty.
+    public static func reminderInterval(intervalMin: Int, durationMin: Int) -> Int {
+        max(1, min(intervalMin, durationMin))
+    }
+
     /// The friction itself.
     public static let hold: TimeInterval = 4
 }
