@@ -74,7 +74,6 @@
 "status.chosen" = "%lld chosen";
 "status.watching" = "watching %lld";
 "status.failed" = "could not start";
-"notif.slipNow" = "You opened one of these. You said you'd: %@";
 "closed.markDone" = "Mark it done";
 "recent.done" = "done";
 "recent.unfinished" = "unfinished";

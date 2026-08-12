@@ -62,7 +62,6 @@
 "status.chosen" = "%lld escolhidos";
 "status.watching" = "%lld observados";
 "status.failed" = "não foi possível iniciar";
-"notif.slipNow" = "Você abriu um deles. Você ia: %@";
 "closed.markDone" = "Marcar como feito";
 "recent.done" = "feito";
 "recent.unfinished" = "não concluído";

@@ -62,7 +62,6 @@
 "status.chosen" = "выбрано %lld";
 "status.watching" = "наблюдение за %lld";
 "status.failed" = "не удалось запустить";
-"notif.slipNow" = "Ты открыл одно из них. Ты собирался: %@";
 "closed.markDone" = "Отметить выполненным";
 "recent.done" = "готово";
 "recent.unfinished" = "не закончено";

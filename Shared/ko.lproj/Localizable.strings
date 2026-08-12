@@ -62,7 +62,6 @@
 "status.chosen" = "%lld개 선택";
 "status.watching" = "%lld개 지켜보는 중";
 "status.failed" = "시작할 수 없음";
-"notif.slipNow" = "방금 하나를 열었습니다. 하려던 일: %@";
 "closed.markDone" = "완료로 표시";
 "recent.done" = "완료";
 "recent.unfinished" = "미완료";

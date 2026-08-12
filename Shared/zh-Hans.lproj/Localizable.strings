@@ -62,7 +62,6 @@
 "status.chosen" = "已选 %lld 个";
 "status.watching" = "正在留意 %lld 个";
 "status.failed" = "无法启动";
-"notif.slipNow" = "你刚打开了其中一个。你说要：%@";
 "closed.markDone" = "标记为完成";
 "recent.done" = "已完成";
 "recent.unfinished" = "未完成";

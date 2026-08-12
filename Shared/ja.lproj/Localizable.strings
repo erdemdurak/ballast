@@ -62,7 +62,6 @@
 "status.chosen" = "%lld 件選択";
 "status.watching" = "%lld 件を見守り中";
 "status.failed" = "開始できません";
-"notif.slipNow" = "いま開きましたね。向き合っていたのは：%@";
 "closed.markDone" = "できたことにする";
 "recent.done" = "完了";
 "recent.unfinished" = "途中";

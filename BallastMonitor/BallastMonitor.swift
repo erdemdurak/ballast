@@ -1,13 +1,15 @@
 import DeviceActivity
 import Foundation
-import UserNotifications
 
-/// Wakes when a watched app has been used for the threshold. This is the one signal
-/// iOS gives a closed app, and it is the whole reason the Screen Time half exists:
-/// the question fires because you slipped, not because a timer expired.
+/// Wakes when a watched app has been used for the threshold.
 ///
-/// The extension runs under a ~6 MB ceiling. It records a timestamp and schedules one
-/// notification — nothing else belongs here.
+/// It records, it does not alert. Apple delivers these events minutes after the fact,
+/// so an alarm here fires once you are already back at work — "you are in Instagram
+/// now" when you are not. A reminder that is wrong about *now* teaches you to ignore
+/// the ones that are right. The count, though, is about the past and stays true
+/// however late it lands, so that is what this keeps.
+///
+/// The extension runs under a ~6 MB ceiling; a timestamp and a tally is all of it.
 class BallastMonitor: DeviceActivityMonitor {
     override func eventDidReachThreshold(
         _ event: DeviceActivityEvent.Name, activity: DeviceActivityName
@@ -26,23 +28,5 @@ class BallastMonitor: DeviceActivityMonitor {
             SharedState.recordInterruption(appIndex: index, at: now)
         }
 
-        let task = SharedState.task
-        guard !task.isEmpty else { return }
-
-        let content = UNMutableNotificationContent()
-        content.title = S.t("ask.title")
-        content.body = S.t("notif.slipNow", task)
-        content.sound = UNNotificationSound(named: UNNotificationSoundName("alarm.wav"))
-        content.interruptionLevel = .timeSensitive
-
-        // Now, not later. Delaying this by the reminder interval meant opening a
-        // watched app produced silence, and the warning landed twenty minutes after
-        // the moment it was about.
-        let request = UNNotificationRequest(
-            identifier: "\(SharedState.notificationID).\(Int(now))",
-            content: content,
-            trigger: nil)
-
-        UNUserNotificationCenter.current().add(request)
     }
 }

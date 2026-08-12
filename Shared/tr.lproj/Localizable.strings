@@ -62,7 +62,6 @@
 "status.chosen" = "%lld seçili";
 "status.watching" = "%lld izleniyor";
 "status.failed" = "başlatılamadı";
-"notif.slipNow" = "Bunlardan birini açtın. Şunu yapacaktın: %@";
 "closed.markDone" = "Bitti olarak işaretle";
 "recent.done" = "bitti";
 "recent.unfinished" = "bitmedi";

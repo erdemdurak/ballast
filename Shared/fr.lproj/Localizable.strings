@@ -62,7 +62,6 @@
 "status.chosen" = "%lld choisies";
 "status.watching" = "%lld surveillées";
 "status.failed" = "démarrage impossible";
-"notif.slipNow" = "Tu viens d'en ouvrir une. Tu voulais : %@";
 "closed.markDone" = "Marquer comme fait";
 "recent.done" = "fait";
 "recent.unfinished" = "inachevé";

@@ -62,7 +62,6 @@
 "status.chosen" = "%lld مختارة";
 "status.watching" = "مراقبة %lld";
 "status.failed" = "تعذّر البدء";
-"notif.slipNow" = "فتحت واحدًا منها للتو. قلت إنك ستقوم بـ: %@";
 "closed.markDone" = "ضع علامة تم";
 "recent.done" = "تم";
 "recent.unfinished" = "غير مكتمل";
