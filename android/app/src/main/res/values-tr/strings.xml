@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_title">Tek bir şey yaz.</string>
+    <string name="setup_sub">Hiçbir şey engellenmez. Seçtiğin uygulamalardan birini açtığında seni uyarır ve tek bir soru sorar.</string>
+    <string name="setup_task_label">İşin</string>
+    <string name="setup_task_hint">Kimya raporunu bitir</string>
+    <string name="setup_duration">İş ne kadar sürmeli</string>
+    <string name="setup_feeds">İzlenecek uygulamalar</string>
+    <string name="setup_feeds_pick">Uygulama seç</string>
+    <string name="setup_start">Başlat</string>
+    <string name="setup_recent">Son oturumlar</string>
+    <string name="setup_wipe">Tüm geçmişi sil</string>
+    <string name="setup_hold_zero">Dört saniyelik beklemeyi kaldır</string>
+
+    <string name="session_anchor">Şunu yapacaktın</string>
+    <string name="session_armed_in">Soruya kalan</string>
+    <string name="session_armed">Hazır — sıradaki alışta sorar</string>
+    <string name="session_quiet">Sessiz</string>
+    <string name="session_end">Bitir</string>
+    <string name="session_in">Oturumda</string>
+    <string name="session_no_interruptions">Henüz bölünme yok</string>
+    <string name="session_interrupted">Bölünme · %1$d</string>
+    <string name="session_watching">%1$d uygulama izleniyor · eline alma ve açılış</string>
+
+    <string name="ask_eyebrow">Dur</string>
+    <string name="ask_title">Şu an buna değer mi?</string>
+    <string name="ask_list">Hâlâ listende</string>
+    <string name="ask_body">%1$s dır buradasın ve telefonu yine elime aldın.</string>
+    <string name="ask_body_slip">Az önce %1$s açtın. Şunu yapacaktın: %2$s</string>
+    <string name="ask_down">Bırak</string>
+    <string name="ask_through">Devam et</string>
+    <string name="ask_through_held">Devam et — %1$d</string>
+
+    <string name="closed_title">Oturum kapandı</string>
+    <string name="closed_next">Sıradakini yaz</string>
+    <string name="closed_mark_done">Bitti olarak işaretle</string>
+    <string name="closed_length">Süre</string>
+    <string name="closed_interrupted_by">İşini bunlar böldü</string>
+    <string name="recent_done">bitti</string>
+    <string name="recent_unfinished">bitmedi</string>
+
+    <string name="notif_channel">Hatırlatmalar</string>
+    <string name="notif_service_channel">Oturum</string>
+    <string name="notif_remaining">%1$s kaldı: %2$s. Bitti mi?</string>
+    <string name="notif_slip_now">Az önce %1$s açtın. Şunu yapacaktın: %2$s</string>
+    <string name="notif_running">İzleniyor · %1$s</string>
+
+    <string name="perm_usage_title">Uygulama açılışlarını görmesine izin ver</string>
+    <string name="perm_usage_body">Android bunu kendi ayarlar sayfasından soruyor. Hold Focus bunu yalnızca senin seçtiğin uygulamaları fark etmek için kullanır; birini açtığın anda seni uyarır. Liste bu telefondan çıkmaz.</string>
+    <string name="perm_usage_open">Ayarları aç</string>
+</resources>

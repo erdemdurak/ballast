@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hold Focus</string>
+
+    <string name="setup_title">Name the one thing.</string>
+    <string name="setup_sub">Nothing gets blocked. When you open one of your feeds, this warns you — and asks one question.</string>
+    <string name="setup_task_label">Your task</string>
+    <string name="setup_task_hint">Finish the chemistry lab write-up</string>
+    <string name="setup_duration">How long the work should take</string>
+    <string name="setup_feeds">Apps to watch</string>
+    <string name="setup_feeds_pick">Choose apps</string>
+    <string name="setup_start">Start</string>
+    <string name="setup_recent">Recent</string>
+    <string name="setup_wipe">Erase all history</string>
+    <string name="setup_hold_zero">Remove the four-second hold</string>
+
+    <string name="session_anchor">You said you\'d</string>
+    <string name="session_armed_in">Question armed in</string>
+    <string name="session_armed">Armed — next pick-up asks</string>
+    <string name="session_quiet">Quiet</string>
+    <string name="session_end">End</string>
+    <string name="session_in">In session</string>
+    <string name="session_no_interruptions">No interruptions yet</string>
+    <string name="session_interrupted">Interruptions · %1$d</string>
+    <string name="session_watching">Watching %1$d apps · pick-ups and app opens</string>
+
+    <string name="ask_eyebrow">Pause</string>
+    <string name="ask_title">Is it worth it right now?</string>
+    <string name="ask_list">Still on your list</string>
+    <string name="ask_body">You\'ve been at this %1$s, and you\'ve just picked the phone up.</string>
+    <string name="ask_body_slip">You just opened %1$s. You said you\'d: %2$s</string>
+    <string name="ask_down">Put it down</string>
+    <string name="ask_through">Carry on</string>
+    <string name="ask_through_held">Carry on in %1$d</string>
+
+    <string name="closed_title">Session closed</string>
+    <string name="closed_next">Set the next one</string>
+    <string name="closed_mark_done">Mark it done</string>
+    <string name="closed_length">Length</string>
+    <string name="closed_interrupted_by">You broke off for these</string>
+    <string name="recent_done">done</string>
+    <string name="recent_unfinished">unfinished</string>
+
+    <string name="notif_channel">Reminders</string>
+    <string name="notif_service_channel">Session</string>
+    <string name="notif_remaining">%1$s left on: %2$s. Done?</string>
+    <string name="notif_slip_now">You just opened %1$s. You said you\'d: %2$s</string>
+    <string name="notif_running">Watching · %1$s</string>
+
+    <string name="perm_usage_title">Let Hold Focus see when an app opens</string>
+    <string name="perm_usage_body">Android asks for this on its own settings page. Hold Focus uses it only to notice the apps you picked, so it can warn you the moment you open one. The list never leaves this phone.</string>
+    <string name="perm_usage_open">Open settings</string>
+</resources>

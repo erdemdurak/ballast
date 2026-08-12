@@ -3,3 +3,10 @@
 .DS_Store
 xcuserdata/
 *.xcuserstate
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.apk

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+
+    <!-- Named packages only. QUERY_ALL_PACKAGES treats the installed-app list as
+         sensitive and Play only allows it where total visibility is core to the app.
+         Hold Focus does not need it: it needs to recognise the few apps the user
+         picked. Fewer supported apps, far less policy risk. -->
+    <queries>
+        <package android:name="com.instagram.android" />
+        <package android:name="com.zhiliaoapp.musically" />
+        <package android:name="com.twitter.android" />
+        <package android:name="com.x.android" />
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.google.android.youtube" />
+        <package android:name="com.reddit.frontpage" />
+        <package android:name="com.linkedin.android" />
+        <package android:name="com.snapchat.android" />
+        <package android:name="com.whatsapp" />
+        <package android:name="org.telegram.messenger" />
+        <package android:name="com.pinterest" />
+        <package android:name="com.netflix.mediaclient" />
+        <package android:name="tv.twitch.android.app" />
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HoldFocus">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- specialUse: this watches for the user's own chosen apps on their own
+             device, which none of the standard types describe. -->
+        <service
+            android:name=".Watcher"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="A focus reminder the user starts themselves. It watches for
+                    the apps they chose so it can warn them, and it never blocks anything." />
+        </service>
+    </application>
+</manifest>
