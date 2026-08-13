@@ -66,3 +66,4 @@
 "recent.done" = "تم";
 "recent.unfinished" = "غير مكتمل";
 "interruption.category" = "تطبيق مُراقَب";
+"notif.slipNow" = "فتحت للتو تطبيقًا مُراقَبًا. قلت إنك ستقوم بـ: %@";

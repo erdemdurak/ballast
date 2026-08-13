@@ -66,3 +66,4 @@
 "recent.done" = "erledigt";
 "recent.unfinished" = "offen";
 "interruption.category" = "Eine beobachtete App";
+"notif.slipNow" = "Du hast gerade eine beobachtete App geöffnet. Du wolltest: %@";

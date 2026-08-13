@@ -66,3 +66,4 @@
 "recent.done" = "fait";
 "recent.unfinished" = "inachevé";
 "interruption.category" = "Une appli surveillée";
+"notif.slipNow" = "Tu viens d'ouvrir une appli surveillée. Tu voulais : %@";

@@ -78,3 +78,4 @@
 "recent.done" = "done";
 "recent.unfinished" = "unfinished";
 "interruption.category" = "A watched app";
+"notif.slipNow" = "You just opened a watched app. You said you'd: %@";

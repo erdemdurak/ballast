@@ -66,3 +66,4 @@
 "recent.done" = "完了";
 "recent.unfinished" = "途中";
 "interruption.category" = "見守り中のアプリ";
+"notif.slipNow" = "見守り中のアプリを開きましたね。向き合っていたのは：%@";

@@ -66,3 +66,4 @@
 "recent.done" = "已完成";
 "recent.unfinished" = "未完成";
 "interruption.category" = "一个留意中的应用";
+"notif.slipNow" = "你刚打开了一个留意中的应用。你说要：%@";

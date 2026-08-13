@@ -66,3 +66,4 @@
 "recent.done" = "완료";
 "recent.unfinished" = "미완료";
 "interruption.category" = "지켜보는 앱";
+"notif.slipNow" = "지켜보는 앱을 방금 열었습니다. 하려던 일: %@";

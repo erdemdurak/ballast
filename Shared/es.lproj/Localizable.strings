@@ -66,3 +66,4 @@
 "recent.done" = "hecho";
 "recent.unfinished" = "sin terminar";
 "interruption.category" = "Una app vigilada";
+"notif.slipNow" = "Acabas de abrir una app vigilada. Ibas a: %@";

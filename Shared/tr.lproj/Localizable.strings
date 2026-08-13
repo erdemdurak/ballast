@@ -66,3 +66,4 @@
 "recent.done" = "bitti";
 "recent.unfinished" = "bitmedi";
 "interruption.category" = "İzlenen bir uygulama";
+"notif.slipNow" = "Az önce izlenen bir uygulamayı açtın. Şunu yapacaktın: %@";
