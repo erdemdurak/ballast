@@ -65,3 +65,4 @@
 "closed.markDone" = "Отметить выполненным";
 "recent.done" = "готово";
 "recent.unfinished" = "не закончено";
+"interruption.category" = "Отслеживаемое приложение";

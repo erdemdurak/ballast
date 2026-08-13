@@ -64,7 +64,15 @@ struct ClosedView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Eyebrow(text: S.t("closed.interruptedBy"), color: Token.slip)
                 ForEach(counts.prefix(4), id: \.index) { entry in
-                    if entry.index < model.screenTime.orderedTokens.count {
+                    if entry.index == Interruption.category {
+                        HStack {
+                            Text(S.t("interruption.category"))
+                                .font(Face.body(15)).foregroundStyle(Token.ink)
+                            Spacer()
+                            Text("\(entry.count)×")
+                                .font(Face.data(13, .medium)).foregroundStyle(Token.slip)
+                        }
+                    } else if entry.index < model.screenTime.orderedTokens.count {
                         HStack {
                             Label(model.screenTime.orderedTokens[entry.index])
                                 .labelStyle(.titleAndIcon)

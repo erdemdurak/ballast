@@ -60,7 +60,15 @@ struct SessionView: View {
             } else {
                 Eyebrow(text: S.t("session.interrupted", total), color: Token.slip)
                 ForEach(counts.prefix(4), id: \.index) { row in
-                    if row.index < model.screenTime.orderedTokens.count {
+                    if row.index == Interruption.category {
+                        HStack {
+                            Text(S.t("interruption.category"))
+                                .font(Face.body(15)).foregroundStyle(Token.ink)
+                            Spacer()
+                            Text("\(row.count)×")
+                                .font(Face.data(13, .medium)).foregroundStyle(Token.slip)
+                        }
+                    } else if row.index < model.screenTime.orderedTokens.count {
                         HStack {
                             Label(model.screenTime.orderedTokens[row.index])
                                 .labelStyle(.titleAndIcon)

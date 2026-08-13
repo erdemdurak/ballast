@@ -65,3 +65,4 @@
 "closed.markDone" = "できたことにする";
 "recent.done" = "完了";
 "recent.unfinished" = "途中";
+"interruption.category" = "見守り中のアプリ";

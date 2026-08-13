@@ -77,3 +77,4 @@
 "closed.markDone" = "Mark it done";
 "recent.done" = "done";
 "recent.unfinished" = "unfinished";
+"interruption.category" = "A watched app";

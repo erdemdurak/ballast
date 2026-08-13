@@ -65,3 +65,4 @@
 "closed.markDone" = "Bitti olarak işaretle";
 "recent.done" = "bitti";
 "recent.unfinished" = "bitmedi";
+"interruption.category" = "İzlenen bir uygulama";

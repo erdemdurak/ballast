@@ -278,3 +278,15 @@ private struct Row {
     #expect(Constants.reminderInterval(intervalMin: 20, durationMin: 240) == 20)
     #expect(Constants.reminderInterval(intervalMin: 20, durationMin: 0) == 1)
 }
+
+@Test func categoryInterruptionsAreCountedNotDropped() {
+    // A category fires one event with no token behind it. Dropping those meant a
+    // category selection was detected and then silently thrown away.
+    let tallied = tallyInterruptions(["-1:100", "-1:160", "0:200"])
+    #expect(tallied == [
+        Interruption(index: Interruption.category, count: 2),
+        Interruption(index: 0, count: 1),
+    ])
+    // Still nothing below the sentinel.
+    #expect(tallyInterruptions(["-2:5"]).isEmpty)
+}

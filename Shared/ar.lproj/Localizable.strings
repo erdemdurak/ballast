@@ -65,3 +65,4 @@
 "closed.markDone" = "ضع علامة تم";
 "recent.done" = "تم";
 "recent.unfinished" = "غير مكتمل";
+"interruption.category" = "تطبيق مُراقَب";

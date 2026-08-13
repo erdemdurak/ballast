@@ -65,3 +65,4 @@
 "closed.markDone" = "标记为完成";
 "recent.done" = "已完成";
 "recent.unfinished" = "未完成";
+"interruption.category" = "一个留意中的应用";

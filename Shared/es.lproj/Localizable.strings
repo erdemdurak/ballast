@@ -65,3 +65,4 @@
 "closed.markDone" = "Marcar como hecho";
 "recent.done" = "hecho";
 "recent.unfinished" = "sin terminar";
+"interruption.category" = "Una app vigilada";

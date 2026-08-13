@@ -65,3 +65,4 @@
 "closed.markDone" = "완료로 표시";
 "recent.done" = "완료";
 "recent.unfinished" = "미완료";
+"interruption.category" = "지켜보는 앱";

@@ -1,6 +1,10 @@
 import Foundation
 
 public struct Interruption: Equatable, Sendable {
+    /// Categories arrive as one event with no per-app token, so they cannot be
+    /// attributed to anything nameable. They still count.
+    public static let category = -1
+
     public let index: Int
     public let count: Int
 
@@ -22,7 +26,7 @@ public func tallyInterruptions(_ entries: [String]) -> [Interruption] {
     for entry in entries {
         guard let field = entry.split(separator: ":").first,
             let index = Int(field),
-            index >= 0
+            index >= Interruption.category
         else { continue }
         counts[index, default: 0] += 1
     }

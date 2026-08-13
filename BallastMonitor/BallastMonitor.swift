@@ -23,10 +23,12 @@ class BallastMonitor: DeviceActivityMonitor {
 
         // "ballast.<appIndex>.<step>" — the index attributes the crossing to one app
         // without this process ever learning which app that is.
+        // "ballast.<appIndex>.<step>" for a chosen app; anything else is a category,
+        // which fires as a single event with no token behind it. Dropping those meant
+        // a category selection was detected and then silently thrown away.
         let parts = event.rawValue.split(separator: ".")
-        if parts.count == 3, let index = Int(parts[1]) {
-            SharedState.recordInterruption(appIndex: index, at: now)
-        }
+        let index = if parts.count == 3, let i = Int(parts[1]) { i } else { Interruption.category }
+        SharedState.recordInterruption(appIndex: index, at: now)
 
     }
 }
