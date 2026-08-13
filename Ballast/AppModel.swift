@@ -59,7 +59,9 @@ final class AppModel {
         // watched only from the next session onwards.
         screenTime.onSelectionChanged = { [weak self] in
             guard let self, self.state.sessionStart != nil else { return }
-            self.screenTime.startMonitoring(stepsPerApp: self.draft.interruptionSteps)
+            self.screenTime.startMonitoring(
+                stepsPerApp: self.draft.interruptionSteps,
+                durationMin: self.draft.durationMin)
         }
 
         if let open = store.open {
@@ -149,7 +151,8 @@ final class AppModel {
         SharedState.sessionActive = true
         // Cleared at the start, not the end: the closed screen still needs them.
         SharedState.clearInterruptions()
-        screenTime.startMonitoring(stepsPerApp: draft.interruptionSteps)
+        screenTime.startMonitoring(
+            stepsPerApp: draft.interruptionSteps, durationMin: draft.durationMin)
     }
 
     func end() {

@@ -78,15 +78,28 @@ final class ScreenTime {
     /// There is no app-open callback on iOS. `DeviceActivityMonitor` is threshold-driven
     /// only, so the smallest useful granularity is a minute of accumulated use — which
     /// also filters out a three-second glance at a notification.
-    func startMonitoring(stepsPerApp: Int = 8) {
+    func startMonitoring(stepsPerApp: Int = 8, durationMin: Int = 60) {
         guard authorized, watchedCount > 0 else {
             refreshStatus()
             return
         }
+
+        // The window has to start with the session, not at midnight.
+        //
+        // A threshold counts usage accumulated since the interval began. With a daily
+        // 00:00–23:59 schedule, anyone who had already spent a minute in Instagram that
+        // morning had crossed every threshold before the session even started — so
+        // nothing ever fired again until the next day. Each session now gets its own
+        // window, and the count starts at zero with it.
+        //
+        // Apple requires at least fifteen minutes between start and end.
+        let calendar = Calendar.current
+        let now = Date()
+        let end = now.addingTimeInterval(TimeInterval(max(15, durationMin) * 60))
         let schedule = DeviceActivitySchedule(
-            intervalStart: DateComponents(hour: 0, minute: 0),
-            intervalEnd: DateComponents(hour: 23, minute: 59),
-            repeats: true)
+            intervalStart: calendar.dateComponents([.hour, .minute], from: now),
+            intervalEnd: calendar.dateComponents([.hour, .minute], from: end),
+            repeats: false)
 
         // One event per app per minute-step. A single event fires only once per
         // monitoring interval, so a ladder of thresholds is the only way to count
