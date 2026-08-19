@@ -1,4 +1,3 @@
-import CallKit
 import Foundation
 import SwiftUI
 import UIKit
@@ -29,8 +28,6 @@ final class AppModel {
     let screenTime = ScreenTime()
 
     private var timer: Timer?
-    private let callObserver = CXCallObserver()
-    private var callDelegate: CallWatcher?
     private var lastEngineTick: TimeInterval = 0
     private var awaySince: TimeInterval?
 
@@ -41,12 +38,6 @@ final class AppModel {
     init(store: Store = Store()) {
         self.store = store
         self.draft = store.prefs
-
-        let watcher = CallWatcher { [weak self] active in
-            self?.send(.callChanged(active))
-        }
-        callDelegate = watcher
-        callObserver.setDelegate(watcher, queue: .main)
 
         UNUserNotificationCenter.current().delegate = notifications
         // Tapping the question is a pick-up: let the engine decide, exactly as it
@@ -345,16 +336,3 @@ final class AppModel {
 
 }
 
-/// `CXCallObserver` keeps only a weak delegate, so this is held by the model.
-private final class CallWatcher: NSObject, CXCallObserverDelegate {
-    private let onChange: @MainActor (Bool) -> Void
-
-    init(onChange: @escaping @MainActor (Bool) -> Void) {
-        self.onChange = onChange
-    }
-
-    func callObserver(_ observer: CXCallObserver, callChanged call: CXCall) {
-        let active = observer.calls.contains { !$0.hasEnded }
-        Task { @MainActor in self.onChange(active) }
-    }
-}

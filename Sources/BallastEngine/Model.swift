@@ -44,7 +44,6 @@ public enum Event: Equatable, Sendable {
     case askNow
     case tick
     case dismiss(Dismissal)
-    case callChanged(Bool)
 }
 
 public enum Dismissal: String, Codable, Sendable {
@@ -78,7 +77,6 @@ public struct SessionState: Equatable, Sendable {
     public var lastSlip: TimeInterval?
     public var lastNudge: TimeInterval?
     public var lastPickup: TimeInterval?
-    public var callActive: Bool
     public var isAsking: Bool
 
     public init(
@@ -88,7 +86,6 @@ public struct SessionState: Equatable, Sendable {
         lastSlip: TimeInterval? = nil,
         lastNudge: TimeInterval? = nil,
         lastPickup: TimeInterval? = nil,
-        callActive: Bool = false,
         isAsking: Bool = false
     ) {
         self.task = task
@@ -97,7 +94,6 @@ public struct SessionState: Equatable, Sendable {
         self.lastSlip = lastSlip
         self.lastNudge = lastNudge
         self.lastPickup = lastPickup
-        self.callActive = callActive
         self.isAsking = isAsking
     }
 

@@ -42,8 +42,6 @@ public func reduce(_ state: SessionState, _ event: Event, _ now: TimeInterval) -
         let recorded: [Effect] = [.record(.pickup, at: now)]
 
         guard !s.isAsking else { return (s, recorded) }
-        // Never interrupt a call.
-        guard !s.callActive else { return (s, recorded) }
         // Nothing to measure from.
         guard let anchor = s.anchor else { return (s, recorded) }
         // Too soon.
@@ -82,9 +80,5 @@ public func reduce(_ state: SessionState, _ event: Event, _ now: TimeInterval) -
         s.isAsking = false
         let kind: RecordKind = how == .down ? .down : .through
         return (s, [.record(kind, at: now), .dismissAsking])
-
-    case let .callChanged(active):
-        s.callActive = active
-        return (s, [])
     }
 }

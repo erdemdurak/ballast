@@ -78,12 +78,6 @@ private struct Row {
             pickupAt: t0 + 90 * min,
             expectRecorded: true, expectQuestion: false),
 
-        Row(
-            name: "ARMED, call in progress",
-            script: [start(.slip), (.slip, t0), (.callChanged(true), t0 + 1)],
-            pickupAt: t0 + 20 * min,
-            expectRecorded: true, expectQuestion: false),
-
         // Not in §2.5. Without consuming the slip, this row asks again — and would keep
         // asking every 60 s for the rest of the session.
         Row(

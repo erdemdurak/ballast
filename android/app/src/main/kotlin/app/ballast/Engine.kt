@@ -46,7 +46,6 @@ data class SessionState(
     val lastSlip: Double? = null,
     val lastNudge: Double? = null,
     val lastPickup: Double? = null,
-    val callActive: Boolean = false,
     val isAsking: Boolean = false,
 ) {
     /** What the interval is measured from. Null means nothing is owed. */
@@ -77,7 +76,6 @@ sealed interface Event {
     data object AskNow : Event
     data object Tick : Event
     data class Dismiss(val how: Dismissal) : Event
-    data class CallChanged(val active: Boolean) : Event
 }
 
 sealed interface Effect {
@@ -128,7 +126,6 @@ fun reduce(state: SessionState, event: Event, now: Double): Pair<SessionState, L
                 Effect.DismissAsking,
             )
 
-        is Event.CallChanged -> state.copy(callActive = event.active) to emptyList()
     }
 
 private fun pickup(state: SessionState, now: Double): Pair<SessionState, List<Effect>> {
@@ -140,7 +137,7 @@ private fun pickup(state: SessionState, now: Double): Pair<SessionState, List<Ef
     val moved = state.copy(lastPickup = now)
     val recorded = listOf(Effect.Record(RecordKind.PICKUP, now))
 
-    if (moved.isAsking || moved.callActive) return moved to recorded
+    if (moved.isAsking) return moved to recorded
     val anchor = moved.anchor ?: return moved to recorded
     if (now - anchor < moved.config.interval) return moved to recorded
     moved.lastNudge?.let { if (now - it < Constants.NUDGE_COOLDOWN) return moved to recorded }
